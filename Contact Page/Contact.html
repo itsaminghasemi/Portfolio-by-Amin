@@ -1,109 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Contact</title>
-    <link href="Contact Style.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Contact</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+  <link rel="shortcut icon" href="/favicon-32x32.png">
+
+  <link rel="stylesheet" href="Contact-Style.css">
 </head>
 
 <body>
 
-    <main>
-        <form class="form1">
+<main>
+  <form class="form1" action="#" method="post">
 
-            <header>
-                <h2>FORM</h2>
-            </header>
+    <header>
+      <h2>Contact Form</h2>
+    </header>
 
-            <section>
-                <input class="form1Input" id="fname" type="text" placeholder="UserName" required>
-            </section>
+    <section class="form-row">
+      <input class="form1Input" type="text" name="username" placeholder="Username" required>
+    </section>
 
-            <section>
-                <input class="form1Input" id="email" type="email" placeholder="E-mail" required>
-            </section>
+    <section class="form-row">
+      <input class="form1Input" type="email" name="email" placeholder="E-mail" required>
+    </section>
 
-            <section>
-                <input class="form1Input" id="pass" type="password" placeholder="Password" required>
-            </section>
+    <section class="form-row">
+      <input class="form1Input" type="password" name="password" placeholder="Password" required>
+    </section>
 
-            <section>
-                <input class="form1Input" id="age" type="number" min="1" max="120" placeholder="Age">
-            </section>
+    <section class="form-row">
+      <input class="form1Input" type="number" name="age" min="1" max="120" placeholder="Age">
+    </section>
 
-            <section>
-                <select class="form1Input" id="country">
-                    <option value="" disabled selected hidden>Country</option>
-                    <option value="us">United States</option>
-                    <option value="uk">United Kingdom</option>
-                    <option value="ca">Canada</option>
-                </select>
-            </section>
+    <section class="form-row">
+      <select class="form1Input" name="country" required>
+        <option value="" disabled selected hidden>Country</option>
+        <option value="us">United States</option>
+        <option value="uk">United Kingdom</option>
+        <option value="ca">Canada</option>
+      </select>
+    </section>
 
+    <!-- Level -->
+    <div class="group">
+      <p class="group-label">Level of Development</p>
+      <div class="options">
 
-            <div>
-                <label id="levelsLabel" for="level"> Level Of Development </label>
+        <label>
+          <input type="radio" name="level" value="basic">
+          Basic
+        </label>
 
-                <section id="level">
-                    <section>
-                        <input id="basic" type="radio" placeholder="Basic">
-                        <label for="basic">Basic</label>
-                    </section>
+        <label>
+          <input type="radio" name="level" value="medium">
+          Medium
+        </label>
 
-                    <section>
-                        <input id="Medium" type="radio" placeholder="Medium">
-                        <label for="basic">Medium</label>
-                    </section>
+        <label>
+          <input type="radio" name="level" value="advanced">
+          Advanced
+        </label>
 
+      </div>
+    </div>
 
-                    <section>
-                        <input id="Advanced" type="radio" placeholder="Advanced">
-                        <label for="basic">Advanced</label>
-                    </section>
-                </section>
-            </div>
+    <!-- Skills -->
+    <div class="group">
+      <p class="group-label">Programming Skills</p>
+      <div class="options">
 
-            <div>
-                <label id="skillsLabel" for="level"> Programming Skills </label>
+        <label>
+          <input type="checkbox" name="skills" value="java">
+          Java
+        </label>
 
-                <section id="Skills">
-                    <section>
-                        <input id="Java" type="checkbox" placeholder="Java">
-                        <label for="basic">Java</label>
-                    </section>
+        <label>
+          <input type="checkbox" name="skills" value="python">
+          Python
+        </label>
 
-                    <section>
-                        <input id="Python" type="checkbox" placeholder="Python">
-                        <label for="Python">Python</label>
-                    </section>
+        <label>
+          <input type="checkbox" name="skills" value="javascript">
+          JavaScript
+        </label>
 
+      </div>
+    </div>
 
-                    <section>
-                        <input id="JS" type="checkbox" placeholder="JavaScript">
-                        <label for="JS">JavaScript</label>
-                    </section>
-                </section>
-            </div>
+    <section class="form-row submit-row">
+      <button class="form1Input" type="submit">Submit</button>
+    </section>
 
-
-
-
-            <section class="container5">
-                <button class="form1Input" type="submit">Submit</button>
-            </section>
-
-        </form>
-    </main>
-
-    <!-- <nav id="navBar">
-            <a id="aboutNav" href="../About Page/About.html" target="_blank">About</a>
-            <a id="homeNav" href="../Home Page/Home.html" target="_blank">Home</a>
-            <a id="telegramLink" href="https://t.me/mgh_19_99" target="_blank">Telegram</a>
-            <a id="githubLink" href="https://github.com/mgh_19_99" target="_blank">Github</a>
-            <a id="githubLink" href="https://linkedin.com/in/ma1999" target="_blank">LinkedIn</a>
-        </nav> -->
+  </form>
+</main>
 
 </body>
-
 </html>

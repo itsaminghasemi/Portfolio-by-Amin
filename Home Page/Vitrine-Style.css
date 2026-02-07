@@ -5,82 +5,79 @@
 
 :root {
     font-size: 24px;
-    margin: 20px;
-    border-radius: 45px;
     font-family: "Comic Sans M5 Bold";
     background-color: black;
 }
 
-main {
+body {
+    margin: 20px;
+}
+
+.vitrine {
     border-radius: 45px;
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-
+    gap: 2.5rem;
     background-image: url("Image/back.svg");
 }
 
-/* Profile section */
+/* Profile */
 .profile {
     display: flex;
-    flex: 1;
-    align-items: center;
-    overflow-wrap: anywhere;
-    gap: 1rem;
-    flex-direction: row;
+    gap: 1.5rem;
     align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+figure {
+    text-align: center;
 }
 
 #profilePNG {
     width: 8rem;
     border-bottom: 0.2rem solid black;
     border-radius: 2rem;
+    cursor: pointer;
 }
 
-#myName,
-#myInfo {
+.hint {
+    font-size: 0.6rem;
+    opacity: 0.6;
+    margin-top: 0.3rem;
+}
+
+.info p {
     max-width: 22rem;
-    color: rgba(96, 163, 188, 1.0);
+    color: rgba(96, 163, 188, 1);
     border: 0.2rem solid black;
     padding: 0.5rem;
     border-radius: 2rem;
-
     background-color: black;
+    margin-bottom: 0.5rem;
 }
 
-@media screen and (max-width: 768px){
-.profile{
-    flex-direction: column;
-    align-items: center;
-}}
-
-.skills {
-    display: flex;
-    justify-content: center;
-}
-
+/* Skills */
 .skills ul {
-    list-style-type: none;
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     padding: 0;
-    margin: 0;
+    justify-content: center;
 }
 
 .skillList {
-    background-color: rgba(96, 163, 188, 1.0);
+    background-color: rgba(96, 163, 188, 1);
     border-bottom: 0.2rem solid black;
     border-radius: 2rem;
     padding: 0.5rem 1rem;
     min-width: 8rem;
     text-align: center;
-    flex: 1;
 }
 
-/* Navigation bar */
-nav {
+/* Navigation */
+.links {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -88,17 +85,24 @@ nav {
     margin-top: 1rem;
 }
 
-nav a {
-    background-color: rgba(181, 14, 181, 0.432);
+.links a {
+    background-color: rgba(181, 14, 181, 0.43);
     border-radius: 1rem;
     border-bottom: 0.08rem solid black;
     padding: 0.5rem 1.2rem;
     text-decoration: none;
-    color: background;
-    transition: background 0.3s;
+    color: white;
 }
 
-nav a:hover {
+.links a:hover {
     background-color: #ddd;
     color: black;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile {
+        justify-content: center;
+        text-align: center;
+    }
 }
