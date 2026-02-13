@@ -3,23 +3,37 @@
     src: url("../Font File/comicbd.ttf");
 }
 
+/* Base */
 :root {
+    --primary: rgba(96, 163, 188, 1);
+    --accent: rgba(181, 14, 181, 0.43);
+    --bg: #000;
+    --text-on-dark: #fff;
+
     font-size: 24px;
-    font-family: "Comic Sans M5 Bold";
-    background-color: black;
+    font-family: "Comic Sans M5 Bold", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--bg);
 }
 
 body {
     margin: 20px;
+    background-color: var(--bg);
+    color: var(--text-on-dark);
 }
 
+/* Vitrine container */
 .vitrine {
+    max-width: 960px;
+    margin: 0 auto;
     border-radius: 45px;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
     background-image: url("Image/back.svg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
 }
 
 /* Profile */

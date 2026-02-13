@@ -3,14 +3,21 @@
   src: url("../Font File/comicbd.ttf");
 }
 
+/* Root variables */
 :root {
   --gap: 16px;
-  --bg-main: #f3f2e1;
-  --bg-box: #ffffff;
-  --border-soft: #ddd;
+  --page-bg: #f3f2e1;
+  --content-bg: #ffffff;
+  --border-soft: #e2e2e2;
+  --text-main: #1f2933;
+  --text-muted: #6b7280;
+  --accent: rgba(181, 14, 181, 0.9);
+  --accent-soft: rgba(181, 14, 181, 0.12);
 }
 
-html, body {
+/* Base */
+html,
+body {
   height: 100%;
   margin: 0;
 }
