@@ -63,11 +63,11 @@ figure {
 
 .info p {
     max-width: 22rem;
-    color: rgba(96, 163, 188, 1);
+    color: var(--primary);
     border: 0.2rem solid black;
     padding: 0.5rem;
     border-radius: 2rem;
-    background-color: black;
+    background-color: var(--bg);
     margin-bottom: 0.5rem;
 }
 
@@ -82,7 +82,7 @@ figure {
 }
 
 .skillList {
-    background-color: rgba(96, 163, 188, 1);
+    background-color: var(--primary);
     border-bottom: 0.2rem solid black;
     border-radius: 2rem;
     padding: 0.5rem 1rem;
@@ -100,17 +100,19 @@ figure {
 }
 
 .links a {
-    background-color: rgba(181, 14, 181, 0.43);
+    background-color: var(--accent);
     border-radius: 1rem;
     border-bottom: 0.08rem solid black;
     padding: 0.5rem 1.2rem;
     text-decoration: none;
-    color: white;
+    color: var(--text-on-dark);
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
 }
 
 .links a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #fff;
+    color: #000;
+    transform: translateY(-1px);
 }
 
 /* Responsive */
