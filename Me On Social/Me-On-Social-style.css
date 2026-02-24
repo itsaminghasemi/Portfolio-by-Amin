@@ -1,8 +1,23 @@
+@font-face {
+    font-family: "Comic Sans M5 Bold";
+    src: url("../Font File/comicbd.ttf");
+}
+
+/* Design tokens shared with other pages */
+:root {
+    --primary: rgba(96, 163, 188, 1);
+    --primary-soft: rgba(96, 163, 188, 0.15);
+    --accent: rgba(181, 14, 181, 0.85);
+    --accent-soft: rgba(181, 14, 181, 0.12);
+    --text-on-dark: #fff;
+}
+
+/* Base */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "Comic Sans M5 Bold", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 body {
@@ -11,7 +26,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: var(--text-on-dark);
 }
 
 /* Card */
@@ -49,7 +64,8 @@ h1 {
     text-decoration: none;
     padding: 0.9rem;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
     color: #e5e7eb;
     transition: background-color 0.22s ease, color 0.22s ease,
         transform 0.12s ease, box-shadow 0.22s ease;
@@ -57,27 +73,27 @@ h1 {
 }
 
 /* Optional: per-platform accent classes (if used in HTML) */
+.social-links a.telegram {
+    border-color: rgba(0, 136, 204, 0.9);
+}
 .social-links a.github {
-    border: 1px solid rgba(156, 163, 175, 0.7);
+    border-color: rgba(156, 163, 175, 0.7);
 }
-
 .social-links a.linkedin {
-    border: 1px solid rgba(14, 118, 168, 0.9);
+    border-color: rgba(14, 118, 168, 0.9);
 }
-
-.social-links a.twitter {
-    border: 1px solid rgba(29, 161, 242, 0.9);
-}
-
 .social-links a.instagram {
-    border: 1px solid rgba(225, 48, 108, 0.85);
+    border-color: rgba(225, 48, 108, 0.85);
+}
+.social-links a.eitaa {
+    border-color: rgba(34, 197, 94, 0.85);
 }
 
 .social-links a:hover {
-    background: #00c6ff;
+    background-color: var(--accent);
     color: #000;
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 198, 255, 0.6);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 /* Disabled state */
