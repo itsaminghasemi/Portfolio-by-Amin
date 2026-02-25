@@ -15,22 +15,24 @@
     background-color: var(--bg);
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 body {
     margin: 0;
     padding: 2rem;
-    min-height: 100vh;
+    min-height: 100dvh;
     background: var(--bg-dark);
     color: var(--text-on-dark);
     font-family: inherit;
     display: flex;
-    flex-direction: column;   /* stack main + footer vertically */
+    flex-direction: column;
+    /* stack main + footer vertically */
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;              /* space between form and link */
-  }
+    gap: 1.5rem;
+    /* space between form and link */
+}
 
 /* Vitrine container */
 .vitrine {
