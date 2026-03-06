@@ -13,7 +13,6 @@
   --bg-elevated: rgba(255, 255, 255, 0.04);
   --text-on-dark: #fff;
   --text-muted: rgba(255, 255, 255, 0.65);
-
   --radius-xl: 2.5rem;
   --radius-lg: 2rem;
   --radius-md: 1rem;
@@ -81,12 +80,12 @@ body {
 .group-label {
   font-size: 0.95rem;
   color: var(--text-muted);
-}
+} 
 
 /* Inputs */
 .form1Input {
   width: 100%;
-  padding: 0.85rem 1.1rem;
+  padding: 0.85dvw 10.1dvw 0.85dvw 1.1dvw;
   border-radius: var(--radius-lg);
   border: 0.1rem solid transparent;
   background: var(--primary-soft);
@@ -115,8 +114,13 @@ body {
 /* Options (radio / checkbox) */
 .options {
   display: flex;
-  gap: 1rem;
+  gap: 3rem;
   flex-wrap: wrap;
+}
+
+#submit-text{
+  padding-left: 10.1dvw;
+  text-align: center;
 }
 
 .options label {
@@ -168,6 +172,10 @@ button.form1Input:hover {
 button.form1Input:active {
   transform: translateY(0);
   box-shadow: none;
+}
+
+.option-types{
+  background-color: #363737;
 }
 
 /* Footer Links – column layout */
