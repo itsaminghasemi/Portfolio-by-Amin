@@ -1,15 +1,28 @@
 @font-face {
-    font-family: "Comic Sans M5 Bold";
-    src: url("../Font File/comicbd.ttf");
+    font-family: 'Vazirmatn';
+    src: url('../fonts/Vazir.woff2') format('woff2'),
+        url('../fonts/Vazir.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazirmatn-bold';
+    src: url('../fonts/Vazir-Bold.woff2') format('woff2'),
+        url('../fonts/Vazir-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* Design tokens shared with other pages */
 :root {
-    --primary: rgba(96, 163, 188, 1);
-    --primary-soft: rgba(96, 163, 188, 0.15);
-    --accent: rgba(181, 14, 181, 0.85);
+    --primary: #38bdf8;
+    --primary-soft: #121212;
+    --accent: #8b5cf6;
     --accent-soft: rgba(181, 14, 181, 0.12);
-    --text-on-dark: #fff;
+    --text-on-dark: #f3f4f6;
 }
 
 /* Base */
@@ -17,7 +30,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Comic Sans M5 Bold", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "vazirmatn", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 body {
@@ -95,7 +108,7 @@ h1 {
 
 .social-links a:hover {
     background-color: var(--accent);
-    color: #000;
+    color: var(--text-on-dark);
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }

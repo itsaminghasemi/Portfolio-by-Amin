@@ -1,83 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact</title>
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
-  <link rel="shortcut icon" href="/favicon-32x32.png">
-
-  <link rel="stylesheet" href="Contact-Style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Premium</title>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/new favicon-32x32.png?v=2">
+    <link rel="stylesheet" href="Contact-Style.css">
 </head>
-
 <body>
 
 <main>
-  <form class="form1" action="#" method="post">
+    <form class="form-premium" action="#" method="post">
+        
+        <!-- Premium Back Button -->
+        <a href="../Home Page/Vitrine.html" class="back-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5"></path>
+                <path d="M12 19l-7-7 7-7"></path>
+            </svg>
+            Back to Vitrine
+        </a>
 
-    <header>
-      <h2>Contact Form</h2>
-    </header>
+        <header class="form-header">
+            <h2>Let's work together</h2>
+            <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+        </header>
 
-    <section class="form-row">
-      <input class="form1Input" type="text" name="username" placeholder="Username" required>
-    </section>
+        <div class="form-grid">
+            
+            <!-- First Name -->
+            <div class="input-group">
+                <label for="firstName">First Name</label>
+                <div class="input-wrapper">
+                    <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                </div>
+            </div>
 
-    <section class="form-row">
-      <input class="form1Input" type="email" name="email" placeholder="E-mail" required>
-    </section>
+            <!-- Last Name -->
+            <div class="input-group">
+                <label for="lastName">Last Name</label>
+                <div class="input-wrapper">
+                    <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                </div>
+            </div>
 
-    <section class="form-row">
-      <input class="form1Input" type="password" name="password" placeholder="Password" required>
-    </section>
+            <!-- Email (Full Width) -->
+            <div class="input-group full-width">
+                <label for="email">Email Address</label>
+                <div class="input-wrapper">
+                    <!-- SVG Icon for Email -->
+                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <input class="with-icon" type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+            </div>
 
-    <section class="form-row">
-      <input class="form1Input" type="number" name="age" min="1" max="120" placeholder="Age">
-    </section>
+            <!-- Project Type (Custom Radio Cards) -->
+            <div class="input-group full-width">
+                <label>What are you interested in?</label>
+                <div class="radio-card-group">
+                    
+                    <input type="radio" id="webDev" name="projectType" value="web" checked>
+                    <label class="radio-card" for="webDev">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        <span>Web Dev</span>
+                    </label>
 
-    <section class="form-row">
-      <select class="form1Input" name="country" required>
-        <option value="" disabled selected hidden>Country</option>
-        <option class="option-types" value="us">United States</option>
-        <option class="option-types" value="uk">United Kingdom</option>
-        <option class="option-types" value="ca">Canada</option>
-      </select>
-    </section>
+                    <input type="radio" id="appDev" name="projectType" value="app">
+                    <label class="radio-card" for="appDev">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                        <span>App Dev</span>
+                    </label>
 
-    <!-- Level -->
-    <div class="group">
-      <p class="group-label">Level of Development</p>
-      <div class="options">
-        <label><input type="radio" name="level" value="basic"> Basic</label>
-        <label><input type="radio" name="level" value="medium"> Medium</label>
-        <label><input type="radio" name="level" value="advanced"> Advanced</label>
-      </div>
-    </div>
+                    <input type="radio" id="design" name="projectType" value="design">
+                    <label class="radio-card" for="design">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+                        <span>Design</span>
+                    </label>
 
-    <!-- Skills -->
-    <div class="group">
-      <p class="group-label">Programming Skills</p>
-      <div class="options">
-        <label><input type="checkbox" name="skills" value="java"> Java</label>
-        <label><input type="checkbox" name="skills" value="python"> Python</label>
-        <label><input type="checkbox" name="skills" value="javascript"> JavaScript</label>
-      </div>
-    </div>
+                </div>
+            </div>
 
-    <section class="form-row submit-row">
-      <button class="form1Input" id="submit-text" type="submit">Submit</button>
-    </section>
+            <!-- Message Area -->
+            <div class="input-group full-width">
+                <label for="message">Project Details</label>
+                <div class="input-wrapper">
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us about your project, timeline, and budget..." required></textarea>
+                </div>
+            </div>
 
-  </form>
+            <!-- Custom File Upload -->
+            <div class="input-group full-width">
+                <label class="file-upload-label" for="fileUpload">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    <span>Click to attach a file (PDF, DOCX, PNG)</span>
+                </label>
+                <input type="file" id="fileUpload" name="fileUpload" class="hidden-input">
+            </div>
+
+            <!-- Modern Toggle Switch -->
+            <div class="input-group full-width toggle-group">
+                <label class="toggle-switch">
+                    <input type="checkbox" name="newsletter">
+                    <span class="slider"></span>
+                </label>
+                <span class="toggle-label">Subscribe to our weekly newsletter</span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="input-group full-width">
+                <button type="submit" class="btn-submit">
+                    Send Message
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </div>
+
+        </div>
+    </form>
 </main>
-
-<footer class="site-footer">
-  <nav class="links">
-    <a href="../Home Page/Vitrine.html" target="_blank">Vitrine</a>
-  </nav>
-</footer>
 
 </body>
 </html>

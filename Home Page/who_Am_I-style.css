@@ -1,17 +1,30 @@
 @font-face {
-  font-family: "Comic Sans M5 Bold";
-  src: url("../Font File/comicbd.ttf");
+  font-family: 'Vazirmatn';
+  src: url('../fonts/Vazir.woff2') format('woff2'),
+       url('../fonts/Vazir.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn-bold';
+  src: url('../fonts/Vazir-Bold.woff2') format('woff2'),
+       url('../fonts/Vazir-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* ============================= */
 /* Design Tokens (Dark Theme) */
 :root {
-  --primary: rgba(96, 163, 188, 1);
-  --accent: rgba(181, 14, 181, 0.85);
+  --primary: #38bdf8;
+  --accent: #8b5cf6;
   --bg-dark: #000;
   --bg-card: #111;
   --text-main: #fff;
-  --text-muted: rgba(255, 255, 255, 0.65);
+  --text-muted: #9ca3af;
   --border-soft: #222;
 
   --radius-xl: 2.5rem;
@@ -26,7 +39,7 @@ html,
 body {
   height: 100%;
   margin: 0;
-  font-family: "Comic Sans M5 Bold", system-ui, -apple-system,
+  font-family: "vazirmatn-bold", system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
   background-color: var(--bg-dark);
   color: var(--text-main);
@@ -72,7 +85,7 @@ body {
   box-shadow: var(--shadow-soft);
 }
 
-.flex-item + .flex-item {
+.flex-item+.flex-item {
   margin-top: 1rem;
 }
 
@@ -95,29 +108,25 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .links a {
   background-color: var(--accent);
-  border-radius: var(--radius-xl);
-  border-bottom: 0.08rem solid #000;
-  padding: 0.45rem 1.4rem;
+  border-radius: 1rem;
+  padding: 0.6rem 1.5rem;
   text-decoration: none;
-  color: var(--text-main);
-  font-size: 0.9rem;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  transition: background-color 0.18s ease, color 0.18s ease,
-    transform 0.12s ease, box-shadow 0.18s ease;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+  transition: all 0.2s ease;
 }
 
 .links a:hover {
-  background-color: #fff;
-  color: #000;
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.4);
+  background-color: #7c3aed;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
 }
 
 /* ============================= */
