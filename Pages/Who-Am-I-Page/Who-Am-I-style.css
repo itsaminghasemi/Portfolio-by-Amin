@@ -6,11 +6,10 @@
     background: radial-gradient(circle at 50% -20%, #2b1055 0%, #0b0b1a 100%);
     display: flex;
     flex-direction: column;
-    margin-top: 80px;
+    margin: 80px auto ;
   }
   
-  .site-header,
-  .site-footer {
+  .site-header {
     background: transparent;
     padding: 1.5rem 1.25rem;
     text-align: center;
