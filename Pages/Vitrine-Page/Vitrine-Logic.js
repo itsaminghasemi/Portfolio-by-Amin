@@ -1,1 +1,1 @@
-alert("LUlu");
+alert("Welcome!");
