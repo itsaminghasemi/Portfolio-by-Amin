@@ -1,4 +1,9 @@
-{
+{"terminal.integrated.fontFamily": "Cascadia Mono, Vazirmatn FD, Consolas, Courier New, monospace",
+"terminal.integrated.gpuAcceleration": "off",
+"terminal.integrated.fontSize": 15,
+"terminal.integrated.lineHeight": 1.1,
+
+
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
   "C_Cpp_Runner.debuggerPath": "gdb",
