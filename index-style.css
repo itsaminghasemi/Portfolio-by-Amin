@@ -46,7 +46,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    background-image: linear-gradient(var(--glass-bg), var(--glass-bg)), url("../../Others/Images/back.svg");
+    background-image: linear-gradient(var(--glass-bg), var(--glass-bg)), url("Others/Images/back.svg");
     background-size: cover;
     background-position: center;
     backdrop-filter: blur(20px);
