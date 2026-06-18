@@ -18,9 +18,7 @@ body {
 
 .page-title h1 {
   margin: 0;
-  font-family: "Vazirmatn-bold", sans-serif;
-  font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.5rem);
-  letter-spacing: 0.03em;
+  font-family: 'JetBrains Mono', monospace;
   color: var(--text-on-dark);
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
@@ -56,10 +54,7 @@ body {
 .flex-item h2 {
   margin: 0 0 0.8rem;
   font-size: 1.25rem;
-  font-family: "Vazirmatn-bold", sans-serif;
-  color: var(--primary);
-}
-
+  font-family: 'JetBrains Mono', monospace;
 .flex-item p {
   margin: 0;
   line-height: 1.7;
