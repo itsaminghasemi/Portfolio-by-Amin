@@ -51,22 +51,14 @@ h1 {
     font-size: 0.95rem;
 }
 
-.social-links a.telegram { border-color: rgba(0, 136, 204, 0.5); }
 .social-links a.github { border-color: rgba(156, 163, 175, 0.5); }
 .social-links a.linkedin { border-color: rgba(14, 118, 168, 0.5); }
-.social-links a.instagram { border-color: rgba(225, 48, 108, 0.5); }
-.social-links a.eitaa { border-color: rgba(34, 197, 94, 0.5); }
 
 .social-links a:hover {
     background-color: var(--primary);
     color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.social-links a.disabled {
-    opacity: 0.4;
-    pointer-events: none;
 }
 
 @media (max-width: 480px) {
