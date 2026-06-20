@@ -1,0 +1,22 @@
+{
+  "name": "Amin Ghasemi Portfolio",
+  "short_name": "Amin Portfolio",
+  "description": "Amin Ghasemi portfolio showcasing front-end skills, social links, and contact options.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "Others/Images/Favicons/new android-chrome-192x192.png?v=2",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "Others/Images/Favicons/new android-chrome-512x512.png?v=2",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
