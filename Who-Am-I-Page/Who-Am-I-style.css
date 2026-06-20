@@ -55,6 +55,8 @@ body {
   margin: 0 0 0.8rem;
   font-size: 1.25rem;
   font-family: 'JetBrains Mono', monospace;
+}
+
 .flex-item p {
   margin: 0;
   line-height: 1.7;
