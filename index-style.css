@@ -1,7 +1,6 @@
 :root {
     --primary-glow: rgba(56, 189, 248, 0.4);
     --accent-glow: rgba(139, 92, 246, 0.4);
-    font-size: 24px;
 }
 
 body {
