@@ -4,31 +4,32 @@ A personal portfolio website built with HTML, CSS, and JavaScript.
 
 ## 🚀 Live Preview
 
-Open `index.html` directly in your browser or serve from a static server.
+Open `index.html` in your browser or serve from a static server.
 
 ## 📁 Project Structure
 
 ```text
-index.html              ← Main entry point
-global.css              ← Shared styles
-404.html                ← Error page
-manifest.json
-robots.txt / sitemap.xml
+index.html                ← Main entry
+global.css                ← Shared styles
+404.html                  ← Redirects to pages/404.html
+manifest.json / robots.txt / sitemap.xml
 pages/
-  about.html            ← About Me
-  contact.html          ← Contact form
-  social.html           ← Social links
+  about.html              ← About Me
+  contact.html            ← Contact form
+  social.html             ← Social links
+  404.html                ← Error page (full design)
 css/
   index-style.css
-  contact-us.css
-  me-on-social.css
-  who-am-i.css
+  contact.css
+  social.css
+  about.css
 js/
   index-logic.js
-  contact-us.js
-  me-on-social.js
-  who-am-i.js
-Others/Images/
+  contact.js
+  social.js
+  about.js
+images/
+  back.svg / profileSVG.svg
   Favicons/
 ```
 
@@ -46,5 +47,5 @@ Others/Images/
 1. Clone this repository.
 2. Open `index.html` in your browser.
 3. Edit files in `pages/`, `css/`, `js/` to personalize.
-4. Replace images in `Others/Images/`.
+4. Replace images in `images/`.
 5. Get a Formspree form ID and update `pages/contact.html`.
