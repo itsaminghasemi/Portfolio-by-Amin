@@ -1,0 +1,2 @@
+# Apache 404 redirect
+ErrorDocument 404 /Portfolio-by-Amin/404.html

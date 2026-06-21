@@ -6,8 +6,7 @@
 body {
     min-height: 100vh;
     margin: 0;
-    padding-top: 110px;
-    background: var(--bg-dark); 
+        background: var(--bg-dark); 
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
@@ -45,7 +44,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    background-image: linear-gradient(var(--glass-bg), var(--glass-bg)), url("Others/Images/back.svg");
+    background-image: linear-gradient(var(--glass-bg), var(--glass-bg)), url("../Others/Images/back.svg");
     background-size: cover;
     background-position: center;
     backdrop-filter: blur(20px);
@@ -303,8 +302,7 @@ figure.profile-figure {
 
 @media (min-width: 769px) {
     body {
-        padding-top: 110px;
-    }
+            }
 
     .vitrine {
         width: calc(100% - 4rem);

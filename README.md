@@ -15,29 +15,47 @@ Open `index.html` directly in your browser or serve the folder from a local stat
 - Glassmorphism-style UI with blur and soft lighting
 - Google Fonts integration: `Inter` and `JetBrains Mono`
 - Separate CSS per page for cleaner styling
+- Accessibility: skip links, focus-visible states, ARIA labels
+- SEO: Open Graph, Twitter cards, canonical URLs, sitemap
+- Dynamic footer year via JavaScript
 
 ## 📁 Project Structure
 
 ```text
 index.html
 global.css
-index-style.css
+404.html
+manifest.json
+robots.txt
+sitemap.xml
+css/
+  index-style.css
+  contact-us.css
+  me-on-social.css
+  who-am-i.css
+js/
+  index-logic.js
+  contact-us.js
+  me-on-social.js
+  who-am-i.js
 Contact-Us/
   Contact-Us.html
-  Contact-Us-Logic.js
-  Contact-Us-style.css
 Me-On-Social/
   Me-On-Social.html
-  Me-On-Social-Logic.js
-  Me-On-Social-style.css
 Who-Am-I-Page/
   Who-Am-I.html
-  Who-Am-I-Logic.js
-  Who-Am-I-style.css
 Others/
-  Fonts/
   Images/
+    back.svg
+    profileSVG.svg
     Favicons/
+      android-chrome-192x192.png
+      android-chrome-512x512.png
+      apple-touch-icon.png
+      favicon-16x16.png
+      favicon-32x32.png
+      favicon.ico
+      site.webmanifest
 ```
 
 ## 📄 Pages
@@ -46,24 +64,12 @@ Others/
 - `Who-Am-I-Page/Who-Am-I.html` — about page
 - `Me-On-Social/Me-On-Social.html` — social links page
 - `Contact-Us/Contact-Us.html` — contact page
+- `404.html` — custom error page
 
 ## 🛠️ How to Use
 
 1. Clone or download this repository.
 2. Open `index.html` in your browser.
-3. Use the navbar to navigate between pages.
-
-> To serve locally, use a simple static server like `live-server`, `http-server`, or VS Code Live Server.
-
-## 🎨 Customization
-
-- Update `global.css` for shared design and responsive header behavior.
-- Edit `index-style.css` for home page layout and presentation.
-- Modify page-specific CSS files for the contact, social, and about pages.
-- Replace placeholder text, links, and images with your own portfolio content.
-
-## 💡 Notes
-
-- The menu icon is implemented with a checkbox toggle for simplicity and compatibility.
-- The fixed navbar is supported by top padding on the body to avoid content overlap.
-- The project uses local HTML/CSS/JS only, no build tools required.
+3. Edit HTML/CSS/JS files to personalize.
+4. Replace images in `Others/Images/` with your own.
+5. Update social links and contact form (Formspree) with your details.

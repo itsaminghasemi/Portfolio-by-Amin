@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://itsaminghasemi.github.io/Portfolio-by-Amin/sitemap.xml

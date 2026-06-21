@@ -57,6 +57,39 @@ body {
   border: 0;
 }
 
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: var(--bg-dark);
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  z-index: 10000;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus-visible states */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+  border-radius: 4px;
+}
+
+
+
 .premium-home-btn {
   position: absolute;
   top: 1.5rem;
@@ -318,30 +351,30 @@ body {
     padding: 0 2rem;
   }
 
-  .nav-links {
-    display: flex;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: rgba(15, 23, 42, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--glass-border);
-    flex-direction: column;
-    gap: 0;
-    overflow: hidden;
-    max-height: 0;
-    visibility: hidden;
-    opacity: 0;
+  .nav-toggle-label {
+    display: none;
   }
 
-  .nav-toggle-label {
+  .nav-links {
     display: flex;
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
+    flex-direction: row;
+    gap: 0.25rem;
+    overflow: visible;
+    max-height: none;
+    visibility: visible;
+    opacity: 1;
   }
 
   .nav-toggle:checked ~ .nav-links {
-    max-height: 320px;
+    max-height: none;
     visibility: visible;
     opacity: 1;
   }

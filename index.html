@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Amin Ghasemi portfolio showcasing front-end skills, social links, and contact options.">
+    <link rel="canonical" href="https://itsaminghasemi.github.io/Portfolio-by-Amin/">
+    <meta property="og:title" content="Amin Ghasemi | Front-end Developer">
+    <meta property="og:description" content="Amin Ghasemi portfolio showcasing front-end skills, social links, and contact options.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://itsaminghasemi.github.io/Portfolio-by-Amin/">
+    <meta property="og:image" content="https://itsaminghasemi.github.io/Portfolio-by-Amin/Others/Images/Favicons/android-chrome-512x512.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Amin Ghasemi | Front-end Developer">
+    <meta name="twitter:description" content="Amin Ghasemi portfolio showcasing front-end skills, social links, and contact options.">
+    <meta name="twitter:image" content="https://itsaminghasemi.github.io/Portfolio-by-Amin/Others/Images/Favicons/android-chrome-512x512.png">
     <meta name="theme-color" content="#0a0a0f">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,10 +28,11 @@
     
     <title>Amin Ghasemi | Front-end Developer</title>
     <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="index-style.css" />
+    <link rel="stylesheet" href="css/index-style.css" />
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header class="glass-navbar fade-in-up">
         <div class="navbar-container">
@@ -47,7 +58,7 @@
     <div class="ambient-glow glow-blue"></div>
     <div class="ambient-glow glow-purple"></div>
 
-    <main class="vitrine fade-in-up delay-1">
+    <main id="main-content" class="vitrine fade-in-up delay-1">
         <h1 class="sr-only">Amin Ghasemi | Front-end Developer Portfolio</h1>
         <section class="profile">
             <figure class="profile-figure">
@@ -108,11 +119,11 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Amin. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> Amin. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="index-logic.js"></script>
+    <script src="js/index-logic.js" defer></script>
 
 </body>
 </html>
