@@ -211,17 +211,13 @@ figure.profile-figure {
     cursor: default;
 }
 
-.skill-icon {
+.skill-card i[class^="devicon-"] {
     font-size: 2.5rem;
     line-height: 1;
-    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.3));
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* Devicon specific styling */
-.skill-card i[class^="devicon-"] {
     display: block;
     margin-bottom: 0.5rem;
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.3));
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .skill-name {
@@ -238,7 +234,7 @@ figure.profile-figure {
     border-color: var(--primary);
 }
 
-.skill-card:hover .skill-icon {
+.skill-card:hover i[class^="devicon-"] {
     transform: scale(1.2);
 }
 
