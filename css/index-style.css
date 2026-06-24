@@ -212,9 +212,16 @@ figure.profile-figure {
 }
 
 .skill-icon {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
+    line-height: 1;
     filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.3));
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Devicon specific styling */
+.skill-card i[class^="devicon-"] {
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 .skill-name {
