@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  font-size: 24px;
 }
 
 html {
@@ -116,4 +117,27 @@ h1 {
 
 .label-score {
   margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (min-width: 769px) {
+  .flex-container {
+    padding: 0 2.5rem;
+    gap: 2rem;
+  }
+
+  .flex-item {
+    padding: 2rem 2.5rem;
+  }
+
+  .flex-item h2 {
+    font-size: 1.4rem;
+  }
+}
+
+.nav-links {
+  gap: 1px;
+}
+.nav-links a {
+  font-size: 1.5rem;
 }
