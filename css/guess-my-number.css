@@ -1,169 +1,441 @@
-@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+/* guess-my-number.css
+   Final mobile-first, polished and corrected layout
+   - Mobile-first responsive design
+   - Header height restored and consistent with navbar
+   - Number pill overlap fixed and centered
+   - .right panel placed at the right edge on large screens (no weird negative margins)
+   - Clean, consistent spacing tokens and breakpoints
+   - Uses global CSS variables when present, with safe fallbacks
+*/
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-  font-size: 24px;
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+:root {
+  /* Fallback tokens (can be overridden by global.css) */
+  --primary: #38bdf8;
+  --success: #60b347;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --bg-color: #0f0f13;
+  --text-on-dark: #eee;
+  --muted: rgba(255, 255, 255, 0.08);
+
+  --page-max-width: 1200px;
+  --page-gutter: 1.6rem;
+  --right-panel-width: 28rem;
+  --right-gap: 2.4rem; /* space to the page edge for the right panel */
+  --radius-lg: 14px;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.55);
+
+  --navbar-height: 70px; /* height of fixed navbar (glass-navbar) */
 }
 
-html {
-  font-size: 62.5%;
+/* Reset & base */
+* {
   box-sizing: border-box;
 }
-
+html {
+  font-size: 16px;
+}
 body {
-  font-family: "Press Start 2P", sans-serif;
-  color: #eee;
-  background-color: #222;
+  margin: 0;
+  font-family:
+    "Press Start 2P",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-color);
+  color: var(--text-on-dark);
+  padding-top: var(--navbar-height); /* reserve space for fixed navbar */
 }
 
-/* LAYOUT */
-header {
-  position: relative;
-  height: 35vh;
-  border-bottom: 7px solid #eee;
-  transition:
-    background-color 0.35s ease,
-    border-color 0.35s ease;
+/* Accessibility focus */
+:focus-visible {
+  outline: 3px solid rgba(56, 189, 248, 0.18);
+  outline-offset: 4px;
+  border-radius: 10px;
 }
 
-main {
-  height: 65vh;
-  color: #eee;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.left {
-  width: 52rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.right {
-  width: 52rem;
-  font-size: 2rem;
-}
-
-/* ELEMENTS STYLE */
-h1 {
-  font-size: 4rem;
-  text-align: center;
-  position: absolute;
+/* ---------- Glass navbar (fixed) ---------- */
+.glass-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  top: 52%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.number {
-  background: #eee;
-  color: #333;
-  font-size: 6rem;
-  width: 15rem;
-  padding: 3rem 0rem;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  transition:
-    transform 0.3s ease,
-    background-color 0.3s ease,
-    color 0.3s ease,
-    width 0.3s ease;
-}
-
-.number.win {
-  background: #60b347;
-  color: #fff;
-  transform: translate(-50%, 35%) scale(1.02);
-  box-shadow: 0 8px 30px rgba(96, 179, 71, 0.18);
-}
-
-/* change header when player wins */
-header.win-header {
-  background-color: rgba(96, 179, 71, 0.06);
-  border-color: #60b347;
-}
-
-/* helper message space */
-.message {
-  margin-bottom: 8rem;
-  height: 3rem;
+  height: var(--navbar-height);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
+  z-index: 1000;
+  padding: 0 var(--page-gutter);
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-/* rest of styles unchanged */
+/* ---------- Header (mobile-first, compact) ---------- */
+/* Keep header compact so it doesn't hide top content.
+   Header leaves room for the number pill that overlaps its bottom.
+*/
+header {
+  position: relative;
+  padding: 2.4rem var(--page-gutter) 7.2rem; /* compact top padding, space at bottom for pill */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent; /* minimal visual - global navbar provides glass effect */
+  border-bottom: none;
+  border-radius: 0 0 12px 12px;
+  overflow: visible;
+}
+
+/* Title (mobile-first sizing) */
+h1 {
+  margin-top: 3rem;
+  font-size: clamp(1.8rem, 4.6vw, 3.2rem);
+  line-height: 1;
+  text-align: center;
+  color: var(--text-on-dark);
+  pointer-events: none;
+}
+
+/* Top-right / top-left small controls (Again, Between) */
 .between {
-  font-size: 1.4rem;
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 0.9rem;
+  right: 0.9rem;
+  font-size: 1.05rem;
+  padding: 0.36rem 0.72rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  color: var(--text-on-dark);
 }
 
-.again {
+.again,
+#again {
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  top: 0.9rem;
+  left: 0.9rem;
+  padding: 0.36rem 0.72rem;
+  font-size: 1.05rem;
+  border-radius: 10px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-on-dark);
+  cursor: pointer;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    background 0.12s ease;
+}
+.again:hover,
+#again:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.36);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ---------- Number pill (centered, overlapping header) ---------- */
+/* Use bottom negative overlap to keep it consistent across breakpoints */
+#number,
+.number {
+  position: absolute;
+  left: 50%;
+  margin-bottom: 2rem;
+  transform: translate(-50%, 0);
+  bottom: -5.6rem; /* overlap amount */
+  width: clamp(11rem, 34vw, 15rem);
+  height: clamp(7rem, 20vw, 9.6rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(3.4rem, 8.5vw, 6rem);
+  border-radius: 1.2rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f1f1f1 70%);
+  color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow:
+    var(--shadow-soft),
+    0 0 36px rgba(56, 189, 248, 0.04);
+  z-index: 40;
+  transition:
+    transform 0.26s ease,
+    box-shadow 0.26s ease,
+    background 0.26s ease;
+  user-select: none;
 }
 
 .guess {
-  background: none;
-  border: 4px solid #eee;
-  font-family: inherit;
-  color: inherit;
-  font-size: 5rem;
-  padding: 2.5rem;
-  width: 25rem;
+  margin-bottom: 1rem;
+}
+
+/* Hover/pointer-only effect */
+@media (hover: hover) and (pointer: fine) {
+  #number:hover,
+  .number:hover {
+    transform: translate(-50%, -2%) scale(1.02);
+    box-shadow:
+      0 18px 46px rgba(0, 0, 0, 0.6),
+      0 0 80px rgba(56, 189, 248, 0.06);
+  }
+}
+
+/* Win state */
+#number.win,
+.number.win {
+  background: linear-gradient(90deg, var(--success), #4f9f3f);
+  color: #fff;
+  box-shadow:
+    0 20px 60px rgba(96, 179, 71, 0.18),
+    0 0 100px rgba(96, 179, 71, 0.08);
+  transform: translate(-50%, -6%) scale(1.02);
+}
+
+/* ---------- Main content (mobile-first stacked) ---------- */
+main {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: calc(5.2rem + 1rem) var(--page-gutter) 3.2rem; /* top padding ensures number pill doesn't overlap content */
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  align-items: stretch;
+}
+
+/* Columns stack on mobile */
+.left,
+.right {
+  width: 100%;
+}
+
+/* Controls wrapper */
+.controls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: stretch;
+}
+
+/* Input (big, touch-friendly) */
+#guess,
+.guess {
+  width: 100%;
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  padding: 1.2rem 1.4rem;
+  border-radius: 12px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-on-dark);
   text-align: center;
-  display: block;
-  margin-bottom: 3rem;
+  outline: none;
+  transition:
+    box-shadow 0.14s ease,
+    transform 0.12s ease,
+    border-color 0.12s ease;
+  -moz-appearance: textfield;
+}
+#guess::placeholder,
+.guess::placeholder {
+  color: rgba(255, 255, 255, 0.28);
+}
+#guess:focus,
+.guess:focus {
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.06);
+  border-color: var(--primary);
+  transform: translateY(-2px);
 }
 
-.btn {
+/* Check button - full width on mobile */
+#check,
+.check,
+button.check {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  font-size: 1.6rem;
+  border-radius: 12px;
   border: none;
-  background-color: #eee;
-  color: #222;
-  font-size: 2rem;
-  font-family: inherit;
-  padding: 2rem 3rem;
   cursor: pointer;
+  background: linear-gradient(90deg, var(--primary), #6ad3ff);
+  color: #021124;
+  box-shadow: 0 10px 28px rgba(56, 189, 248, 0.12);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+#check:active,
+.check:active {
+  transform: translateY(-1px) scale(0.998);
+}
+#check:hover,
+.check:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(56, 189, 248, 0.16);
 }
 
-.btn:hover {
-  background-color: #ccc;
+/* Message and scores (stacked) */
+#message,
+.message {
+  font-size: 1.1rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  text-align: center;
+  min-height: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.label-score,
+.label-highscore,
+.score,
+.highscore {
+  text-align: center;
+  margin-top: 0.7rem;
+  font-size: 1.05rem;
 }
 
-.label-score {
-  margin-bottom: 2rem;
-}
-
-/* Responsive */
-@media (min-width: 769px) {
-  .flex-container {
-    padding: 0 2.5rem;
-    gap: 2rem;
-  }
-
-  .flex-item {
-    padding: 2rem 2.5rem;
-  }
-
-  .flex-item h2 {
-    font-size: 1.4rem;
-  }
-}
-
+/* Small nav link sync */
 .nav-links {
   gap: 1px;
 }
 .nav-links a {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  color: var(--text-on-dark);
+  text-decoration: none;
+}
+
+/* ---------- Tablet (progressive enhancement) ---------- */
+@media (min-width: 601px) {
+  header {
+    padding: 3.2rem var(--page-gutter) 8.8rem;
+  }
+  h1 {
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+  }
+  #number,
+  .number {
+    bottom: -6.4rem;
+    font-size: clamp(4.2rem, 6vw, 5.6rem);
+  }
+  main {
+    padding-top: 6.8rem;
+    gap: 2rem;
+  }
+  #guess,
+  .guess {
+    font-size: clamp(3rem, 4.8vw, 4.6rem);
+    padding: 1.4rem 1.6rem;
+    border-radius: 14px;
+  }
+  #check,
+  .check {
+    font-size: 1.75rem;
+    padding: 1.2rem 1.6rem;
+    border-radius: 14px;
+  }
+}
+
+/* ---------- Desktop (side-by-side) ---------- */
+@media (min-width: 1000px) {
+  header {
+    padding: 3.2rem 2.6rem 11rem;
+    border-radius: 0 0 14px 14px;
+  }
+
+  main {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2.4rem;
+    padding: 3.6rem 3.2rem 6rem;
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+  }
+
+  /* Left column: main controls/content */
+  .left {
+    flex: 1 1 62%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  /* Right column: pinned to the far right inside main container */
+  .right {
+    flex: 0 0 var(--right-panel-width);
+    width: var(--right-panel-width);
+    margin-left: auto; /* pushes it to the right within the main content */
+    align-self: flex-start;
+    padding-left: 1rem;
+  }
+
+  /* Inline controls on wide screens (input + check) */
+  .left .controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+  }
+  #guess {
+    width: calc(100% - 16.6rem);
+    min-width: 20rem;
+  } /* allow check button to fit */
+  #check {
+    width: 16.6rem;
+    padding: 1.2rem 1.8rem;
+  }
+
+  /* Slightly larger pill */
+  #number,
+  .number {
+    width: 15rem;
+    height: 9.6rem;
+    font-size: 6rem;
+    bottom: -6.5rem;
+    border-radius: 1.6rem;
+  }
+
+  /* Pointer-only hover polish */
+  @media (hover: hover) and (pointer: fine) {
+    #number:hover,
+    .number:hover {
+      transform: translate(-50%, -2%) scale(1.04);
+      box-shadow:
+        0 28px 80px rgba(0, 0, 0, 0.6),
+        0 0 100px rgba(56, 189, 248, 0.05);
+    }
+    #check:hover,
+    .check:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 24px 60px rgba(56, 189, 248, 0.16);
+    }
+    #again:hover,
+    .again:hover {
+      transform: translateY(-4px);
+    }
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Small niceties */
+.number,
+#number {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
