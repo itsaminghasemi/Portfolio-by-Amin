@@ -1,3 +1,1 @@
 // this is just my task manager of this project
-
-- fix layout issues with all sizes -> guess-my-number.css
