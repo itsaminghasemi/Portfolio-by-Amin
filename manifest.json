@@ -1,7 +1,7 @@
 {
   "name": "Amin Ghasemi Portfolio",
   "short_name": "Amin Portfolio",
-  "description": "Amin Ghasemi portfolio showcasing front-end skills, social links, and contact options.",
+  "description": "Amin Ghasemi portfolio showcasing front-end skills, social links, contact options, and interactive games including Pig Game and Guess My Number.",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0a0a0f",
@@ -17,6 +17,15 @@
       "src": "images/Favicons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    }
+  ],
+  "categories": ["portfolio", "games", "entertainment"],
+  "screenshots": [
+    {
+      "src": "images/Favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide"
     }
   ]
 }

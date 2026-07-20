@@ -1,1 +1,155 @@
-Nothing should be ignored based on the provided file changes. The only modified file is 'pages/pig-game.html', which is a source file and should not be added to .gitignore.
+```
+# Logs and temp files
+*.log
+
+# Environment
+.env
+.env.local
+.env.*
+
+# Dependencies
+node_modules/
+
+# Editors
+.vscode/
+
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.out
+dist/
+build/
+target/
+
+# Python specific
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.eggs/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.git/modules/
+.DS_Store
+Thumbs.db
+
+# Compressed files
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
+
+# Test and coverage
+coverage/
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.hypothesis/
+
+# Gradle
+.gradle/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.klib
+
+# Go
+*.exe
+*.dll
+*.so
+*.dylib
+
+# C/C++
+*.o
+*.a
+*.obj
+*.out
+*.exe
+*.dll
+*.so
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ruby
+*.gem
+*.rbc
+extconf.rb
+*.so
+Gemfile.lock
+.ruby-version
+.bundle/
+vendor/bundle/
+vendor/cache/
+vendor/gems/
+vendor/ruby/
+
+# Rust
+target/
+Cargo.lock
+
+# Julia
+julia-*/
+
+# Zig
+zig-*/
+
+# Temporary files
+*.tmp
+*.temp
+*~
+.swp
+.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+```
