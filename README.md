@@ -17,6 +17,7 @@ pages/
   about.html              ← About Me
   contact.html            ← Contact form
   social.html             ← Social links
+  guess-my-number.html    ← Guess My Number game
   404.html                ← Error page (full design)
 css/
   index-style.css
@@ -37,10 +38,20 @@ images/
 
 | Page | File | Description |
 |------|------|-------------|
-| Home | `index.html` | Portfolio landing page |
+| Home | `index.html` | Portfolio landing page with modal window |
 | About | `pages/about.html` | Bio, skills, timeline |
 | Social | `pages/social.html` | GitHub & LinkedIn |
 | Contact | `pages/contact.html` | Formspree form |
+| Game | `pages/guess-my-number.html` | Interactive number guessing game |
+
+## ✨ Features
+
+- **Responsive Design** - Mobile-friendly layout with glass-morphism effects
+- **Dark Theme** - Modern dark interface with ambient glow effects
+- **Accessibility** - Semantic HTML and ARIA labels for screen readers
+- **Performance** - Optimized CSS and JavaScript with lazy loading
+- **Modal Window** - Interactive modal on the navbar for enhanced UX
+- **Interactive Elements** - Smooth animations and transitions
 
 ## 🛠️ How to Use
 
@@ -49,3 +60,11 @@ images/
 3. Edit files in `pages/`, `css/`, `js/` to personalize.
 4. Replace images in `images/`.
 5. Get a Formspree form ID and update `pages/contact.html`.
+6. Customize the modal window functionality in `js/index-logic.js`.
+
+## 🎨 Customization
+
+- Modify colors and styles in `global.css` and individual `css/` files
+- Update content in HTML pages
+- Extend functionality through JavaScript files
+- Add new pages following the existing structure
