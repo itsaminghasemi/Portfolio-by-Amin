@@ -2,21 +2,81 @@
 <html lang="en">
 
 <head>
+    <!-- Primary Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:image"
-        content="https://itsaminghasemi.github.io/Portfolio-by-Amin/images/Favicons/android-chrome-512x512.png">
-    <meta name="twitter:image"
-        content="https://itsaminghasemi.github.io/Portfolio-by-Amin/images/Favicons/android-chrome-512x512.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Pig Game - Roll the Dice & Race to 100 Points | Amin Ghasemi Portfolio</title>
+    <meta name="title" content="Pig Game - Roll the Dice & Race to 100 Points | Amin Ghasemi Portfolio" />
+    <meta name="description" content="Play the classic Pig Game online! A fun two-player dice game where you roll, hold, and race to 100 points. Built with HTML, CSS, and JavaScript. Challenge your friends now!" />
+    <meta name="keywords" content="pig game, dice game, two player game, online dice game, browser game, javascript game, portfolio game, amin ghasemi, web game, roll dice, hold score, racing game, free online game" />
+    <meta name="author" content="Amin Ghasemi" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0f" />
+    <link rel="canonical" href="https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/pig-game.html" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/pig-game.html" />
+    <meta property="og:title" content="Pig Game - Roll the Dice & Race to 100 Points" />
+    <meta property="og:description" content="Play the classic Pig Game online! A fun two-player dice game where you roll, hold, and race to 100 points. Challenge your friends now!" />
+    <meta property="og:image" content="https://itsaminghasemi.github.io/Portfolio-by-Amin/images/Favicons/android-chrome-512x512.png" />
+    <meta property="og:site_name" content="Amin Ghasemi Portfolio" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/pig-game.html" />
+    <meta name="twitter:title" content="Pig Game - Roll the Dice & Race to 100 Points" />
+    <meta name="twitter:description" content="Play the classic Pig Game online! A fun two-player dice game where you roll, hold, and race to 100 points. Challenge your friends now!" />
+    <meta name="twitter:image" content="https://itsaminghasemi.github.io/Portfolio-by-Amin/images/Favicons/android-chrome-512x512.png" />
+    <meta name="twitter:creator" content="@aminghasemi" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../images/Favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../images/Favicons/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../images/Favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="../images/Favicons/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="../images/Favicons/android-chrome-512x512.png">
     <link rel="shortcut icon" href="../images/Favicons/favicon-32x32.png">
+    <link rel="manifest" href="../manifest.json" />
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="/global.css" />
     <link rel="stylesheet" href="/css/pig-game.css" />
-    <title>Pig Game</title>
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/global.css" as="style" />
+    <link rel="preload" href="/css/pig-game.css" as="style" />
+    <link rel="preload" href="/js/pig-game.js" as="script" />
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Pig Game",
+      "alternateName": "Dice Pig Game",
+      "url": "https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/pig-game.html",
+      "description": "A classic two-player dice game where players race to reach 100 points by rolling dice and holding their score.",
+      "applicationCategory": "Game",
+      "gamePlatform": "Web Browser",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Amin Ghasemi",
+        "url": "https://itsaminghasemi.github.io/Portfolio-by-Amin/"
+      },
+      "inLanguage": "en-US",
+      "featureList": "Two-player mode, Roll dice, Hold score, Auto-switch turns, Win detection",
+      "screenshot": "https://itsaminghasemi.github.io/Portfolio-by-Amin/images/Favicons/android-chrome-512x512.png"
+    }
+    </script>
 </head>
 
 <body class="pig-game-page">
@@ -47,31 +107,37 @@
     </header>
 
     <!-- PREMIUM PIG GAME -->
-    <main class="pig-game-container">
-        <section class="player player--0 player--active">
+    <main class="pig-game-container" role="main" aria-label="Pig Game - Roll the Dice and Race to 100 Points">
+        <!-- Game Description for SEO and Accessibility -->
+        <div class="visually-hidden">
+            <h1>Pig Game - Classic Two Player Dice Game</h1>
+            <p>A fun two-player dice game where players take turns rolling a die to accumulate points. Roll the dice to add to your current score, or hold to bank your points. First player to reach 100 points wins! But beware - if you roll a 1, you lose all your current points.</p>
+        </div>
+
+        <section class="player player--0 player--active" aria-label="Player 1 Section">
             <h2 class="name" id="name--0">Player 1</h2>
-            <p class="score" id="score--0">0</p>
+            <p class="score" id="score--0" aria-live="polite">0</p>
             <div class="current">
                 <p class="current-label">Current</p>
-                <p class="current-score" id="current--0">0</p>
+                <p class="current-score" id="current--0" aria-live="polite">0</p>
             </div>
         </section>
 
         <div class="game-center">
-            <img src="/images/dice/dice-5.png" alt="Dice" class="dice hidden" />
-            <div class="controls">
-                <button class="btn btn--roll">🎲 Roll Dice</button>
-                <button class="btn btn--hold">📥 Hold</button>
-                <button class="btn btn--new">🔄 New Game</button>
+            <img src="/images/dice/dice-5.png" alt="Dice showing current roll" class="dice hidden" id="dice-image" />
+            <div class="controls" role="group" aria-label="Game Controls">
+                <button class="btn btn--roll" aria-label="Roll the dice to get a random number between 1 and 6">🎲 Roll Dice</button>
+                <button class="btn btn--hold" aria-label="Hold your current score and pass turn to next player">📥 Hold</button>
+                <button class="btn btn--new" aria-label="Start a new game">🔄 New Game</button>
             </div>
         </div>
 
-        <section class="player player--1">
+        <section class="player player--1" aria-label="Player 2 Section">
             <h2 class="name" id="name--1">Player 2</h2>
-            <p class="score" id="score--1">0</p>
+            <p class="score" id="score--1" aria-live="polite">0</p>
             <div class="current">
                 <p class="current-label">Current</p>
-                <p class="current-score" id="current--1">0</p>
+                <p class="current-score" id="current--1" aria-live="polite">0</p>
             </div>
         </section>
     </main>
