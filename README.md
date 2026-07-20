@@ -18,17 +18,20 @@ pages/
   contact.html            ← Contact form
   social.html             ← Social links
   guess-my-number.html    ← Guess My Number game
+  modal-window.html       ← Modal Window component
   404.html                ← Error page (full design)
 css/
   index-style.css
   contact.css
   social.css
   about.css
+  modal-window.css        ← Modal styles
 js/
   index-logic.js
   contact.js
   social.js
   about.js
+  modal-window.js         ← Modal functionality
 images/
   back.svg / profileSVG.svg
   Favicons/
@@ -43,6 +46,7 @@ images/
 | Social | `pages/social.html` | GitHub & LinkedIn |
 | Contact | `pages/contact.html` | Formspree form |
 | Game | `pages/guess-my-number.html` | Interactive number guessing game |
+| Modal Window | `pages/modal-window.html` | Reusable modal component |
 
 ## ✨ Features
 
@@ -50,7 +54,7 @@ images/
 - **Dark Theme** - Modern dark interface with ambient glow effects
 - **Accessibility** - Semantic HTML and ARIA labels for screen readers
 - **Performance** - Optimized CSS and JavaScript with lazy loading
-- **Modal Window** - Interactive modal on the navbar for enhanced UX
+- **Modal Window** - Interactive modal available on every page navbar
 - **Interactive Elements** - Smooth animations and transitions
 
 ## 🛠️ How to Use
@@ -60,7 +64,7 @@ images/
 3. Edit files in `pages/`, `css/`, `js/` to personalize.
 4. Replace images in `images/`.
 5. Get a Formspree form ID and update `pages/contact.html`.
-6. Customize the modal window functionality in `js/index-logic.js`.
+6. Customize the modal window functionality in `js/modal-window.js`.
 
 ## 🎨 Customization
 
@@ -68,3 +72,4 @@ images/
 - Update content in HTML pages
 - Extend functionality through JavaScript files
 - Add new pages following the existing structure
+- Customize modal window appearance in `css/modal-window.css`
