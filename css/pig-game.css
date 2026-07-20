@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap");
+
+/* 1. GLOBAL OVERRIDES & LAYOUT FLOW */
+body.pig-game-page {
+  background: var(--bg-color) !important;
+  /* Override global 110px padding since the navbar is now inside the body */
+  padding-top: 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  /* Removed justify-content: center to allow natural document flow */
+}
+
+/* 2. MAIN CONTAINER (Mobile Base) */
+.pig-game-container {
+  position: relative;
+  width: 95vw;
+  max-width: 500px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-family: "Nunito", sans-serif;
+  /* Pushes content below the fixed global navbar */
+  margin-top: 90px;
+  margin-bottom: 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* 3. PLAYER CARDS (Mobile Sizes) */
+.player {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.player--active {
+  background: rgba(56, 189, 248, 0.05);
+  border-color: var(--primary);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+.name {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.player--active .name {
+  color: var(--primary);
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+.score {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-on-dark);
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+/* 4. CURRENT SCORE (Mobile Sizes) */
+.current {
+  width: 100%;
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.player--active .current {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: var(--accent);
+}
+
+.current-label {
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+  letter-spacing: 1px;
+}
+
+.current-score {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* 5. CENTER AREA & DICE (Mobile Sizes) */
+.game-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.dice {
+  height: 5rem; /* Scaled down for mobile */
+  filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.4));
+}
+
+.dice.rolling {
+  animation: premiumRoll 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes premiumRoll {
+  0% {
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+/* 6. BUTTONS (Mobile Sizes) */
+.btn {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: var(--text-on-dark);
+  font-family: inherit;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--new {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+}
+
+/* 7. STATES */
+.player--winner {
+  background: rgba(47, 255, 150, 0.05) !important;
+  border-color: #2fff96 !important;
+  box-shadow: 0 0 30px rgba(47, 255, 150, 0.2) !important;
+}
+.player--winner .name {
+  color: #2fff96 !important;
+  text-shadow: 0 0 10px rgba(47, 255, 150, 0.5);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* =========================================================
+   8. DESKTOP ENHANCEMENTS (min-width: 769px)
+   ========================================================= */
+@media (min-width: 769px) {
+  .pig-game-container {
+    max-width: 1100px;
+    width: 90vw;
+    min-height: 600px;
+    flex-direction: row;
+    padding: 3rem;
+    gap: 3rem;
+    align-items: stretch;
+    margin-top: 100px;
+  }
+
+  .player {
+    flex: 1;
+    padding: 3rem 2rem;
+    justify-content: space-between;
+  }
+
+  .name {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .score {
+    font-size: 6.5rem;
+    margin-bottom: 2rem;
+  }
+  .current {
+    padding: 1.5rem;
+  }
+  .current-label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .current-score {
+    font-size: 3.5rem;
+  }
+
+  .game-center {
+    flex: 0 0 250px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .dice {
+    height: 10rem;
+  }
+
+  .controls {
+    gap: 1.2rem;
+  }
+
+  .btn {
+    padding: 1.4rem;
+    font-size: 1.5rem;
+  }
+}
