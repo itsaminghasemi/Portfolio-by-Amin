@@ -5,32 +5,94 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="/css/modal-window.css" />
-    <script src="/js/modal-window.js"></script>
-    <title>Modal window</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/Favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/Favicons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/Favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../images/Favicons/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../images/Favicons/android-chrome-512x512.png" />
+    <link rel="shortcut icon" href="../images/Favicons/favicon-32x32.png" />
+
+    <title>Modal Window Demo | Amin Ghasemi</title>
+    <meta name="description" content="Interactive modal window demonstration with keyboard and click support." />
+    <link rel="canonical" href="https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/modal-window.html" />
+    <meta property="og:title" content="Modal Window Demo | Amin Ghasemi" />
+    <meta property="og:description" content="Interactive modal window demonstration with keyboard and click support." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/modal-window.html" />
+    <meta property="og:image" content="https://itsaminghasemi.github.io/Portfolio-by-Amin/images/Favicons/android-chrome-512x512.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Modal Window Demo | Amin Ghasemi" />
+    <meta name="twitter:description" content="Interactive modal window demonstration with keyboard and click support." />
+    <meta name="twitter:image" content="https://itsaminghasemi.github.io/Portfolio-by-Amin/images/Favicons/android-chrome-512x512.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="../css/modal-window.css" />
+    <script src="../js/modal-window.js" defer></script>
 </head>
 
 <body>
-    <button class="show-modal">Show modal 1</button>
-    <button class="show-modal">Show modal 2</button>
-    <button class="show-modal">Show modal 3</button>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <div class="modal hidden">
-        <button class="close-modal">&times;</button>
-        <h1>I'm a modal window 😍</h1>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
-        </p>
-    </div>
-    <div class="overlay hidden"></div>
+    <header class="glass-navbar fade-in-up">
+        <div class="navbar-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-icon">✨</span>
+                <span>Amin Ghasemi</span>
+            </a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Vitrine</a>
+                <a href="about.html" class="nav-link">Who Am I</a>
+                <a href="social.html" class="nav-link">Me On Social</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+                <a href="guess-my-number.html" class="nav-link">Guess My Number</a>
+            </nav>
+        </div>
+    </header>
 
-    <script src="script.js"></script>
+    <main id="main-content">
+        <button class="show-modal">Show modal 1</button>
+        <button class="show-modal">Show modal 2</button>
+        <button class="show-modal">Show modal 3</button>
+
+        <div class="modal hidden">
+            <button class="close-modal">&times;</button>
+            <h1>I'm a modal window 😍</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum.
+            </p>
+        </div>
+        <div class="overlay hidden"></div>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <p>
+                    Building beautiful and functional digital experiences with code and
+                    creativity.
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>
+                &copy; <span id="year">2026</span> Amin Ghasemi. All rights reserved.
+            </p>
+        </div>
+    </footer>
 </body>
 
 </html>
