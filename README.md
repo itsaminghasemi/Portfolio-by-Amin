@@ -39,6 +39,7 @@ images/
 
 ## 📄 Pages
 
+
 | Page | File | Description |
 |------|------|-------------|
 | Home | `index.html` | Portfolio landing page with modal window |
@@ -48,6 +49,15 @@ images/
 | Game | `pages/guess-my-number.html` | Interactive number guessing game |
 | Modal Window | `pages/modal-window.html` | Reusable modal component |
 | Pig Game | `pages/pig-game.html` | Classic two-player dice game - race to 100 points |
+=======
+| Page         | File                         | Description                              |
+| ------------ | ---------------------------- | ---------------------------------------- |
+| Home         | `index.html`                 | Portfolio landing page with modal window |
+| About        | `pages/about.html`           | Bio, skills, timeline                    |
+| Social       | `pages/social.html`          | GitHub & LinkedIn                        |
+| Contact      | `pages/contact.html`         | Formspree form                           |
+| Game         | `pages/guess-my-number.html` | Interactive number guessing game         |
+| Modal Window | `pages/modal-window.html`    | Reusable modal component                 |
 
 ## ✨ Features
 
