@@ -2,22 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://itsaminghasemi.github.io/Portfolio-by-Amin/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/about.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/social.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/contact.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/guess-my-number.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/modal-window.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.5</priority>
   </url>
 </urlset>
