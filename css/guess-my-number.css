@@ -1,445 +1,536 @@
 /* guess-my-number.css
-   Final mobile-first, polished and corrected layout
-   - Mobile-first responsive design
-   - Header height restored and consistent with navbar
-   - Number pill overlap fixed and centered
-   - .right panel placed at the right edge on large screens (no weird negative margins)
-   - Clean, consistent spacing tokens and breakpoints
-   - Uses global CSS variables when present, with safe fallbacks
+   Final mobile-first, polished design synced with global.css
+   - Uses global CSS variables (--primary, --accent, --glass-bg, etc.)
+   - Inter font family (synced with global.css)
+   - Glass-morphism effects matching portfolio theme
+   - Responsive breakpoints: 480px, 768px, 1024px
+   - Smooth animations using global easing
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-
 :root {
-  /* Fallback tokens (can be overridden by global.css) */
-  --primary: #38bdf8;
-  --success: #60b347;
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --bg-color: #0f0f13;
-  --text-on-dark: #eee;
-  --muted: rgba(255, 255, 255, 0.08);
-
-  --page-max-width: 1200px;
-  --page-gutter: 1.6rem;
-  --right-panel-width: 28rem;
-  --right-gap: 2.4rem; /* space to the page edge for the right panel */
-  --radius-lg: 14px;
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.55);
-
-  --navbar-height: 70px; /* height of fixed navbar (glass-navbar) */
+  /* Game-specific overrides (fallback to global.css variables) */
+  --game-header-height: auto;
+  --number-size-mobile: clamp(6rem, 18vw, 9rem);
+  --number-size-desktop: 10rem;
+  --panel-gap: 1.5rem;
 }
 
-/* Reset & base */
+/* Reset & base - defer to global.css */
 * {
   box-sizing: border-box;
 }
-html {
-  font-size: 16px;
-}
+
 body {
-  margin: 0;
-  font-family:
-    "Press Start 2P",
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: var(--bg-color);
-  color: var(--text-on-dark);
-  padding-top: var(--navbar-height); /* reserve space for fixed navbar */
-}
-
-/* Accessibility focus */
-:focus-visible {
-  outline: 3px solid rgba(56, 189, 248, 0.18);
-  outline-offset: 4px;
-  border-radius: 10px;
-}
-
-/* ---------- Glass navbar (fixed) ---------- */
-.glass-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--navbar-height);
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
+}
+
+/* Accessibility focus - sync with global.css */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ========== Game Container ========== */
+.game-container {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ========== Game Header Section ========== */
+.game-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-  padding: 0 var(--page-gutter);
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid var(--glass-border);
+  padding: 2rem 1rem 4rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
-/* ---------- Header (mobile-first, compact) ---------- */
-/* Keep header compact so it doesn't hide top content.
-   Header leaves room for the number pill that overlaps its bottom.
-*/
-header {
-  position: relative;
-  padding: 2.4rem var(--page-gutter) 7.2rem; /* compact top padding, space at bottom for pill */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent; /* minimal visual - global navbar provides glass effect */
-  border-bottom: none;
-  border-radius: 0 0 12px 12px;
-  overflow: visible;
-}
-
-/* Title (mobile-first sizing) */
-h1 {
-  margin-top: 3rem;
-  font-size: clamp(1.8rem, 4.6vw, 3.2rem);
-  line-height: 1;
+.game-title {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--text-on-dark);
   text-align: center;
-  color: var(--text-on-dark);
-  pointer-events: none;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.5px;
 }
 
-/* Top-right / top-left small controls (Again, Between) */
-.between {
-  position: absolute;
-  top: 0.9rem;
-  right: 0.9rem;
-  font-size: 1.05rem;
-  padding: 0.36rem 0.72rem;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--glass-border);
-  color: var(--text-on-dark);
+.game-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0 0 1.5rem 0;
+  font-family: "JetBrains Mono", monospace;
 }
 
-.again,
-#again {
+/* Again Button */
+.btn-again {
   position: absolute;
-  top: 0.9rem;
-  left: 0.9rem;
-  padding: 0.36rem 0.72rem;
-  font-size: 1.05rem;
-  border-radius: 10px;
+  top: 1rem;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-on-dark);
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  color: var(--text-on-dark);
+  border-radius: 50px;
   cursor: pointer;
-  transition:
-    transform 0.12s ease,
-    box-shadow 0.12s ease,
-    background 0.12s ease;
-}
-.again:hover,
-#again:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.36);
-  background: rgba(255, 255, 255, 0.04);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* ---------- Number pill (centered, overlapping header) ---------- */
-/* Use bottom negative overlap to keep it consistent across breakpoints */
-#number,
-.number {
-  position: absolute;
-  left: 50%;
-  margin-bottom: 2rem;
-  transform: translate(-50%, 0);
-  bottom: -5.6rem; /* overlap amount */
-  width: clamp(11rem, 34vw, 15rem);
-  height: clamp(7rem, 20vw, 9.6rem);
+.btn-again:hover {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
+}
+
+.btn-again svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.btn-again:hover svg {
+  transform: rotate(-180deg);
+}
+
+/* Number Display (The Big Pill) */
+.number-display {
+  width: var(--number-size-mobile);
+  height: calc(var(--number-size-mobile) * 0.65);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(3.4rem, 8.5vw, 6rem);
-  border-radius: 1.2rem;
-  background: linear-gradient(180deg, #ffffff 0%, #f1f1f1 70%);
-  color: #111;
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  box-shadow:
-    var(--shadow-soft),
-    0 0 36px rgba(56, 189, 248, 0.04);
-  z-index: 40;
-  transition:
-    transform 0.26s ease,
-    box-shadow 0.26s ease,
-    background 0.26s ease;
+  font-size: calc(var(--number-size-mobile) * 0.6);
+  font-weight: 700;
+  font-family: "JetBrains Mono", monospace;
+  background: linear-gradient(180deg, #ffffff 0%, #e5e5e5 100%);
+  color: #1a1a2e;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(56, 189, 248, 0.1);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   user-select: none;
+  margin-top: 1rem;
 }
 
-.guess {
-  margin-bottom: 1rem;
-}
-
-/* Hover/pointer-only effect */
 @media (hover: hover) and (pointer: fine) {
-  #number:hover,
-  .number:hover {
-    transform: translate(-50%, -2%) scale(1.02);
-    box-shadow:
-      0 18px 46px rgba(0, 0, 0, 0.6),
-      0 0 80px rgba(56, 189, 248, 0.06);
+  .number-display:hover {
+    transform: scale(1.03) translateY(-3px);
+    box-shadow: 
+      0 20px 50px rgba(0, 0, 0, 0.5),
+      0 0 80px rgba(56, 189, 248, 0.15);
   }
 }
 
-/* Win state */
-#number.win,
-.number.win {
-  background: #000;
-
-  box-shadow:
-    0 20px 60px rgba(96, 179, 71, 0.18),
-    0 0 100px rgba(96, 179, 71, 0.08);
-  transform: translate(-50%, -6%) scale(1.02);
+/* Win State */
+.number-display.win {
+  background: linear-gradient(180deg, #1a1a2e 0%, #0d0d1a 100%);
+  color: #60b347;
+  border-color: #60b347;
+  box-shadow: 
+    0 20px 60px rgba(96, 179, 71, 0.3),
+    0 0 100px rgba(96, 179, 71, 0.15);
+  transform: scale(1.05);
 }
 
-/* ---------- Main content (mobile-first stacked) ---------- */
-main {
-  max-width: var(--page-max-width);
-  margin: 0 auto;
-  padding: calc(5.2rem + 1rem) var(--page-gutter) 3.2rem; /* top padding ensures number pill doesn't overlap content */
+/* Lose State */
+.number-display.lose {
+  background: linear-gradient(180deg, #1a1a2e 0%, #0d0d1a 100%);
+  color: #dc2626;
+  border-color: #dc2626;
+  box-shadow: 
+    0 20px 60px rgba(220, 38, 38, 0.3),
+    0 0 100px rgba(220, 38, 38, 0.15);
+}
+
+/* ========== Game Content (Two Panels) ========== */
+.game-content {
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
-  align-items: stretch;
-}
-
-/* Columns stack on mobile */
-.left,
-.right {
+  gap: var(--panel-gap);
   width: 100%;
 }
 
-/* Controls wrapper */
-.controls {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  align-items: stretch;
-}
-
-/* Input (big, touch-friendly) */
-#guess,
-.guess {
-  width: 100%;
-  font-size: clamp(2.4rem, 5vw, 4.4rem);
-  padding: 1.2rem 1.4rem;
-  border-radius: 12px;
+/* Panel Base Styles */
+.panel {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  color: var(--text-on-dark);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .panel:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Left Panel - Input & Check */
+.panel-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-label {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.guess-input {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
   text-align: center;
+  color: var(--text-on-dark);
+  background: rgba(255, 255, 255, 0.02);
+  border: 2px solid var(--glass-border);
+  border-radius: 12px;
   outline: none;
-  transition:
-    box-shadow 0.14s ease,
-    transform 0.12s ease,
-    border-color 0.12s ease;
+  transition: all 0.3s ease;
   -moz-appearance: textfield;
 }
-#guess::placeholder,
-.guess::placeholder {
-  color: rgba(255, 255, 255, 0.28);
+
+.guess-input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
 }
-#guess:focus,
-.guess:focus {
-  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.06);
+
+.guess-input::-webkit-outer-spin-button,
+.guess-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.guess-input:focus {
   border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
   transform: translateY(-2px);
 }
 
-/* Check button - full width on mobile */
-#check,
-.check,
-button.check {
+/* Check Button */
+.btn-check {
   width: 100%;
-  padding: 1rem 1.2rem;
-  font-size: 1.6rem;
-  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0a0a0f;
+  background: linear-gradient(135deg, var(--primary) 0%, #7dd3fc 100%);
   border: none;
+  border-radius: 12px;
   cursor: pointer;
-  background: linear-gradient(90deg, var(--primary), #6ad3ff);
-  color: #021124;
-  box-shadow: 0 10px 28px rgba(56, 189, 248, 0.12);
-  transition:
-    transform 0.12s ease,
-    box-shadow 0.12s ease;
-}
-#check:active,
-.check:active {
-  transform: translateY(-1px) scale(0.998);
-}
-#check:hover,
-.check:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 40px rgba(56, 189, 248, 0.16);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* Message and scores (stacked) */
-#message,
-.message {
-  font-size: 1.1rem;
-  padding: 0.9rem 1.1rem;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.01);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  text-align: center;
-  min-height: 3.2rem;
+.btn-check:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(56, 189, 248, 0.3);
+  filter: brightness(1.05);
+}
+
+.btn-check:active {
+  transform: translateY(-1px);
+}
+
+.btn-check svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Right Panel - Stats & Messages */
+.panel-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.message-container {
+  min-height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.label-score,
-.label-highscore,
-.score,
-.highscore {
-  text-align: center;
-  margin-top: 0.7rem;
-  font-size: 1.05rem;
-}
 
-/* Small nav link sync */
-.nav-links {
-  gap: 1px;
-}
-.nav-links a {
-  font-size: 1.4rem;
+.message-text {
+  font-size: 1.1rem;
   color: var(--text-on-dark);
-  text-decoration: none;
+  text-align: center;
+  padding: 0.8rem 1.2rem;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  font-weight: 500;
 }
 
-/* ---------- Tablet (progressive enhancement) ---------- */
-@media (min-width: 601px) {
-  header {
-    padding: 3.2rem var(--page-gutter) 8.8rem;
+/* Stats Container */
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(56, 189, 248, 0.2);
+}
+
+.stat-icon {
+  font-size: 1.4rem;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-family: "JetBrains Mono", monospace;
+  color: var(--primary);
+}
+
+/* Hints Container */
+.hints-container {
+  padding: 1rem 1.2rem;
+  background: rgba(56, 189, 248, 0.03);
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  border-radius: 12px;
+}
+
+.hint-title {
+  font-size: 0.95rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin: 0 0 0.8rem 0;
+}
+
+.hint-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hint-list li {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.hint-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 0.8rem;
+}
+
+/* ========== Tablet Breakpoint (768px+) ========== */
+@media (min-width: 768px) {
+  .game-container {
+    padding: 3rem 2rem;
   }
-  h1 {
-    font-size: clamp(2.4rem, 4vw, 3.4rem);
+
+  .game-header {
+    padding: 2.5rem 2rem 5rem;
   }
-  #number,
-  .number {
-    bottom: -6.4rem;
-    font-size: clamp(4.2rem, 6vw, 5.6rem);
+
+  .game-title {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
   }
-  main {
-    padding-top: 6.8rem;
+
+  .number-display {
+    margin-top: 1.5rem;
+  }
+
+  .game-content {
+    flex-direction: row;
     gap: 2rem;
   }
-  #guess,
-  .guess {
-    font-size: clamp(3rem, 4.8vw, 4.6rem);
-    padding: 1.4rem 1.6rem;
-    border-radius: 14px;
+
+  .panel-left {
+    flex: 1;
+    min-width: 0;
   }
-  #check,
-  .check {
-    font-size: 1.75rem;
-    padding: 1.2rem 1.6rem;
-    border-radius: 14px;
+
+  .panel-right {
+    flex: 0 0 280px;
+  }
+
+  .btn-check {
+    font-size: 1.2rem;
+    padding: 1.2rem 2rem;
   }
 }
 
-/* ---------- Desktop (side-by-side) ---------- */
-@media (min-width: 1000px) {
-  header {
-    padding: 3.2rem 2.6rem 11rem;
-    border-radius: 0 0 14px 14px;
+/* ========== Desktop Breakpoint (1024px+) ========== */
+@media (min-width: 1024px) {
+  .game-container {
+    padding: 4rem 3rem;
   }
 
-  main {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 2.4rem;
-    padding: 3.6rem 3.2rem 6rem;
-    max-width: var(--page-max-width);
-    margin: 0 auto;
+  .game-header {
+    padding: 3rem 3rem 6rem;
   }
 
-  /* Left column: main controls/content */
-  .left {
-    flex: 1 1 62%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+  .game-title {
+    font-size: 3.5rem;
   }
 
-  /* Right column: pinned to the far right inside main container */
-  .right {
-    flex: 0 0 15rem;
-    width: auto;
-    margin-right: 6rem;
-    align-self: flex-start;
-    justify-content: space-between;
-    display: flexbox;
+  .number-display {
+    width: var(--number-size-desktop);
+    height: calc(var(--number-size-desktop) * 0.65);
+    font-size: calc(var(--number-size-desktop) * 0.6);
+    border-radius: 20px;
   }
 
-  /* Inline controls on wide screens (input + check) */
-  .left .controls {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    width: 100%;
-  }
-  #guess {
-    width: calc(100% - 89rem);
-    min-width: 20rem;
-  } /* allow check button to fit */
-  #check {
-    width: 17rem;
-    padding: 1.2rem 1.8rem;
-    align-items: center;
-    justify-content: center;
-    margin-left: 1.5rem;
-
-    /* Slightly larger pill */
-    #number,
-    .number {
-      width: 15rem;
-      height: 9.6rem;
-      font-size: 6rem;
-      bottom: -6.5rem;
-      border-radius: 1.6rem;
-    }
-
-    /* Pointer-only hover polish */
-    @media (hover: hover) and (pointer: fine) {
-      #number:hover,
-      .number:hover {
-        transform: translate(-50%, -2%) scale(1.04);
-        box-shadow:
-          0 28px 80px rgba(0, 0, 0, 0.6),
-          0 0 100px rgba(56, 189, 248, 0.05);
-      }
-      #check:hover,
-      .check:hover {
-        transform: translateY(-6px) scale(1.02);
-        box-shadow: 0 24px 60px rgba(56, 189, 248, 0.16);
-      }
-      #again:hover,
-      .again:hover {
-        transform: translateY(-4px);
-      }
-    }
+  .panel {
+    padding: 2rem;
   }
 
-  /* Respect reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      transition: none !important;
-      animation: none !important;
-    }
+  .guess-input {
+    font-size: 3.5rem;
+    padding: 1.5rem;
   }
 
-  /* Small niceties */
-  .number,
-  #number {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
+  .btn-check {
+    font-size: 1.3rem;
+    padding: 1.3rem 2.5rem;
+  }
+
+  .stat-item {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}
+
+/* ========== Mobile Small (≤480px) ========== */
+@media (max-width: 480px) {
+  .game-container {
+    padding: 1rem 1rem 2rem;
+    gap: 1.5rem;
+  }
+
+  .game-header {
+    padding: 1.5rem 1rem 3.5rem;
+    border-radius: 12px;
+  }
+
+  .game-title {
+    font-size: 1.6rem;
+  }
+
+  .game-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .btn-again {
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .panel {
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .guess-input {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .btn-check {
+    font-size: 1rem;
+    padding: 0.9rem 1.2rem;
+  }
+
+  .message-text {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .stat-item {
+    padding: 0.8rem 1rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+  }
+
+  .stat-value {
+    font-size: 1.1rem;
+  }
+
+  .hint-list li {
+    font-size: 0.8rem;
+  }
+}
+
+/* ========== Reduced Motion ========== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

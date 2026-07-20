@@ -3,6 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Test your luck and intuition in this classic number guessing game. Can you find the secret number between 1 and 20?" />
+    <meta name="keywords" content="guess my number, game, number guessing, interactive game, portfolio game" />
+    
+    <!-- OpenGraph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Guess My Number! - Interactive Game" />
+    <meta property="og:description" content="Test your luck and intuition in this classic number guessing game." />
+    <meta property="og:image" content="../images/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Guess My Number!" />
+    <meta name="twitter:description" content="Can you guess the secret number between 1 and 20?" />
+    
+    <!-- Favicons -->
     <link
       rel="icon"
       type="image/png"
@@ -33,18 +46,23 @@
       href="../images/Favicons/android-chrome-512x512.png"
     />
     <link rel="shortcut icon" href="../images/Favicons/favicon-32x32.png" />
-    <link rel="stylesheet" href="/global.css" />
-    <link rel="stylesheet" href="/css/guess-my-number.css" />
-    <title>Guess My Number!</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="../css/guess-my-number.css" />
+    
+    <title>Guess My Number! - Interactive Game | Amin Ghasemi</title>
   </head>
   <body>
-    <header>
-      <h1>Guess My Number!</h1>
-      <p class="between">(Between 1 and 20)</p>
-      <button id="again" class="btn again">Again!</button>
-      <div id="number" class="number">?</div>
-    </header>
-
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Glass Navbar -->
     <header class="glass-navbar fade-in-up" aria-hidden="false">
       <div class="navbar-container">
         <a href="../index.html" class="nav-logo">
@@ -72,33 +90,101 @@
       </div>
     </header>
 
-    <main>
-      <section class="left">
-        <input
-          id="guess"
-          type="number"
-          class="guess"
-          min="1"
-          max="20"
-          inputmode="numeric"
-          autocomplete="off"
-          aria-label="Your guess"
-          placeholder="1–20"
-        />
-        <button id="check" class="btn check">Check!</button>
+    <!-- Main Game Container -->
+    <main id="main-content" class="game-container">
+      <!-- Game Header Section -->
+      <section class="game-header">
+        <h1 class="game-title">Guess My Number!</h1>
+        <p class="game-subtitle">(Between 1 and 20)</p>
+        
+        <button id="again" class="btn btn-again" aria-label="Play again">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 12"/>
+            <path d="M3 3v9h9"/>
+          </svg>
+          Again!
+        </button>
+        
+        <div id="number" class="number-display" aria-live="polite" aria-label="Secret number display">?</div>
       </section>
 
-      <section class="right">
-        <p id="message" class="message" aria-live="polite">Start guessing...</p>
-        <p class="label-score">
-          💯 Score: <span id="score" class="score">20</span>
-        </p>
-        <p class="label-highscore">
-          🥇 Highscore: <span id="highscore" class="highscore">0</span>
-        </p>
-      </section>
+      <!-- Game Content -->
+      <div class="game-content">
+        <!-- Left Panel - Input & Check -->
+        <section class="panel panel-left">
+          <div class="input-group">
+            <label for="guess" class="input-label">Enter your guess:</label>
+            <input
+              id="guess"
+              type="number"
+              class="guess-input"
+              min="1"
+              max="20"
+              inputmode="numeric"
+              autocomplete="off"
+              aria-label="Your guess (1 to 20)"
+              placeholder="?"
+            />
+          </div>
+          <button id="check" class="btn btn-check">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Check!
+          </button>
+        </section>
+
+        <!-- Right Panel - Stats & Messages -->
+        <section class="panel panel-right">
+          <div class="message-container">
+            <p id="message" class="message-text" aria-live="polite">Start guessing...</p>
+          </div>
+          
+          <div class="stats-container">
+            <div class="stat-item stat-score">
+              <span class="stat-icon">💯</span>
+              <span class="stat-label">Score:</span>
+              <span id="score" class="stat-value">20</span>
+            </div>
+            
+            <div class="stat-item stat-highscore">
+              <span class="stat-icon">🥇</span>
+              <span class="stat-label">Highscore:</span>
+              <span id="highscore" class="stat-value">0</span>
+            </div>
+          </div>
+          
+          <div class="hints-container">
+            <p class="hint-title">💡 How to Play:</p>
+            <ul class="hint-list">
+              <li>Enter a number between 1 and 20</li>
+              <li>Click "Check!" or press Enter</li>
+              <li>Get hints if too high or low</li>
+              <li>Beat your highscore!</li>
+            </ul>
+          </div>
+        </section>
+      </div>
     </main>
 
-    <script src="/js/guess-my-number.js"></script>
+    <!-- Footer -->
+    <footer class="glass-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Amin Ghasemi</h3>
+          <p>Frontend Developer & UI/UX Enthusiast</p>
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Amin Ghasemi. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../js/guess-my-number.js"></script>
   </body>
 </html>
