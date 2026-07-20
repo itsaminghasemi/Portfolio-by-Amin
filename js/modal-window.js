@@ -2,6 +2,12 @@
 
 // Wait for DOM to be fully loaded before querying elements
 document.addEventListener("DOMContentLoaded", function () {
+  // Dynamic footer year
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
   const modal = document.querySelector(".modal");
   const overlay = document.querySelector(".overlay");
   const btnCloseModal = document.querySelector(".close-modal");
