@@ -7,14 +7,13 @@ body {
   justify-content: center;
   text-align: center;
   color: var(--text-on-dark);
-  padding: 2rem;
 }
 .error-code {
   font-family: "JetBrains Mono", monospace;
   font-size: 8rem;
   font-weight: 700;
   background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
+  -webkit-background-clips: text;
   -webkit-text-fill-color: transparent;
   line-height: 1;
   margin-bottom: 0.5rem;
@@ -24,20 +23,6 @@ body {
   color: var(--text-muted);
   margin-bottom: 2rem;
 }
-.home-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 2rem;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: 99px;
-  color: var(--text-on-dark);
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-.home-link:hover {
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateY(-2px);
+.glass-footer {
+  margin-bottom: -2rem;
 }
