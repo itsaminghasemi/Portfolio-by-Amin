@@ -41,23 +41,23 @@
     <header>
       <h1>Guess My Number!</h1>
       <p class="between">(Between 1 and 20)</p>
-      <button class="btn again">Again!</button>
-      <div class="number">?</div>
+      <button id="again" class="btn again">Again!</button>
+      <div id="number" class="number">?</div>
     </header>
 
-    <header class="glass-navbar fade-in-up">
+    <header class="glass-navbar fade-in-up" aria-hidden="false">
       <div class="navbar-container">
         <a href="../index.html" class="nav-logo">
           <span class="logo-icon">✨</span>
           <span>Amin Ghasemi</span>
         </a>
         <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-        <label for="nav-toggle" class="nav-toggle-label">
+        <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
           <span></span>
           <span></span>
           <span></span>
         </label>
-        <nav class="nav-links">
+        <nav class="nav-links" aria-label="Main navigation">
           <a href="../index.html" class="nav-link">Vitrine</a>
           <a href="about.html" class="nav-link">Who Am I</a>
           <a href="social.html" class="nav-link">Me On Social</a>
@@ -74,15 +74,27 @@
 
     <main>
       <section class="left">
-        <input type="number" class="guess" />
-        <button class="btn check">Check!</button>
+        <input
+          id="guess"
+          type="number"
+          class="guess"
+          min="1"
+          max="20"
+          inputmode="numeric"
+          autocomplete="off"
+          aria-label="Your guess"
+          placeholder="1–20"
+        />
+        <button id="check" class="btn check">Check!</button>
       </section>
 
       <section class="right">
-        <p class="message">Start guessing...</p>
-        <p class="label-score">💯 Score: <span class="score">20</span></p>
+        <p id="message" class="message" aria-live="polite">Start guessing...</p>
+        <p class="label-score">
+          💯 Score: <span id="score" class="score">20</span>
+        </p>
         <p class="label-highscore">
-          🥇 Highscore: <span class="highscore">0</span>
+          🥇 Highscore: <span id="highscore" class="highscore">0</span>
         </p>
       </section>
     </main>

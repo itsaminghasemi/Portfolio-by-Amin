@@ -12,17 +12,35 @@
   --glass-border: rgba(255, 255, 255, 0.08);
 }
 
+/* Base / Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  padding-top: 110px;
+  background: var(--bg-color);
+  color: var(--text-on-dark);
+  padding-top: 110px; /* leaves space for fixed navbar used by guess-my-number layout */
+  line-height: 1.4;
+  min-height: 100vh;
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -40,11 +58,13 @@ body {
   background: var(--primary);
 }
 
+/* Selection */
 ::selection {
   background: var(--accent);
   color: #ffffff;
 }
 
+/* Accessibility helpers */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -71,7 +91,6 @@ body {
   text-decoration: none;
   transition: top 0.2s ease;
 }
-
 .skip-link:focus {
   top: 0;
 }
@@ -81,15 +100,13 @@ body {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
-
 .nav-link:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: -2px;
   border-radius: 4px;
 }
 
-
-
+/* Premium / Home button (top-left) */
 .premium-home-btn {
   position: absolute;
   top: 1.5rem;
@@ -111,7 +128,6 @@ body {
   width: fit-content;
   z-index: 10;
 }
-
 .premium-home-btn::before {
   content: "";
   position: absolute;
@@ -119,21 +135,23 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(56, 189, 248, 0.2),
+    transparent
+  );
   transition: all 0.6s ease;
 }
-
 .premium-home-btn:hover::before {
   left: 100%;
 }
-
 .premium-home-btn:hover {
   border-color: var(--primary);
   background: rgba(56, 189, 248, 0.05);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
 }
-
 .icon-wrapper {
   display: flex;
   align-items: center;
@@ -144,32 +162,28 @@ body {
   border-radius: 50%;
   transition: all 0.4s ease;
 }
-
 .premium-home-btn:hover .icon-wrapper {
   background: var(--primary);
   color: var(--primary-soft);
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
 }
-
 .icon-wrapper svg {
   width: 1.1rem;
   height: 1.1rem;
   transition: transform 0.4s ease;
 }
-
 .premium-home-btn:hover .icon-wrapper svg {
   transform: translateY(-2px);
 }
-
 .premium-home-btn .text {
   transition: color 0.4s ease;
 }
-
 .premium-home-btn:hover .text {
   color: var(--primary);
 }
 
+/* Small screens for premium button */
 @media (max-width: 480px) {
   .premium-home-btn {
     top: 1rem;
@@ -183,6 +197,7 @@ body {
   }
 }
 
+/* Simple fade in up animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -194,6 +209,7 @@ body {
   }
 }
 
+/* Glass navbar (fixed to top) */
 .glass-navbar {
   position: fixed;
   top: 0;
@@ -211,6 +227,7 @@ body {
   transition: all 0.3s ease;
 }
 
+/* Container used in navbar */
 .navbar-container {
   width: 100%;
   max-width: 1200px;
@@ -220,6 +237,7 @@ body {
   padding: 0 3rem;
 }
 
+/* Logo */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -230,12 +248,12 @@ body {
   text-decoration: none;
   letter-spacing: 1px;
 }
-
 .logo-icon {
   font-size: 1.5rem;
   filter: drop-shadow(0 0 8px var(--primary));
 }
 
+/* Responsive nav links (mobile collapsed) */
 .nav-links {
   display: flex;
   position: absolute;
@@ -252,28 +270,12 @@ body {
   max-height: 0;
   visibility: hidden;
   opacity: 0;
-  transition: max-height 0.4s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s ease;
+  transition:
+    max-height 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 0.3s ease;
 }
 
-.nav-toggle:checked ~ .nav-links {
-  max-height: 320px;
-  visibility: visible;
-  opacity: 1;
-}
-
-.nav-link {
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  position: relative;
-  transition: color 0.3s ease, background 0.3s ease;
-  padding: 1rem 1.25rem;
-  width: 100%;
-  text-align: left;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
+/* Hidden checkbox controlling mobile menu */
 .nav-toggle {
   position: absolute;
   opacity: 0;
@@ -287,6 +289,7 @@ body {
   pointer-events: none;
 }
 
+/* Toggle label (hamburger) */
 .nav-toggle-label {
   display: flex;
   align-items: center;
@@ -300,42 +303,57 @@ body {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 50%;
-  transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
   z-index: 10000;
 }
-
 .nav-toggle-label:hover {
   background: rgba(255, 255, 255, 0.14);
   transform: scale(1.04);
 }
-
 .nav-toggle-label span {
   display: block;
   height: 2px;
   width: 18px;
   background-color: var(--text-on-dark);
   border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    background-color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .nav-toggle-label {
-    width: 30px;
-    height: 30px;
-    padding: 0.25rem;
-    gap: 3px;
-    border-width: 1px;
-  }
-
-  .nav-toggle-label span {
-    width: 12px;
-  }
+/* Nav link styles */
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  transition:
+    color 0.3s ease,
+    background 0.3s ease;
+  padding: 1rem 1.25rem;
+  width: 100%;
+  text-align: left;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--text-on-dark);
+  background: rgba(255, 255, 255, 0.02);
 }
 
+/* When toggle is checked, show mobile menu */
 .nav-toggle:checked ~ .nav-links {
   max-height: 320px;
+  visibility: visible;
+  opacity: 1;
 }
 
+/* Hamburger transform when active */
 .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -346,6 +364,7 @@ body {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* Desktop layout overrides */
 @media (min-width: 769px) {
   .navbar-container {
     padding: 0 2rem;
@@ -383,7 +402,9 @@ body {
     width: auto;
     text-align: left;
     padding: 1rem 1.25rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.01);
+    color: var(--text-on-dark);
+    background: transparent;
   }
 
   .nav-link::after {
@@ -391,6 +412,7 @@ body {
   }
 }
 
+/* Footer glass style */
 .glass-footer {
   margin-top: 3rem;
   background: var(--glass-bg);
@@ -400,7 +422,6 @@ body {
   padding: 2rem 5% 1rem;
   color: var(--text-light);
 }
-
 .footer-content {
   display: flex;
   justify-content: space-between;
@@ -410,36 +431,30 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .footer-brand h3 {
   color: var(--text-light);
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
-
 .footer-brand p {
   color: var(--text-muted);
   font-size: 0.9rem;
   max-width: 300px;
   line-height: 1.6;
 }
-
 .footer-links {
   display: flex;
   gap: 1.5rem;
 }
-
 .footer-links a {
   color: var(--text-muted);
   text-decoration: none;
   transition: color 0.3s ease;
   font-size: 0.95rem;
 }
-
 .footer-links a:hover {
   color: var(--primary);
 }
-
 .footer-bottom {
   text-align: center;
   margin-top: 2rem;
@@ -448,7 +463,6 @@ body {
   color: var(--text-muted);
   font-size: 0.8rem;
 }
-
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -459,13 +473,11 @@ body {
   }
 }
 
-
-
+/* Tooltip helper */
 [data-tooltip] {
   position: relative;
   cursor: pointer;
 }
-
 [data-tooltip]::after {
   content: attr(data-tooltip);
   position: absolute;
@@ -483,7 +495,6 @@ body {
   transition: all 0.3s ease;
   border: 1px solid var(--glass-border);
 }
-
 [data-tooltip]:hover::after {
   opacity: 1;
   visibility: visible;
