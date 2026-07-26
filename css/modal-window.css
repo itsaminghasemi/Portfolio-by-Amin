@@ -55,7 +55,7 @@ main {
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -121,8 +121,8 @@ main {
   overflow-y: auto;
   
   background: rgba(15, 15, 19, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--glass-border);
   border-radius: 16px;
   padding: 3rem;

@@ -19,7 +19,7 @@ body {
 
 .page-title h1 {
   margin: 0;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: ui-monospace, monospace;
   color: var(--text-on-dark);
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
@@ -55,7 +55,7 @@ body {
 .flex-item h2 {
   margin: 0 0 0.8rem;
   font-size: 1.25rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: ui-monospace, monospace;
   color: var(--text-on-dark);
 }
 
@@ -99,7 +99,7 @@ body {
   font-weight: 500;
   color: var(--primary);
   margin: 0 0 0.15rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: ui-monospace, monospace;
 }
 
 .timeline-item h3 {
