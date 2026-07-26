@@ -2,7 +2,7 @@
 // Synced with portfolio design system
 
 (function () {
-  "use strict";
+  ("use strict");
 
   // DOM Elements
   const numberEl = document.getElementById("number");
@@ -35,7 +35,7 @@
   function init() {
     secretNumber = Math.trunc(Math.random() * 20) + 1; // Generate 1-20
     score = 20;
-    
+
     // Reset UI
     if (scoreEl) scoreEl.textContent = score;
     if (numberEl) {
@@ -51,7 +51,7 @@
     if (guessInput) {
       guessInput.value = "";
       guessInput.disabled = false;
-      guessInput.focus();
+      guessInput.focus({ preventScroll: true });
     }
     if (checkBtn) {
       checkBtn.disabled = false;
@@ -63,14 +63,14 @@
 
   /**
    * Display a message to the user
-   * @param {string} msg - Message to display
-   * @param {string} [type] - Optional type for styling (success, error, warning)
+   * @param {'success' | 'error' | 'warning'} [type]
    */
+
   function displayMessage(msg, type = "neutral") {
     if (!messageEl) return;
-    
+
     messageEl.textContent = msg;
-    
+
     // Optional: Add color coding based on message type
     switch (type) {
       case "success":
@@ -110,14 +110,14 @@
     if (score > 1) {
       score -= 1;
       scoreEl.textContent = score;
-      
+
       const hint = guess > secretNumber ? "📈 Too high!" : "📉 Too low!";
       displayMessage(hint, "warning");
-      
+
       // Provide visual feedback
       guessInput?.classList.add("shake");
       setTimeout(() => guessInput?.classList.remove("shake"), 300);
-      
+
       guessInput.value = "";
       guessInput.focus();
     } else {
@@ -130,24 +130,24 @@
    */
   function handleWin() {
     displayMessage("🎉 Correct! You guessed the number!", "success");
-    
+
     if (numberEl) {
       numberEl.textContent = secretNumber;
       numberEl.classList.add("win");
     }
-    
+
     // Update highscore
     if (score > highscore) {
       highscore = score;
       highscoreEl.textContent = highscore;
       localStorage.setItem("guessMyNumberHighscore", highscore);
-      
+
       // Celebrate new highscore
       setTimeout(() => {
         displayMessage("🏆 New Highscore! 🎊", "success");
       }, 800);
     }
-    
+
     // Disable input after win
     if (guessInput) guessInput.disabled = true;
     if (checkBtn) {
@@ -161,14 +161,14 @@
    */
   function handleLoss() {
     displayMessage("💥 You lost the game!", "error");
-    
+
     if (numberEl) {
       numberEl.textContent = secretNumber;
       numberEl.classList.add("lose");
     }
-    
+
     scoreEl.textContent = 0;
-    
+
     // Disable input after loss
     if (guessInput) guessInput.disabled = true;
     if (checkBtn) {
@@ -179,7 +179,7 @@
 
   /**
    * Handle keyboard events
-   * @param {KeyboardEvent} e 
+   * @param {KeyboardEvent} e
    */
   function handleKeydown(e) {
     if (e.key === "Enter" && !guessInput.disabled) {
@@ -206,10 +206,10 @@
   // Log game info for debugging
   console.log(
     "%c🎮 Guess My Number Game Loaded!",
-    "font-size: 14px; font-weight: bold; color: #38bdf8;"
+    "font-size: 14px; font-weight: bold; color: #38bdf8;",
   );
   console.log(
     "%cHow to play: Enter a number (1-20) and click Check!",
-    "font-size: 12px; color: #9ca3af;"
+    "font-size: 12px; color: #9ca3af;",
   );
 })();
