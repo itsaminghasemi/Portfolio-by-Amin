@@ -328,9 +328,6 @@ figure.profile-figure {
 }
 
 @media (min-width: 769px) {
-  body {
-  }
-
   .vitrine {
     width: calc(100% - 4rem);
     max-width: 960px;

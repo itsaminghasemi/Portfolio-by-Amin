@@ -52,7 +52,7 @@ btnRoll.addEventListener("click", function () {
     void diceEl.offsetWidth;
     diceEl.classList.add("rolling");
 
-    diceEl.src = `/images/dice/dice-${dice}.png`;
+    diceEl.src = `/images/dice/dice-${dice}.avif`;
 
     if (dice !== 1) {
       currentScore += dice;
