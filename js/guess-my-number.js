@@ -12,7 +12,7 @@
   const guessInput = document.getElementById("guess");
   const checkBtn = document.getElementById("check");
   const againBtn = document.getElementById("again");
-  const currentYearEl = document.getElementById("current-year");
+  const currentYearEl = document.getElementById("year");
 
   // Game State
   let secretNumber;
