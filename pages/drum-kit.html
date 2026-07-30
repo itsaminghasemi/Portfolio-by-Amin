@@ -2,22 +2,94 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>JS Drum Kit</title>
+  <!-- Primary Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>JS Drum Kit - Play Virtual Drums Online | Amin Ghasemi Portfolio</title>
+  <meta name="title" content="JS Drum Kit - Play Virtual Drums Online | Amin Ghasemi Portfolio" />
+  <meta name="description"
+    content="Play virtual drums online with this interactive JS Drum Kit! Hit keyboard keys A-L to create beats with clap, hihat, kick, snare, and more. Built with HTML, CSS, and JavaScript." />
+  <meta name="keywords"
+    content="drum kit, virtual drums, online drums, javascript drums, web audio, keyboard drums, browser drums, amin ghasemi, portfolio, interactive music, drum machine, free online drums" />
+  <meta name="author" content="Amin Ghasemi" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <link rel="canonical" href="https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/drum-kit.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/drum-kit.html" />
+  <meta property="og:title" content="JS Drum Kit - Play Virtual Drums Online" />
+  <meta property="og:description"
+    content="Play virtual drums online with this interactive JS Drum Kit! Hit keyboard keys A-L to create beats. Built with HTML, CSS, and JavaScript." />
+  <meta property="og:image"
+    content="https://itsaminghasemi.github.io/Portfolio-by-Amin/images/Favicons/android-chrome-512x512.png" />
+  <meta property="og:site_name" content="Amin Ghasemi Portfolio" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/drum-kit.html" />
+  <meta name="twitter:title" content="JS Drum Kit - Play Virtual Drums Online" />
+  <meta name="twitter:description"
+    content="Play virtual drums online with this interactive JS Drum Kit! Hit keyboard keys A-L to create beats." />
+  <meta name="twitter:image"
+    content="https://itsaminghasemi.github.io/Portfolio-by-Amin/images/Favicons/android-chrome-512x512.png" />
+  <meta name="twitter:creator" content="@aminghasemi" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/Portfolio-by-Amin/images/Favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Portfolio-by-Amin/images/Favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Portfolio-by-Amin/images/Favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192"
+    href="/Portfolio-by-Amin/images/Favicons/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512"
+    href="/Portfolio-by-Amin/images/Favicons/android-chrome-512x512.png">
+  <link rel="shortcut icon" href="/Portfolio-by-Amin/images/Favicons/favicon-32x32.png">
+  <link rel="manifest" href="/Portfolio-by-Amin/manifest.json" />
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="/Portfolio-by-Amin/css/global.css">
   <link rel="stylesheet" href="/Portfolio-by-Amin/css/drum-kit-style.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "JS Drum Kit",
+      "description": "Interactive virtual drum kit playable with keyboard",
+      "url": "https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/drum-kit.html",
+      "applicationCategory": "Game",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Amin Ghasemi",
+        "url": "https://itsaminghasemi.github.io/Portfolio-by-Amin/"
+      }
+    }
+  </script>
 </head>
 
 <body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#drum-kit-main" class="skip-link">Skip to main content</a>
 
   <!-- Glass Navbar -->
-  <header class="glass-navbar fade-in-up" aria-hidden="false">
+  <header class="glass-navbar fade-in-up" role="banner" aria-label="Main navigation">
     <div class="navbar-container">
-      <a href="/Portfolio-by-Amin/index.html" class="nav-logo">
-        <span class="logo-icon"><img src="/Portfolio-by-Amin/images/Favicons/favicon.avif" alt="my logo"></span>
+      <a href="/Portfolio-by-Amin/index.html" class="nav-logo" aria-label="Home">
+        <span class="logo-icon"><img src="/Portfolio-by-Amin/images/Favicons/favicon.avif" alt="Logo"></span>
         <span>Amin Ghasemi</span>
       </a>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu" />
       <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
         <span></span>
         <span></span>
@@ -28,68 +100,109 @@
         <a href="/Portfolio-by-Amin/pages/about.html" class="nav-link">Who Am I</a>
         <a href="/Portfolio-by-Amin/pages/social.html" class="nav-link">Me On Social</a>
         <a href="/Portfolio-by-Amin/pages/contact.html" class="nav-link">Contact Us</a>
-        <a href="/Portfolio-by-Amin/pages/guess-my-number.html" class="nav-link">Guess My
-          Number</a>
+        <a href="/Portfolio-by-Amin/pages/guess-my-number.html" class="nav-link">Guess My Number</a>
         <a href="/Portfolio-by-Amin/pages/modal-window.html" class="nav-link" id="modal-toggle">Modal Window</a>
         <a href="/Portfolio-by-Amin/pages/pig-game.html" class="nav-link">Pig Game</a>
-        <a href="/Portfolio-by-Amin/pages/pig-game.html" class="nav-link" aria-current="page">Drum Kit</a>
+        <a href="/Portfolio-by-Amin/pages/drum-kit.html" class="nav-link" aria-current="page">Drum Kit</a>
       </nav>
     </div>
   </header>
 
+  <!-- Main Content -->
+  <main id="drum-kit-main" class="drum-kit-container" role="main">
+    <div class="drum-header fade-in-up">
+      <h1>🥁 JS Drum Kit</h1>
+      <p class="drum-subtitle">Press keys <strong>A</strong> through <strong>L</strong> or click the pads to play</p>
+    </div>
 
-  <div class="keys">
-    <div data-key="65" class="key">
-      <kbd>A</kbd>
-      <span class="sound">clap</span>
+    <div class="keys" role="region" aria-label="Drum pads">
+      <button data-key="65" class="key" aria-label="Clap drum sound, press A key" tabindex="0">
+        <kbd>A</kbd>
+        <span class="sound">clap</span>
+      </button>
+      <button data-key="83" class="key" aria-label="Hi-hat drum sound, press S key" tabindex="0">
+        <kbd>S</kbd>
+        <span class="sound">hihat</span>
+      </button>
+      <button data-key="68" class="key" aria-label="Kick drum sound, press D key" tabindex="0">
+        <kbd>D</kbd>
+        <span class="sound">kick</span>
+      </button>
+      <button data-key="70" class="key" aria-label="Open hat drum sound, press F key" tabindex="0">
+        <kbd>F</kbd>
+        <span class="sound">openhat</span>
+      </button>
+      <button data-key="71" class="key" aria-label="Boom drum sound, press G key" tabindex="0">
+        <kbd>G</kbd>
+        <span class="sound">boom</span>
+      </button>
+      <button data-key="72" class="key" aria-label="Ride cymbal sound, press H key" tabindex="0">
+        <kbd>H</kbd>
+        <span class="sound">ride</span>
+      </button>
+      <button data-key="74" class="key" aria-label="Snare drum sound, press J key" tabindex="0">
+        <kbd>J</kbd>
+        <span class="sound">snare</span>
+      </button>
+      <button data-key="75" class="key" aria-label="Tom drum sound, press K key" tabindex="0">
+        <kbd>K</kbd>
+        <span class="sound">tom</span>
+      </button>
+      <button data-key="76" class="key" aria-label="Tink cymbal sound, press L key" tabindex="0">
+        <kbd>L</kbd>
+        <span class="sound">tink</span>
+      </button>
     </div>
-    <div data-key="83" class="key">
-      <kbd>S</kbd>
-      <span class="sound">hihat</span>
-    </div>
-    <div data-key="68" class="key">
-      <kbd>D</kbd>
-      <span class="sound">kick</span>
-    </div>
-    <div data-key="70" class="key">
-      <kbd>F</kbd>
-      <span class="sound">openhat</span>
-    </div>
-    <div data-key="71" class="key">
-      <kbd>G</kbd>
-      <span class="sound">boom</span>
-    </div>
-    <div data-key="72" class="key">
-      <kbd>H</kbd>
-      <span class="sound">ride</span>
-    </div>
-    <div data-key="74" class="key">
-      <kbd>J</kbd>
-      <span class="sound">snare</span>
-    </div>
-    <div data-key="75" class="key">
-      <kbd>K</kbd>
-      <span class="sound">tom</span>
-    </div>
-    <div data-key="76" class="key">
-      <kbd>L</kbd>
-      <span class="sound">tink</span>
-    </div>
-  </div>
 
-  <audio data-key="65" src="/Portfolio-By-Amin/sounds/clap.wav"></audio>
-  <audio data-key="83" src="/Portfolio-By-Amin/sounds/hihat.wav"></audio>
-  <audio data-key="68" src="/Portfolio-By-Amin/sounds/kick.wav"></audio>
-  <audio data-key="70" src="/Portfolio-By-Amin/sounds/openhat.wav"></audio>
-  <audio data-key="71" src="/Portfolio-By-Amin/sounds/boom.wav"></audio>
-  <audio data-key="72" src="/Portfolio-By-Amin/sounds/ride.wav"></audio>
-  <audio data-key="74" src="/Portfolio-By-Amin/sounds/snare.wav"></audio>
-  <audio data-key="75" src="/Portfolio-By-Amin/sounds/tom.wav"></audio>
-  <audio data-key="76" src="/Portfolio-By-Amin/sounds/tink.wav"></audio>
+    <div class="drum-instructions fade-in-up">
+      <div class="instruction-card">
+        <span class="instruction-icon">⌨️</span>
+        <h3>Keyboard</h3>
+        <p>Use keys A-L to play different drums</p>
+      </div>
+      <div class="instruction-card">
+        <span class="instruction-icon">🖱️</span>
+        <h3>Mouse / Touch</h3>
+        <p>Click or tap any drum pad to play</p>
+      </div>
+      <div class="instruction-card">
+        <span class="instruction-icon">🎵</span>
+        <h3>Create Beats</h3>
+        <p>Combine sounds to make your own rhythm</p>
+      </div>
+    </div>
+  </main>
 
-  <script src="/Portfolio-By-Amin/js/drum-kit.js"></script>
+  <!-- Audio Elements -->
+  <audio data-key="65" src="/Portfolio-by-Amin/sound/drum-kit/clap.wav" preload="auto"></audio>
+  <audio data-key="83" src="/Portfolio-by-Amin/sound/drum-kit/hihat.wav" preload="auto"></audio>
+  <audio data-key="68" src="/Portfolio-by-Amin/sound/drum-kit/kick.wav" preload="auto"></audio>
+  <audio data-key="70" src="/Portfolio-by-Amin/sound/drum-kit/openhat.wav" preload="auto"></audio>
+  <audio data-key="71" src="/Portfolio-by-Amin/sound/drum-kit/boom.wav" preload="auto"></audio>
+  <audio data-key="72" src="/Portfolio-by-Amin/sound/drum-kit/ride.wav" preload="auto"></audio>
+  <audio data-key="74" src="/Portfolio-by-Amin/sound/drum-kit/snare.wav" preload="auto"></audio>
+  <audio data-key="75" src="/Portfolio-by-Amin/sound/drum-kit/tom.wav" preload="auto"></audio>
+  <audio data-key="76" src="/Portfolio-by-Amin/sound/drum-kit/tink.wav" preload="auto"></audio>
 
+  <!-- Footer -->
+  <footer class="glass-footer" role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Amin Ghasemi</h3>
+        <p>Front-End Developer crafting modern web experiences</p>
+      </div>
+      <div class="footer-links">
+        <a href="/Portfolio-by-Amin/pages/about.html">About</a>
+        <a href="/Portfolio-by-Amin/pages/contact.html">Contact</a>
+        <a href="/Portfolio-by-Amin/index.html">Home</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="current-year"></span> Amin Ghasemi. All rights reserved.</p>
+    </div>
+  </footer>
 
+  <script src="/Portfolio-by-Amin/js/drum-kit.js"></script>
 </body>
 
 </html>

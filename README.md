@@ -19,6 +19,8 @@ pages/
   social.html             ← Social links
   guess-my-number.html    ← Guess My Number game
   modal-window.html       ← Modal Window component
+  pig-game.html           ← Pig Game dice game
+  drum-kit.html           ← JS Drum Kit virtual drums
   404.html                ← Error page (full design)
 css/
   index-style.css
@@ -26,15 +28,19 @@ css/
   social.css
   about.css
   modal-window.css        ← Modal styles
+  drum-kit-style.css      ← Drum Kit styles
 js/
   index-logic.js
   contact.js
   social.js
   about.js
   modal-window.js         ← Modal functionality
+  drum-kit.js             ← Drum Kit functionality
 images/
   back.svg / profileSVG.svg
   Favicons/
+sound/
+  drum-kit/               ← Drum sound files (.wav)
 ```
 
 ## 📄 Pages
@@ -48,16 +54,7 @@ images/
 | Game         | `pages/guess-my-number.html` | Interactive number guessing game                  |
 | Modal Window | `pages/modal-window.html`    | Reusable modal component                          |
 | Pig Game     | `pages/pig-game.html`        | Classic two-player dice game - race to 100 points |
-
-=======
-| Page | File | Description |
-| ------------ | ---------------------------- | ---------------------------------------- |
-| Home | `index.html` | Portfolio landing page with modal window |
-| About | `pages/about.html` | Bio, skills, timeline |
-| Social | `pages/social.html` | GitHub & LinkedIn |
-| Contact | `pages/contact.html` | Formspree form |
-| Game | `pages/guess-my-number.html` | Interactive number guessing game |
-| Modal Window | `pages/modal-window.html` | Reusable modal component |
+| Drum Kit     | `pages/drum-kit.html`        | Interactive virtual drum kit playable with keyboard |
 
 ## ✨ Features
 
@@ -67,7 +64,9 @@ images/
 - **Performance** - Optimized CSS and JavaScript with lazy loading
 - **Modal Window** - Interactive modal available on every page navbar
 - **Interactive Elements** - Smooth animations and transitions
-- **Games** - Multiple interactive games including Guess My Number and Pig Game
+- **Games** - Multiple interactive games including Guess My Number, Pig Game, and JS Drum Kit
+- **SEO Optimized** - Complete meta tags, Open Graph, Twitter cards, and sitemap
+- **PWA Ready** - Web app manifest with comprehensive favicon set
 
 ## 🛠️ How to Use
 
