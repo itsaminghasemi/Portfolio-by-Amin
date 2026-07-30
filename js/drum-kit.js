@@ -65,10 +65,19 @@
    * @param {KeyboardEvent} e - The keyboard event
    */
   function handleKeyPress(e) {
-    const keyCode = e.keyCode || e.which;
+    // Get the key character and convert to uppercase
+    const key = e.key.toUpperCase();
     
-    // Only handle valid drum keys (A-L: 65-76)
-    if (keyCode < 65 || keyCode > 76) return;
+    // Map key characters to their keyCode values
+    const keyToCodeMap = {
+      'A': 65, 'S': 83, 'D': 68, 'F': 70, 'G': 71,
+      'H': 72, 'J': 74, 'K': 75, 'L': 76
+    };
+    
+    const keyCode = keyToCodeMap[key];
+    
+    // Only handle valid drum keys
+    if (!keyCode) return;
 
     playSound(keyCode);
     addVisualFeedback(keyCode);
