@@ -106,7 +106,7 @@ body {
   border-radius: 4px;
 }
 
-.nav-link.active:focus-visible {
+.nav-link.active {
   outline: 2px solid gold;
   outline-offset: -2px;
   border-radius: 4px;
