@@ -2,7 +2,7 @@
 // Synced with portfolio design system
 
 (function () {
-  ("use strict");
+  "use strict";
 
   // DOM Elements
   const numberEl = document.getElementById("number");
@@ -63,27 +63,30 @@
 
   /**
    * Display a message to the user
-   * @param {'success' | 'error' | 'warning'} [type]
+   * @param {string} msg - The message to display
+   * @param {'success' | 'error' | 'warning' | 'neutral'} type - Message type for styling
    */
-
   function displayMessage(msg, type = "neutral") {
     if (!messageEl) return;
 
     messageEl.textContent = msg;
 
-    // Optional: Add color coding based on message type
+    // Color coding based on message type
     switch (type) {
       case "success":
-        messageEl.style.color = "#60b347";
+        messageEl.style.color = "#2ed573"; // Green
         break;
       case "error":
-        messageEl.style.color = "#dc2626";
+        messageEl.style.color = "#ff4757"; // Red
         break;
       case "warning":
-        messageEl.style.color = "#f59e0b";
+        messageEl.style.color = "#ffa502"; // Orange
+        break;
+      case "info":
+        messageEl.style.color = "#38bdf8"; // Blue
         break;
       default:
-        messageEl.style.color = "";
+        messageEl.style.color = "#ffffff";
     }
   }
 
@@ -93,10 +96,20 @@
   function handleCheck() {
     const guess = Number(guessInput?.value);
 
-    // Validate input
-    if (!guess || guess < 1 || guess > 20) {
-      displayMessage("⛔ Enter a number between 1 and 20", "warning");
+    // Validate input: No input
+    if (!guess) {
+      displayMessage("⛔ No number!", "warning");
       guessInput?.focus();
+      return;
+    }
+
+    // Validate input: Out of range (Under 0 or Over 20)
+    if (guess < 0 || guess > 20) {
+      displayMessage("❌ Incorrect! (Out of Range)", "error");
+      score--;
+      if (scoreEl) scoreEl.textContent = score;
+
+      if (score <= 0) handleLoss();
       return;
     }
 
@@ -109,12 +122,34 @@
     // Wrong guess - decrease score
     if (score > 1) {
       score -= 1;
-      scoreEl.textContent = score;
+      if (scoreEl) scoreEl.textContent = score;
 
-      const hint = guess > secretNumber ? "📈 Too high!" : "📉 Too low!";
-      displayMessage(hint, "warning");
+      // Calculate difference for specific hints
+      const diff = Math.abs(secretNumber - guess);
+      let hint = "";
+      let type = "warning";
 
-      // Provide visual feedback
+      if (diff <= 5) {
+        // Within 5 numbers: "Low" or "High"
+        if (guess < secretNumber) {
+          hint = "Low 🔼";
+        } else {
+          hint = "High 🔽";
+        }
+        type = "warning"; // Orange
+      } else {
+        // More than 5 numbers away: "Too Low" or "Too High"
+        if (guess < secretNumber) {
+          hint = "Too Low! ⬇️";
+        } else {
+          hint = "Too High! ⬆️";
+        }
+        type = "error"; // Red
+      }
+
+      displayMessage(hint, type);
+
+      // Provide visual feedback (shake animation)
       guessInput?.classList.add("shake");
       setTimeout(() => guessInput?.classList.remove("shake"), 300);
 
@@ -134,12 +169,15 @@
     if (numberEl) {
       numberEl.textContent = secretNumber;
       numberEl.classList.add("win");
+      // Optional: Add a background glow for win state
+      numberEl.style.backgroundColor = "#2ed573";
+      numberEl.style.color = "#0a0a0f";
     }
 
     // Update highscore
     if (score > highscore) {
       highscore = score;
-      highscoreEl.textContent = highscore;
+      if (highscoreEl) highscoreEl.textContent = highscore;
       localStorage.setItem("guessMyNumberHighscore", highscore);
 
       // Celebrate new highscore
@@ -160,14 +198,16 @@
    * Handle losing the game
    */
   function handleLoss() {
-    displayMessage("💥 You lost the game!", "error");
+    displayMessage("💀 You lost the game!", "error");
 
     if (numberEl) {
       numberEl.textContent = secretNumber;
       numberEl.classList.add("lose");
+      numberEl.style.backgroundColor = "#ff4757";
+      numberEl.style.color = "#ffffff";
     }
 
-    scoreEl.textContent = 0;
+    if (scoreEl) scoreEl.textContent = 0;
 
     // Disable input after loss
     if (guessInput) guessInput.disabled = true;
@@ -209,7 +249,7 @@
     "font-size: 14px; font-weight: bold; color: #38bdf8;",
   );
   console.log(
-    "%cHow to play: Enter a number (1-20) and click Check!",
+    "%cHow to play: Enter a number (0-20) and click Check!",
     "font-size: 12px; color: #9ca3af;",
   );
 })();
