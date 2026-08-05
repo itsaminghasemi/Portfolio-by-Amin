@@ -132,6 +132,44 @@
       <div class="footer-brand">
         <p>Building beautiful and functional digital experiences with code and creativity.</p>
       </div>
+
+      <!-- Guidance Modal -->
+      <div class="modal-overlay" id="guideModal">
+        <div class="guidance-modal">
+          <div class="modal-header">
+            <h2>About Page - Guide</h2>
+            <button class="close-modal" onclick="closeGuideModal()" aria-label="Close guide">&times;</button>
+          </div>
+          <div class="modal-body">
+            <h3>👤 About This Page</h3>
+            <p>This page introduces Amin Ghasemi, a passionate front-end developer from Borazjan, Iran. Learn about his
+              journey into web development and what drives him to create beautiful digital experiences.</p>
+
+            <h3>📖 What You'll Find Here</h3>
+            <ul>
+              <li><strong>Who Am I:</strong> Personal introduction and background</li>
+              <li><strong>Why Front-end:</strong> Passion for visual design and immediate results</li>
+              <li><strong>My Journey:</strong> Timeline from Computer Science degree to Junior Web Developer</li>
+              <li><strong>Skills:</strong> Technical expertise in HTML, CSS, JavaScript, Git, and more</li>
+            </ul>
+
+            <h3>💡 Navigation Tips</h3>
+            <ul>
+              <li>Use the navbar to explore other sections of the portfolio</li>
+              <li>Click on the profile photo to learn more</li>
+              <li>Check out the Projects section to see practical applications of these skills</li>
+            </ul>
+
+            <h3>🎯 Focus Areas</h3>
+            <ul>
+              <li>Front-end Development (HTML, CSS, JavaScript)</li>
+              <li>Responsive Design</li>
+              <li>Clean, maintainable code</li>
+              <li>User-focused interfaces</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; <span id="year">2026</span> Amin Ghasemi. All rights reserved.</p>
@@ -141,42 +179,7 @@
     </button>
   </footer>
 
-  <!-- Guidance Modal -->
-  <div class="modal-overlay" id="guideModal">
-    <div class="guidance-modal">
-      <div class="modal-header">
-        <h2>About Page - Guide</h2>
-        <button class="close-modal" onclick="closeGuideModal()" aria-label="Close guide">&times;</button>
-      </div>
-      <div class="modal-body">
-        <h3>👤 About This Page</h3>
-        <p>This page introduces Amin Ghasemi, a passionate front-end developer from Borazjan, Iran. Learn about his journey into web development and what drives him to create beautiful digital experiences.</p>
-        
-        <h3>📖 What You'll Find Here</h3>
-        <ul>
-          <li><strong>Who Am I:</strong> Personal introduction and background</li>
-          <li><strong>Why Front-end:</strong> Passion for visual design and immediate results</li>
-          <li><strong>My Journey:</strong> Timeline from Computer Science degree to Junior Web Developer</li>
-          <li><strong>Skills:</strong> Technical expertise in HTML, CSS, JavaScript, Git, and more</li>
-        </ul>
 
-        <h3>💡 Navigation Tips</h3>
-        <ul>
-          <li>Use the navbar to explore other sections of the portfolio</li>
-          <li>Click on the profile photo to learn more</li>
-          <li>Check out the Projects section to see practical applications of these skills</li>
-        </ul>
-
-        <h3>🎯 Focus Areas</h3>
-        <ul>
-          <li>Front-end Development (HTML, CSS, JavaScript)</li>
-          <li>Responsive Design</li>
-          <li>Clean, maintainable code</li>
-          <li>User-focused interfaces</li>
-        </ul>
-      </div>
-    </div>
-  </div>
 
   <script>
     // Guide Modal Functions
@@ -191,14 +194,14 @@
     }
 
     // Close modal when clicking outside
-    document.getElementById('guideModal').addEventListener('click', function(e) {
+    document.getElementById('guideModal').addEventListener('click', function (e) {
       if (e.target === this) {
         closeGuideModal();
       }
     });
 
     // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         closeGuideModal();
       }
