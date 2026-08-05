@@ -127,17 +127,88 @@
   <footer class="glass-footer">
     <div class="footer-content">
       <div class="footer-brand">
-        <p>
-          Building beautiful and functional digital experiences with code and
-          creativity.
-        </p>
+        <p>Building beautiful and functional digital experiences with code and creativity.</p>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; <span id="year">2026</span> Amin. All rights reserved.</p>
     </div>
+    <button class="guide-btn" onclick="openGuideModal()" aria-label="View page guide">
+      <i>📖</i> Guide
+    </button>
   </footer>
 
+  <!-- Guidance Modal -->
+  <div class="modal-overlay" id="guideModal">
+    <div class="guidance-modal">
+      <div class="modal-header">
+        <h2>Home Page - Guide</h2>
+        <button class="close-modal" onclick="closeGuideModal()" aria-label="Close guide">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h3>🏠 About This Page</h3>
+        <p>Welcome to Amin Ghasemi's portfolio homepage! This is your starting point to explore front-end development skills, view projects, and get in touch for collaboration opportunities.</p>
+        
+        <h3>📍 What You'll Find Here</h3>
+        <ul>
+          <li><strong>Profile Section:</strong> Introduction with professional photo and bio</li>
+          <li><strong>Technical Skills:</strong> Visual display of core competencies (HTML, CSS, JavaScript, etc.)</li>
+          <li><strong>Quick Navigation:</strong> Easy access to Contact, Social, and Projects pages</li>
+        </ul>
+
+        <h3>💡 How to Navigate</h3>
+        <ul>
+          <li><strong>Click the Profile Photo:</strong> Learn more about Amin on the About page</li>
+          <li><strong>Explore Skills:</strong> Review technical capabilities at a glance</li>
+          <li><strong>Use the Navbar:</strong> Access all sections from the top navigation menu</li>
+          <li><strong>Check Projects:</strong> See practical applications of skills in action</li>
+        </ul>
+
+        <h3>🎯 Key Features</h3>
+        <ul>
+          <li>Clean, modern design with glass morphism effects</li>
+          <li>Responsive layout for all devices</li>
+          <li>Smooth animations and transitions</li>
+          <li>Accessible navigation and content structure</li>
+        </ul>
+
+        <h3>✨ Tips for Visitors</h3>
+        <ul>
+          <li>Start with the profile to understand the developer's background</li>
+          <li>Review skills to assess technical fit for your project</li>
+          <li>Visit Projects to see coding style and problem-solving approach</li>
+          <li>Use Contact or Social links to initiate collaboration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Guide Modal Functions
+    function openGuideModal() {
+      document.getElementById('guideModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeGuideModal() {
+      document.getElementById('guideModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('guideModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeGuideModal();
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeGuideModal();
+      }
+    });
+  </script>
   <script src="js/index-logic.js" defer></script>
 </body>
 
