@@ -190,68 +190,69 @@
     <div class="footer-content">
       <div class="footer-brand">
         <p>Building beautiful and functional digital experiences with code and creativity.</p>
+        <button class="guide-btn" onclick="openGuideModal()" aria-label="View project guide">
+          <i>📖</i> Guide
+        </button>
       </div>
     </div>
+    
+    <!-- Guidance Modal -->
+    <div class="modal-overlay" id="guideModal">
+      <div class="guidance-modal">
+        <div class="modal-header">
+          <h2>🥁 JS Drum Kit - Guide</h2>
+          <button class="close-modal" onclick="closeGuideModal()" aria-label="Close guide">&times;</button>
+        </div>
+        <div class="modal-body">
+          <h3>🌟 About This Project</h3>
+          <p>The JS Drum Kit is an interactive virtual drum machine that lets you create beats and rhythms right in your browser! Using keyboard keys or mouse clicks, you can play 9 different drum sounds including clap, hi-hat, kick, snare, and more. Built with Web Audio API for authentic sound reproduction!</p>
+          
+          <h3>🎮 How to Play</h3>
+          <ul>
+            <li><strong>⌨️ Keyboard:</strong> Press keys A through L to play different drums</li>
+            <li><strong>🖱️ Mouse/Touch:</strong> Click or tap any drum pad to play that sound</li>
+            <li><strong>🎵 Create Beats:</strong> Combine different sounds in rhythm to create your own beats</li>
+            <li><strong>🔬 Experiment:</strong> Try different combinations and tempos to discover new patterns</li>
+          </ul>
+
+          <h3>🥁 Drum Mapping</h3>
+          <ul>
+            <li><strong>A</strong> - Clap: Sharp clapping sound</li>
+            <li><strong>S</strong> - Hi-Hat: Crisp closed hi-hat</li>
+            <li><strong>D</strong> - Kick: Deep bass drum</li>
+            <li><strong>F</strong> - Open Hat: Sustained open hi-hat</li>
+            <li><strong>G</strong> - Boom: Low boom sound</li>
+            <li><strong>H</strong> - Ride: Ride cymbal sound</li>
+            <li><strong>J</strong> - Snare: Classic snare drum</li>
+            <li><strong>K</strong> - Tom: Mid-tone tom drum</li>
+            <li><strong>L</strong> - Tink: High-pitched tink cymbal</li>
+          </ul>
+
+          <h3>💡 Tips for Better Beats</h3>
+          <ul>
+            <li>Start with a simple kick-snare pattern (D-J-D-J)</li>
+            <li>Add hi-hats (S) between kicks for rhythm</li>
+            <li>Use claps (A) on beats 2 and 4 for emphasis</li>
+            <li>Experiment with ride cymbals (H) for variety</li>
+            <li>Practice consistent timing for cleaner beats</li>
+          </ul>
+
+          <h3>⚙️ Technical Features</h3>
+          <ul>
+            <li>Built with vanilla JavaScript and Web Audio API</li>
+            <li>Responsive design for desktop and mobile</li>
+            <li>Visual feedback on key press</li>
+            <li>Accessible with keyboard navigation</li>
+            <li>Preloaded audio for instant playback</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
     <div class="footer-bottom">
       <p>&copy; <span id="year">2026</span> Amin Ghasemi. All rights reserved.</p>
     </div>
-    <button class="guide-btn" onclick="openGuideModal()" aria-label="View project guide">
-      <i>📖</i> Guide
-    </button>
   </footer>
-
-  <!-- Guidance Modal -->
-  <div class="modal-overlay" id="guideModal">
-    <div class="guidance-modal">
-      <div class="modal-header">
-        <h2>JS Drum Kit - Guide</h2>
-        <button class="close-modal" onclick="closeGuideModal()" aria-label="Close guide">&times;</button>
-      </div>
-      <div class="modal-body">
-        <h3>About This Project</h3>
-        <p>The JS Drum Kit is an interactive virtual drum machine that lets you create beats and rhythms right in your browser! Using keyboard keys or mouse clicks, you can play 9 different drum sounds including clap, hi-hat, kick, snare, and more. Built with Web Audio API for authentic sound reproduction!</p>
-        
-        <h3>How to Play</h3>
-        <ul>
-          <li><strong>Keyboard:</strong> Press keys A through L to play different drums</li>
-          <li><strong>Mouse/Touch:</strong> Click or tap any drum pad to play that sound</li>
-          <li><strong>Create Beats:</strong> Combine different sounds in rhythm to create your own beats</li>
-          <li><strong>Experiment:</strong> Try different combinations and tempos to discover new patterns</li>
-        </ul>
-
-        <h3>Drum Mapping</h3>
-        <ul>
-          <li><strong>A</strong> - Clap: Sharp clapping sound</li>
-          <li><strong>S</strong> - Hi-Hat: Crisp closed hi-hat</li>
-          <li><strong>D</strong> - Kick: Deep bass drum</li>
-          <li><strong>F</strong> - Open Hat: Sustained open hi-hat</li>
-          <li><strong>G</strong> - Boom: Low boom sound</li>
-          <li><strong>H</strong> - Ride: Ride cymbal sound</li>
-          <li><strong>J</strong> - Snare: Classic snare drum</li>
-          <li><strong>K</strong> - Tom: Mid-tone tom drum</li>
-          <li><strong>L</strong> - Tink: High-pitched tink cymbal</li>
-        </ul>
-
-        <h3>Tips for Better Beats</h3>
-        <ul>
-          <li>Start with a simple kick-snare pattern (D-J-D-J)</li>
-          <li>Add hi-hats (S) between kicks for rhythm</li>
-          <li>Use claps (A) on beats 2 and 4 for emphasis</li>
-          <li>Experiment with ride cymbals (H) for variety</li>
-          <li>Practice consistent timing for cleaner beats</li>
-        </ul>
-
-        <h3>Technical Features</h3>
-        <ul>
-          <li>Built with vanilla JavaScript and Web Audio API</li>
-          <li>Responsive design for desktop and mobile</li>
-          <li>Visual feedback on key press</li>
-          <li>Accessible with keyboard navigation</li>
-          <li>Preloaded audio for instant playback</li>
-        </ul>
-      </div>
-    </div>
-  </div>
 
   <script src="/Portfolio-by-Amin/js/drum-kit.js"></script>
   <script src="../js/script.js"></script>
