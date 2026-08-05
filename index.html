@@ -128,16 +128,16 @@
     <div class="footer-content">
       <div class="footer-brand">
         <p>Building beautiful and functional digital experiences with code and creativity.</p>
+        <button class="guide-btn" onclick="openGuideModal()" aria-label="View page guide">
+          <i>📖</i> Guide
+        </button>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; <span id="year">2026</span> Amin. All rights reserved.</p>
     </div>
-    <button class="guide-btn" onclick="openGuideModal()" aria-label="View page guide">
-      <i>📖</i> Guide
-    </button>
   </footer>
-
+  
   <!-- Guidance Modal -->
   <div class="modal-overlay" id="guideModal">
     <div class="guidance-modal">
@@ -183,32 +183,7 @@
     </div>
   </div>
 
-  <script>
-    // Guide Modal Functions
-    function openGuideModal() {
-      document.getElementById('guideModal').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeGuideModal() {
-      document.getElementById('guideModal').classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    // Close modal when clicking outside
-    document.getElementById('guideModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeGuideModal();
-      }
-    });
-
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeGuideModal();
-      }
-    });
-  </script>
+  <script src="js/script.js"></script>
   <script src="js/index-logic.js" defer></script>
 </body>
 
