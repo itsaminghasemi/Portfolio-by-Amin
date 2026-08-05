@@ -78,10 +78,79 @@
     <div class="footer-bottom">
       <p>&copy; <span id="year">2026</span> Amin Ghasemi. All rights reserved.</p>
     </div>
+    <button class="guide-btn" onclick="openGuideModal()" aria-label="View page guide">
+      <i>📖</i> Guide
+    </button>
   </footer>
 
-  <script src="../js/social.js" defer></script>
+  <!-- Guidance Modal -->
+  <div class="modal-overlay" id="guideModal">
+    <div class="guidance-modal">
+      <div class="modal-header">
+        <h2>Social Page - Guide</h2>
+        <button class="close-modal" onclick="closeGuideModal()" aria-label="Close guide">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h3>🔗 About This Page</h3>
+        <p>This page provides quick links to connect with Amin Ghasemi on professional social platforms. Choose your preferred platform to explore more about his work and professional network.</p>
+        
+        <h3>📱 Available Platforms</h3>
+        <ul>
+          <li><strong>GitHub:</strong> View code repositories, contributions, and open-source projects</li>
+          <li><strong>LinkedIn:</strong> Professional profile, work experience, and networking</li>
+        </ul>
 
+        <h3>💡 Why Connect?</h3>
+        <ul>
+          <li><strong>GitHub:</strong> See real code examples, collaborate on projects, review technical skills</li>
+          <li><strong>LinkedIn:</strong> Professional background, recommendations, industry connections</li>
+        </ul>
+
+        <h3>🎯 What You'll Find</h3>
+        <ul>
+          <li>Portfolio projects with source code</li>
+          <li>Contribution history and activity</li>
+          <li>Professional endorsements</li>
+          <li>Industry insights and updates</li>
+        </ul>
+
+        <h3>✨ Tips for Connection</h3>
+        <ul>
+          <li>Follow on GitHub to get updates on new projects</li>
+          <li>Connect on LinkedIn with a personalized message</li>
+          <li>Star repositories you find interesting</li>
+          <li>Check pinned repositories for best work samples</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Guide Modal Functions
+    function openGuideModal() {
+      document.getElementById('guideModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeGuideModal() {
+      document.getElementById('guideModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('guideModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeGuideModal();
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeGuideModal();
+      }
+    });
+  </script>
 </body>
 
 </html>

@@ -415,6 +415,7 @@ body {
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
   }
   .footer-brand h3 {
     color: var(--text-light);
@@ -424,8 +425,9 @@ body {
   .footer-brand p {
     color: var(--text-muted);
     font-size: 0.9rem;
-    max-width: 300px;
+    max-width: 600px;
     line-height: 1.6;
+    margin: 0;
   }
   .footer-links {
     display: flex;
@@ -449,6 +451,40 @@ body {
     font-size: 0.8rem;
     padding-bottom: 3rem;
   }
+  
+  /* Guide Button in Footer - positioned to the right of footer text */
+  .guide-btn {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+    font-style: normal;
+    white-space: nowrap;
+  }
+  
+  .guide-btn:hover {
+    background-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.4);
+  }
+  
+  .guide-btn i {
+    font-size: 1.1rem;
+    font-style: normal;
+  }
+  
   @media (max-width: 768px) {
     .footer-content {
       flex-direction: column;
@@ -456,6 +492,11 @@ body {
     }
     .footer-brand p {
       margin: 0 auto;
+    }
+    .guide-btn {
+      position: static;
+      margin: 1rem auto 0;
+      width: fit-content;
     }
   }
 
@@ -518,38 +559,6 @@ body {
     width: 80px;
     height: 80px;
   }
-}
-
-/* Guide Button in Footer */
-.guide-btn {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 2rem;
-  background-color: var(--primary);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.25rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
-  z-index: 100;
-  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
-  font-style: normal;
-}
-
-.guide-btn:hover {
-  background-color: var(--secondary);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(56, 189, 248, 0.4);
-}
-
-.guide-btn i {
-  font-size: 1.2rem;
-  font-style: normal;
 }
 
 /* Guidance Modal */

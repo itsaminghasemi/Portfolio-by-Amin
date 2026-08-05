@@ -114,17 +114,90 @@
   <footer class="glass-footer">
     <div class="footer-content">
       <div class="footer-brand">
-        <p>
-          Building beautiful and functional digital experiences with code and
-          creativity.
-        </p>
+        <p>Building beautiful and functional digital experiences with code and creativity.</p>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; <span id="year">2026</span> Amin. All rights reserved.</p>
     </div>
+    <button class="guide-btn" onclick="openGuideModal()" aria-label="View page guide">
+      <i>📖</i> Guide
+    </button>
   </footer>
 
+  <!-- Guidance Modal -->
+  <div class="modal-overlay" id="guideModal">
+    <div class="guidance-modal">
+      <div class="modal-header">
+        <h2>Projects Page - Guide</h2>
+        <button class="close-modal" onclick="closeGuideModal()" aria-label="Close guide">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h3>🚀 About This Page</h3>
+        <p>This page showcases a collection of interactive projects and games built with HTML, CSS, and JavaScript. Each project demonstrates different aspects of front-end development skills and creative coding.</p>
+        
+        <h3>🎮 Available Projects</h3>
+        <ul>
+          <li><strong>Guess My Number:</strong> Classic number guessing game with scoring system</li>
+          <li><strong>Modal Window:</strong> Accessible modal dialog component with animations</li>
+          <li><strong>Pig Game:</strong> Two-player dice game with strategy elements</li>
+          <li><strong>Drum Kit:</strong> Interactive musical instrument with keyboard support</li>
+        </ul>
+
+        <h3>💡 How to Navigate</h3>
+        <ul>
+          <li>Click on any project card to launch the full experience</li>
+          <li>Each project has its own dedicated page with instructions</li>
+          <li>Use the "Guide" button on each project page for detailed help</li>
+          <li>Return to this page using the browser back button or navbar</li>
+        </ul>
+
+        <h3>🎯 Learning Objectives</h3>
+        <ul>
+          <li>DOM manipulation and event handling</li>
+          <li>CSS animations and transitions</li>
+          <li>Responsive design principles</li>
+          <li>Accessibility best practices</li>
+          <li>Game logic and state management</li>
+        </ul>
+
+        <h3>✨ Tips for Best Experience</h3>
+        <ul>
+          <li>Try each project to understand different coding concepts</li>
+          <li>Check the source code on GitHub to learn implementation details</li>
+          <li>Experiment with modifying the code to create your own versions</li>
+          <li>Pay attention to accessibility features in each project</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Guide Modal Functions
+    function openGuideModal() {
+      document.getElementById('guideModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeGuideModal() {
+      document.getElementById('guideModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('guideModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeGuideModal();
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeGuideModal();
+      }
+    });
+  </script>
   <script src="../js/projects.js" defer></script>
 </body>
 
