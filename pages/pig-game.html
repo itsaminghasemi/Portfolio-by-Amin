@@ -161,9 +161,79 @@
         <div class="footer-bottom">
             <p>&copy; <span id="year">2026</span> Amin Ghasemi. All rights reserved.</p>
         </div>
+        <button class="guide-btn" onclick="openGuideModal()" aria-label="View project guide">
+            <i>📖</i> Guide
+        </button>
     </footer>
 
+    <!-- Guidance Modal -->
+    <div class="modal-overlay" id="guideModal">
+        <div class="guidance-modal">
+            <div class="modal-header">
+                <h2>Pig Game - Guide</h2>
+                <button class="close-modal" onclick="closeGuideModal()" aria-label="Close guide">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>About This Project</h3>
+                <p>Pig Game is a classic two-player dice game where players race to reach 100 points. It's a game of chance versus strategy - will you keep rolling to build your score, or play it safe and hold? Built with modern web technologies for a smooth gaming experience!</p>
+                
+                <h3>How to Play</h3>
+                <ul>
+                    <li><strong>Objective:</strong> Be the first player to reach 100 points</li>
+                    <li><strong>Roll Dice:</strong> Click "Roll Dice" to get a random number between 1 and 6</li>
+                    <li><strong>Add Points:</strong> Your roll is added to your "current" temporary score</li>
+                    <li><strong>Hold:</strong> Click "Hold" to add your current score to your total score and pass to next player</li>
+                    <li><strong>Rolling a 1:</strong> If you roll a 1, you lose all current points and it's the next player's turn</li>
+                    <li><strong>Winning:</strong> First player to reach 100 or more points wins!</li>
+                </ul>
+
+                <h3>Strategy Tips</h3>
+                <ul>
+                    <li>Know when to hold: Don't get greedy! Consider holding after reaching 20-25 current points</li>
+                    <li>If you're ahead, play safer. If behind, take more risks</li>
+                    <li>Watch your opponent's score and adjust your strategy accordingly</li>
+                    <li>Remember: rolling a 1 loses everything, so balance risk vs reward</li>
+                </ul>
+
+                <h3>Technical Features</h3>
+                <ul>
+                    <li>Built with vanilla JavaScript (no frameworks)</li>
+                    <li>Responsive design for desktop and mobile</li>
+                    <li>Smooth animations and visual feedback</li>
+                    <li>Accessible with ARIA labels and keyboard support</li>
+                    <li>Clean UI with player turn indicators</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <script src="/Portfolio-by-Amin/js/pig-game.js" defer></script>
+    <script>
+        // Guide Modal Functions
+        function openGuideModal() {
+            document.getElementById('guideModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGuideModal() {
+            document.getElementById('guideModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('guideModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeGuideModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeGuideModal();
+            }
+        });
+    </script>
 </body>
 
 </html>
