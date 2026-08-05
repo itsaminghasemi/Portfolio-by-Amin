@@ -46,7 +46,7 @@
     }
     if (messageEl) {
       messageEl.textContent = "Start guessing...";
-      messageEl.style.color = "";
+      messageEl.className = "message-text"; // Reset classes
     }
     if (guessInput) {
       guessInput.value = "";
@@ -64,29 +64,17 @@
   /**
    * Display a message to the user
    * @param {string} msg - The message to display
-   * @param {'success' | 'error' | 'warning' | 'neutral'} type - Message type for styling
+   * @param {'success' | 'error' | 'warning' | 'info' | 'neutral'} type - Message type for styling
    */
   function displayMessage(msg, type = "neutral") {
     if (!messageEl) return;
 
     messageEl.textContent = msg;
 
-    // Color coding based on message type
-    switch (type) {
-      case "success":
-        messageEl.style.color = "#2ed573"; // Green
-        break;
-      case "error":
-        messageEl.style.color = "#ff4757"; // Red
-        break;
-      case "warning":
-        messageEl.style.color = "#ffa502"; // Orange
-        break;
-      case "info":
-        messageEl.style.color = "#38bdf8"; // Blue
-        break;
-      default:
-        messageEl.style.color = "#ffffff";
+    // Reset classes then add specific type
+    messageEl.className = "message-text";
+    if (type !== "neutral") {
+      messageEl.classList.add(type);
     }
   }
 
@@ -106,10 +94,12 @@
     // Validate input: Out of range (Under 0 or Over 20)
     if (guess < 0 || guess > 20) {
       displayMessage("❌ Incorrect! (Out of Range)", "error");
-      score--;
-      if (scoreEl) scoreEl.textContent = score;
-
-      if (score <= 0) handleLoss();
+      if (score > 1) {
+        score--;
+        if (scoreEl) scoreEl.textContent = score;
+      } else {
+        handleLoss();
+      }
       return;
     }
 
@@ -129,6 +119,7 @@
       let hint = "";
       let type = "warning";
 
+      // LOGIC: Specific Ranges based on your request
       if (diff <= 5) {
         // Within 5 numbers: "Low" or "High"
         if (guess < secretNumber) {
@@ -150,8 +141,10 @@
       displayMessage(hint, type);
 
       // Provide visual feedback (shake animation)
-      guessInput?.classList.add("shake");
-      setTimeout(() => guessInput?.classList.remove("shake"), 300);
+      if (guessInput) {
+        guessInput.classList.add("shake");
+        setTimeout(() => guessInput.classList.remove("shake"), 300);
+      }
 
       guessInput.value = "";
       guessInput.focus();
@@ -169,9 +162,6 @@
     if (numberEl) {
       numberEl.textContent = secretNumber;
       numberEl.classList.add("win");
-      // Optional: Add a background glow for win state
-      numberEl.style.backgroundColor = "#2ed573";
-      numberEl.style.color = "#0a0a0f";
     }
 
     // Update highscore
@@ -203,8 +193,6 @@
     if (numberEl) {
       numberEl.textContent = secretNumber;
       numberEl.classList.add("lose");
-      numberEl.style.backgroundColor = "#ff4757";
-      numberEl.style.color = "#ffffff";
     }
 
     if (scoreEl) scoreEl.textContent = 0;

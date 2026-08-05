@@ -145,22 +145,22 @@ body {
 /* Win State */
 .number-display.win {
   background: linear-gradient(180deg, #1a1a2e 0%, #0d0d1a 100%);
-  color: #60b347;
-  border-color: #60b347;
+  color: #2ed573;
+  border-color: #2ed573;
   box-shadow:
-    0 20px 60px rgba(96, 179, 71, 0.3),
-    0 0 100px rgba(96, 179, 71, 0.15);
+    0 20px 60px rgba(46, 213, 115, 0.3),
+    0 0 100px rgba(46, 213, 115, 0.15);
   transform: scale(1.05);
 }
 
 /* Lose State */
 .number-display.lose {
   background: linear-gradient(180deg, #1a1a2e 0%, #0d0d1a 100%);
-  color: #dc2626;
-  border-color: #dc2626;
+  color: #ff4757;
+  border-color: #ff4757;
   box-shadow:
-    0 20px 60px rgba(220, 38, 38, 0.3),
-    0 0 100px rgba(220, 38, 38, 0.15);
+    0 20px 60px rgba(255, 71, 87, 0.3),
+    0 0 100px rgba(255, 71, 87, 0.15);
 }
 
 /* ========== Game Content (Two Panels) ========== */
@@ -242,6 +242,24 @@ body {
   transform: translateY(-2px);
 }
 
+/* Shake Animation for wrong guesses */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.shake {
+  animation: shake 0.3s ease-in-out;
+}
+
 /* Check Button */
 .btn-check {
   width: 100%;
@@ -284,21 +302,43 @@ body {
 }
 
 .message-container {
-  min-height: 3rem;
+  min-height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .message-text {
-  font-size: 1.1rem;
-  color: var(--text-on-dark);
+  font-size: 1.4rem; /* Larger base size */
+  font-weight: 700; /* Bold for visibility */
   text-align: center;
   padding: 0.8rem 1.2rem;
   background: rgba(255, 255, 255, 0.01);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 10px;
-  font-weight: 500;
+  transition: color 0.3s ease;
+  word-wrap: break-word;
+}
+
+/* Message Color Variants */
+.message-text.success {
+  color: #2ed573 !important; /* Green */
+  text-shadow: 0 0 10px rgba(46, 213, 115, 0.3);
+}
+
+.message-text.error {
+  color: #ff4757 !important; /* Red */
+  text-shadow: 0 0 10px rgba(255, 71, 87, 0.3);
+}
+
+.message-text.warning {
+  color: #ffa502 !important; /* Orange/Yellow */
+  text-shadow: 0 0 10px rgba(255, 165, 2, 0.3);
+  font-size: 1.6rem; /* Slightly larger for hints */
+}
+
+.message-text.info {
+  color: #38bdf8 !important; /* Blue */
 }
 
 /* Stats Container */
@@ -505,8 +545,12 @@ body {
   }
 
   .message-text {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     padding: 0.7rem 1rem;
+  }
+
+  .message-text.warning {
+    font-size: 1.3rem;
   }
 
   .stat-item {
