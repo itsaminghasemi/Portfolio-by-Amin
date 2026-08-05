@@ -131,9 +131,9 @@
       } else {
         // More than 5 numbers away: "Too Low" or "Too High"
         if (guess < secretNumber) {
-          hint = "Too Low! ⬇️";
+          hint = "Too Low! ⬆️";
         } else {
-          hint = "Too High! ⬆️";
+          hint = "Too High! ⬇️";
         }
         type = "error"; // Red
       }
