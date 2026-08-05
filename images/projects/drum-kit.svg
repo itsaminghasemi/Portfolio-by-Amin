@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="drumGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="45" fill="url(#drumGradient)" opacity="0.15"/>
+  <ellipse cx="50" cy="45" rx="30" ry="10" fill="none" stroke="url(#drumGradient)" stroke-width="3"/>
+  <path d="M 20 45 L 20 70 Q 50 80 80 70 L 80 45" fill="none" stroke="url(#drumGradient)" stroke-width="3"/>
+  <circle cx="50" cy="55" r="8" fill="url(#drumGradient)" opacity="0.3"/>
+  <line x1="50" y1="35" x2="50" y2="25" stroke="url(#drumGradient)" stroke-width="2"/>
+  <circle cx="50" cy="22" r="3" fill="url(#drumGradient)"/>
+</svg>
