@@ -405,6 +405,7 @@ body {
     border-top: 1px solid var(--glass-border);
     padding: 2rem 5% 1rem;
     color: var(--text-light);
+    position: relative;
   }
   .footer-content {
     display: flex;
@@ -446,6 +447,7 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     color: var(--text-muted);
     font-size: 0.8rem;
+    padding-bottom: 3rem;
   }
   @media (max-width: 768px) {
     .footer-content {
@@ -520,30 +522,34 @@ body {
 
 /* Guide Button in Footer */
 .guide-btn {
-  position: absolute;
+  position: fixed;
   bottom: 1.5rem;
   right: 2rem;
   background-color: var(--primary);
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  z-index: 10;
+  transition: all 0.3s ease;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+  font-style: normal;
 }
 
 .guide-btn:hover {
   background-color: var(--secondary);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(56, 189, 248, 0.4);
 }
 
 .guide-btn i {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-style: normal;
 }
 
 /* Guidance Modal */
@@ -637,8 +643,10 @@ body {
 
 @media (max-width: 768px) {
   .guide-btn {
-    position: static;
-    margin: 1rem auto 0;
-    justify-content: center;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
   }
 }
