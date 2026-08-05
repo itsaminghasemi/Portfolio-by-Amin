@@ -151,9 +151,77 @@
     <div class="footer-bottom">
       <p>&copy; <span id="year">2026</span> Amin Ghasemi. All rights reserved.</p>
     </div>
+    <button class="guide-btn" onclick="openGuideModal()" aria-label="View project guide">
+      <i>📖</i> Guide
+    </button>
   </footer>
 
+  <!-- Guidance Modal -->
+  <div class="modal-overlay" id="guideModal">
+    <div class="guidance-modal">
+      <div class="modal-header">
+        <h2>Guess My Number! - Guide</h2>
+        <button class="close-modal" onclick="closeGuideModal()" aria-label="Close guide">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h3>About This Project</h3>
+        <p>Guess My Number is a classic interactive game that tests your intuition and logical thinking. The computer selects a random number between 1 and 20, and your challenge is to discover it in as few attempts as possible!</p>
+        
+        <h3>How to Play</h3>
+        <ul>
+          <li><strong>Start:</strong> Enter a number between 1 and 20 in the input field</li>
+          <li><strong>Check:</strong> Click the "Check!" button or press Enter to submit your guess</li>
+          <li><strong>Hints:</strong> The game will tell you if your guess is "Too High!" or "Too Low!"</li>
+          <li><strong>Score:</strong> You start with 20 points. Each wrong guess reduces your score by 1</li>
+          <li><strong>Win:</strong> Guess the correct number to win and save your score as highscore!</li>
+          <li><strong>Play Again:</strong> Click the "Again!" button to restart the game anytime</li>
+        </ul>
+
+        <h3>Tips for Success</h3>
+        <ul>
+          <li>Use binary search strategy: start with 10, then go higher or lower based on hints</li>
+          <li>Pay attention to the feedback messages</li>
+          <li>Try to beat your highscore with fewer attempts!</li>
+        </ul>
+
+        <h3>Technical Features</h3>
+        <ul>
+          <li>Built with vanilla JavaScript (no frameworks)</li>
+          <li>Responsive design for all devices</li>
+          <li>Accessible with keyboard navigation</li>
+          <li>Clean UI with visual feedback</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <script src="/Portfolio-by-Amin/js/guess-my-number.js" defer></script>
+  <script>
+    // Guide Modal Functions
+    function openGuideModal() {
+      document.getElementById('guideModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeGuideModal() {
+      document.getElementById('guideModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('guideModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeGuideModal();
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeGuideModal();
+      }
+    });
+  </script>
 </body>
 
 </html>
