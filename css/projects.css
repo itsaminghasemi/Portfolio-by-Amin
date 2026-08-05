@@ -94,6 +94,12 @@
   transform: scale(1.1) rotate(5deg);
 }
 
+.project-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .project-icon i {
   font-size: 2.5rem;
   color: var(--primary);

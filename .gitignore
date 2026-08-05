@@ -1,11 +1,4 @@
-(images/projects/drum-kit.svg
-images/projects/guess-my-number.svg
-images/projects/modal-window.svg
-images/projects/pig-game.svg
-css/global.css
-css/projects.css
-pages/drum-kit.html
-pages/guess-my-number.html
-pages/modal-window.html
-pages/pig-game.html
-pages/projects.html)
+```css
+/* No build artifacts, dependencies, or temporary files detected in changes */
+/* Only source files (.css, .html) were modified */
+```
