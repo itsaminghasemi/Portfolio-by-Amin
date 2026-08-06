@@ -410,7 +410,8 @@ main {
   /* Footer glass style */
   .glass-footer {
     position: relative;
-    margin: 3rem 1rem;
+    margin: 3rem;
+    margin-bottom: 0;
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
