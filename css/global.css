@@ -398,7 +398,7 @@ body {
 @media (min-width: 769px) {
   /* Footer glass style */
   .glass-footer {
-    position: absolute;
+    position: relative;
     margin: 3rem 1rem;
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
