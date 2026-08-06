@@ -445,7 +445,7 @@ body {
   .footer-bottom {
     text-align: center;
     margin-top: 2rem;
-    padding-top: 1rem 0;
+    padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     color: var(--text-muted);
     font-size: 0.8rem;
