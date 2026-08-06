@@ -467,13 +467,14 @@ main {
 
   /* Guide Button in Footer - positioned to the right of footer text */
   .guide-btn {
+    top: 0.1rem;
     position: absolute;
-    bottom: 0.5rem;
+    bottom: 2rem;
     right: 0;
     background-color: var(--primary);
     color: white;
     border: none;
-    padding: 0.6rem 1rem;
+    padding: 1rem;
     border-radius: 8px;
     cursor: pointer;
     font-size: 0.85rem;
