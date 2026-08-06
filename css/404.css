@@ -23,6 +23,3 @@ body {
   color: var(--text-muted);
   margin-bottom: 2rem;
 }
-.glass-footer {
-  margin-bottom: -2rem;
-}
