@@ -398,14 +398,14 @@ body {
 @media (min-width: 769px) {
   /* Footer glass style */
   .glass-footer {
-    margin-top: 3rem;
+    position: absolute;
+    margin: 3rem 1rem;
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-top: 1px solid var(--glass-border);
     padding: 2rem 5% 1rem;
     color: var(--text-light);
-    position: relative;
   }
   .footer-content {
     display: flex;
@@ -451,7 +451,7 @@ body {
     font-size: 0.8rem;
     padding-bottom: 3rem;
   }
-  
+
   /* Guide Button in Footer - positioned to the right of footer text */
   .guide-btn {
     position: absolute;
@@ -473,18 +473,18 @@ body {
     font-style: normal;
     white-space: nowrap;
   }
-  
+
   .guide-btn:hover {
     background-color: var(--accent);
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(139, 92, 246, 0.4);
   }
-  
+
   .guide-btn i {
     font-size: 1.1rem;
     font-style: normal;
   }
-  
+
   @media (max-width: 768px) {
     .footer-content {
       flex-direction: column;
@@ -546,7 +546,8 @@ body {
 }
 
 @keyframes logoFloat {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -575,7 +576,9 @@ body {
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 
 .modal-overlay.active {
@@ -594,7 +597,7 @@ body {
   position: relative;
   transform: translateY(20px);
   transition: transform 0.3s ease;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   border: 1px solid var(--glass-border);
 }
 
@@ -636,7 +639,8 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.modal-body p, .modal-body ul {
+.modal-body p,
+.modal-body ul {
   color: var(--text-light);
   line-height: 1.6;
   margin-bottom: 1rem;
