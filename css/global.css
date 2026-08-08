@@ -420,6 +420,7 @@ main {
     border-top: 1px solid var(--glass-border);
     padding: 2rem 5% 1rem;
     color: var(--text-light);
+    bottom: 0;
   }
   .footer-content {
     display: flex;
