@@ -1,5 +1,5 @@
 body {
-  background: radial-gradient(circle at 50% -20%, #2b1055 0%, #0b0b1a 100%);
+  background: var(--bg-dark);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -7,6 +7,32 @@ body {
   justify-content: center;
   text-align: center;
   color: var(--text-on-dark);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Ambient glow effects matching index page */
+.ambient-glow {
+  position: fixed;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.glow-blue {
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.4), transparent 70%);
+}
+
+.glow-purple {
+  bottom: -10%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent 70%);
 }
 .error-code {
   font-family: "JetBrains Mono", monospace;
