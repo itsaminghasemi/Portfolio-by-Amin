@@ -508,7 +508,7 @@ main {
       text-align: center;
     }
     .footer-brand p {
-      margin: 0 auto;
+      margin: 0 0 2rem 0;
     }
     .guide-btn {
       position: static;
