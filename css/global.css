@@ -470,6 +470,7 @@ main {
 
   /* Guide Button in Footer - positioned to the right of footer text */
   .guide-btn {
+    margin: 1rem 1rem 1rem 1rem;
     position: relative;
     background-color: var(--primary);
     color: white;
