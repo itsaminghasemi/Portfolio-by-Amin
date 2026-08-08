@@ -12,6 +12,10 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  min-height: 100%;
+}
+
 .ambient-glow {
   position: absolute;
   width: 40vw;
