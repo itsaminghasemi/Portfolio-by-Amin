@@ -64,6 +64,10 @@
     </div>
   </header>
 
+  <button class="guide-btn" onclick="openGuideModal()" aria-label="View page guide">
+    <i>📖</i> Guide
+  </button>
+
   <div class="ambient-glow glow-blue"></div>
   <div class="ambient-glow glow-purple"></div>
 
@@ -128,16 +132,13 @@
     <div class="footer-content">
       <div class="footer-brand">
         <p>Building beautiful and functional digital experiences with code and creativity.</p>
-        <button class="guide-btn" onclick="openGuideModal()" aria-label="View page guide">
-          <i>📖</i> Guide
-        </button>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; <span id="year">2026</span> Amin. All rights reserved.</p>
     </div>
   </footer>
-  
+
   <!-- Guidance Modal -->
   <div class="modal-overlay" id="guideModal">
     <div class="guidance-modal">
@@ -147,8 +148,9 @@
       </div>
       <div class="modal-body">
         <h3>🏠 About This Page</h3>
-        <p>Welcome to Amin Ghasemi's portfolio homepage! This is your starting point to explore front-end development skills, view projects, and get in touch for collaboration opportunities.</p>
-        
+        <p>Welcome to Amin Ghasemi's portfolio homepage! This is your starting point to explore front-end development
+          skills, view projects, and get in touch for collaboration opportunities.</p>
+
         <h3>📍 What You'll Find Here</h3>
         <ul>
           <li><strong>Profile Section:</strong> Introduction with professional photo and bio</li>
