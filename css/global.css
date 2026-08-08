@@ -413,15 +413,13 @@ main {
   /* Footer glass style */
   .glass-footer {
     position: relative;
-    margin: 3rem;
-    margin-bottom: 0;
+    margin: 3rem 0 0 0;
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-top: 1px solid var(--glass-border);
     padding: 2rem 5% 1rem;
     color: var(--text-light);
-    height: 2rem;
   }
   .footer-content {
     display: flex;
