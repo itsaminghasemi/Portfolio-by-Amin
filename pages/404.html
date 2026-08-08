@@ -44,6 +44,9 @@
   </header>
 
   <main id="main-content" class="error-container fade-in-up delay-1">
+    <button class="guide-btn" onclick="openGuideModal()" aria-label="View page guide">
+      <i>📖</i> Guide
+    </button>
     <div class="error-content">
       <div class="error-code">404</div>
       <h1 class="error-title">Page Not Found</h1>
@@ -57,6 +60,36 @@
         <p>Building beautiful and functional digital experiences with code and creativity.</p>
       </div>
     </div>
+    
+    <!-- Guidance Modal -->
+    <div class="modal-overlay" id="guideModal">
+      <div class="guidance-modal">
+        <div class="modal-header">
+          <h2>404 Page - Guide</h2>
+          <button class="close-modal" onclick="closeGuideModal()" aria-label="Close guide">&times;</button>
+        </div>
+        <div class="modal-body">
+          <h3>🚫 About This Page</h3>
+          <p>This is a custom 404 error page that appears when you try to access a page that doesn't exist or has been moved. It helps you navigate back to the main content of the website.</p>
+          
+          <h3>📍 What to Do</h3>
+          <ul>
+            <li><strong>Check the URL:</strong> Make sure the web address is correct</li>
+            <li><strong>Use Navigation:</strong> Use the navbar to find what you're looking for</li>
+            <li><strong>Go Home:</strong> Click "Vitrine" in the navbar to return to the homepage</li>
+            <li><strong>Contact:</strong> If you believe this is an error, reach out through the Contact page</li>
+          </ul>
+
+          <h3>💡 Tips</h3>
+          <ul>
+            <li>The page you were looking for might have been moved or deleted</li>
+            <li>Try searching from the homepage</li>
+            <li>Bookmark important pages to avoid broken links</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
     <div class="footer-bottom">
       <p>&copy; <span id="year">2026</span> Amin Ghasemi. All rights reserved.</p>
     </div>
