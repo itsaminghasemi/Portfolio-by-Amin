@@ -40,6 +40,10 @@ body {
   min-height: 100vh;
 }
 
+#general-container {
+  display: inline-block;
+}
+
 html,
 body {
   height: 100%;
@@ -48,7 +52,6 @@ body {
 
 main {
   min-height: 100%;
-  margin-bottom: -50px;
 }
 
 /* Scrollbar */
@@ -467,14 +470,11 @@ main {
 
   /* Guide Button in Footer - positioned to the right of footer text */
   .guide-btn {
-    top: 0.1rem;
-    position: absolute;
-    bottom: 2rem;
-    right: 0;
+    position: relative;
     background-color: var(--primary);
     color: white;
     border: none;
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
     border-radius: 8px;
     cursor: pointer;
     font-size: 0.85rem;
