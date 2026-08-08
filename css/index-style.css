@@ -3,6 +3,57 @@
   --accent-glow: rgba(139, 92, 246, 0.4);
 }
 
+/* Guide Button - Home Page Style */
+.guide-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  color: var(--text-on-dark);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.guide-btn:hover {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-color: transparent;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.4);
+  color: #fff;
+}
+
+.guide-btn i {
+  font-size: 1.1rem;
+  font-style: normal;
+  transition: transform 0.3s ease;
+}
+
+.guide-btn:hover i {
+  transform: rotate(10deg) scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .guide-btn {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  }
+}
+
 body {
   min-height: 100vh;
   margin: 0;
