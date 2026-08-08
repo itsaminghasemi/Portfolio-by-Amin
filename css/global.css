@@ -131,7 +131,7 @@ body {
     0 0 15px rgba(255, 215, 0, 0.3),
     inset 0 0 10px rgba(255, 215, 0, 0.2);
   text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
-  transition: all 0.3s ease;
+  transition: none 0.3s ease;
 }
 
 .nav-link.active:hover {
@@ -388,9 +388,15 @@ body {
 
 /* When toggle is checked, show mobile menu */
 .nav-toggle:checked ~ .nav-links {
+  overflow: hidden;
   max-height: 320px;
   visibility: visible;
+  width: 50%;
   opacity: 1;
+  right: auto;
+  left: 25%;
+  justify-content: center;
+  border-radius: 14px;
 }
 
 /* Hamburger transform when active */
