@@ -1,5 +1,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap");
 
+/* Guide Button - Pig Game Page Style */
+.guide-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  background: rgba(236, 72, 153, 0.15);
+  border: 1px solid rgba(236, 72, 153, 0.4);
+  border-radius: 50px;
+  color: #f9a8d4;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+}
+
+.guide-btn:hover {
+  background: rgba(236, 72, 153, 0.3);
+  border-color: #ec4899;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5);
+  color: #fff;
+}
+
+.guide-btn i {
+  font-size: 1rem;
+  font-style: normal;
+  transition: transform 0.3s ease;
+}
+
+.guide-btn:hover i {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+@media (max-width: 768px) {
+  .guide-btn {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.65rem 1.1rem;
+    font-size: 0.82rem;
+  }
+}
+
 /* 1. GLOBAL OVERRIDES & LAYOUT FLOW */
 body.pig-game-page {
   background: var(--bg-color) !important;

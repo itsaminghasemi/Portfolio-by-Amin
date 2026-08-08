@@ -11,6 +11,56 @@ body {
   overflow-x: hidden;
 }
 
+/* Guide Button - 404 Page Style */
+.guide-btn {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  color: #fca5a5;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.2);
+}
+
+.guide-btn:hover {
+  background: rgba(239, 68, 68, 0.3);
+  border-color: #ef4444;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+  color: #fff;
+}
+
+.guide-btn i {
+  font-size: 1rem;
+  font-style: normal;
+  transition: transform 0.3s ease;
+}
+
+.guide-btn:hover i {
+  transform: scale(1.15) rotate(-10deg);
+}
+
+@media (max-width: 768px) {
+  .guide-btn {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.65rem 1.1rem;
+    font-size: 0.82rem;
+  }
+}
+
 /* Ambient glow effects matching index page */
 .ambient-glow {
   position: fixed;
