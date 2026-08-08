@@ -570,16 +570,6 @@ body {
   margin-bottom: 0.5rem;
 }
 
-@media (max-width: 768px) {
-  .guide-btn {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    padding: 0.6rem 1rem;
-    font-size: 0.85rem;
-  }
-}
-
 /* Footer content styles */
 .footer-content {
   display: flex;
