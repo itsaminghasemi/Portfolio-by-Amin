@@ -441,7 +441,7 @@ main {
     font-size: 0.9rem;
     max-width: 600px;
     line-height: 1.6;
-    margin: 0;
+    margin: 0rem 0rem 2rem 0rem;
   }
   .footer-links {
     display: flex;
@@ -468,11 +468,12 @@ main {
 
   /* Guide Button main corner, top-right position */
   .guide-btn {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
     top: 0;
     margin: 0.2rem 0rem 1rem 1rem;
     position: absolute;
     right: 0;
-    background-color: var(--primary);
+    background-color: rgb(255, 255, 255, 0.4);
     color: white;
     border: none;
     padding: 0.01rem 0.5rem 0.1rem 0.1rem;
@@ -487,6 +488,7 @@ main {
     box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
     font-style: normal;
     white-space: nowrap;
+    backdrop-filter: blur(18px);
   }
 
   .guide-btn:hover {
