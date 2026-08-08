@@ -525,6 +525,7 @@ body {
 
 .modal-overlay.active .guidance-modal {
   transform: translateY(0);
+  text-align: left;
 }
 
 .modal-header {
