@@ -600,19 +600,7 @@ body {
   line-height: 1.6;
   margin: 0rem 0rem 2rem 0rem;
 }
-.footer-links {
-  display: flex;
-  gap: 1.5rem;
-}
-.footer-links a {
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-size: 0.95rem;
-}
-.footer-links a:hover {
-  color: var(--primary);
-}
+
 .footer-bottom {
   text-align: center;
   margin-top: 0;
