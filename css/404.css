@@ -54,7 +54,7 @@ body {
 @media (max-width: 768px) {
   .guide-btn {
     position: fixed;
-    bottom: 1.5rem;
+    bottom: auto;
     right: 1.5rem;
     padding: 0.65rem 1.1rem;
     font-size: 0.82rem;

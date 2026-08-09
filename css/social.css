@@ -1,148 +1,152 @@
 body {
-    min-height: 100vh;
-    margin: 0;
-    background: var(--bg-dark);
-    display: flex;
-    flex-direction: column;
-    color: var(--text-on-dark);
-    position: relative;
-    overflow-x: hidden;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  color: var(--text-on-dark);
+  position: relative;
+  overflow-x: hidden;
 }
 
 /* Guide Button - Social Page Style */
 .guide-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1.1rem;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 50px;
-    color: var(--text-on-dark);
-    cursor: pointer;
-    font-size: 0.88rem;
-    font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-    backdrop-filter: blur(10px);
-    z-index: 100;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  color: var(--text-on-dark);
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .guide-btn:hover {
-    background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
-    border-color: transparent;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
-    color: #fff;
+  background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+  color: #fff;
 }
 
 .guide-btn i {
-    font-size: 1rem;
-    font-style: normal;
-    transition: transform 0.3s ease;
+  font-size: 1rem;
+  font-style: normal;
+  transition: transform 0.3s ease;
 }
 
 .guide-btn:hover i {
-    transform: scale(1.15) rotate(10deg);
+  transform: scale(1.15) rotate(10deg);
 }
 
 @media (max-width: 768px) {
-    .guide-btn {
-        position: fixed;
-        bottom: 1.5rem;
-        right: 1.5rem;
-        padding: 0.65rem 1.1rem;
-        font-size: 0.82rem;
-    }
+  .guide-btn {
+    position: fixed;
+    bottom: auto;
+    right: 1.5rem;
+    padding: 0.65rem 1.1rem;
+    font-size: 0.82rem;
+  }
 }
 
 /* Ambient glow effects matching index page */
 .ambient-glow {
-    position: fixed;
-    width: 40vw;
-    height: 40vw;
-    border-radius: 50%;
-    filter: blur(100px);
-    z-index: -1;
-    opacity: 0.5;
-    pointer-events: none;
+  position: fixed;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .glow-blue {
-    top: -10%;
-    left: -10%;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.4), transparent 70%);
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.4), transparent 70%);
 }
 
 .glow-purple {
-    bottom: -10%;
-    right: -10%;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent 70%);
+  bottom: -10%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent 70%);
 }
 
 .container {
-    text-align: center;
-    background: var(--glass-bg);
-    padding: 2.6rem 2.4rem;
-    border-radius: var(--radius-lg, 18px);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
-    width: 100%;
-    max-width: 420px;
-    margin: 0 auto auto auto;
+  text-align: center;
+  background: var(--glass-bg);
+  padding: 2.6rem 2.4rem;
+  border-radius: var(--radius-lg, 18px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto auto auto;
 }
 
 h1 {
-    font-size: 2rem;
-    margin-bottom: 0.4rem;
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
 }
 
 .subtitle {
-    opacity: 0.8;
-    margin-bottom: 2.1rem;
-    font-size: 0.96rem;
-    color: var(--text-muted);
+  opacity: 0.8;
+  margin-bottom: 2.1rem;
+  font-size: 0.96rem;
+  color: var(--text-muted);
 }
 
 .social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
 }
 
 .social-links a {
-    text-decoration: none;
-    padding: 0.9rem;
-    border-radius: 99px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--glass-border);
-    color: var(--text-on-dark);
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
+  text-decoration: none;
+  padding: 0.9rem;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  color: var(--text-on-dark);
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
 }
 
-.social-links a.github { border-color: rgba(156, 163, 175, 0.5); }
-.social-links a.linkedin { border-color: rgba(14, 118, 168, 0.5); }
+.social-links a.github {
+  border-color: rgba(156, 163, 175, 0.5);
+}
+.social-links a.linkedin {
+  border-color: rgba(14, 118, 168, 0.5);
+}
 
 .social-links a:hover {
-    background-color: var(--primary);
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background-color: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 2.2rem 1.6rem;
-        margin: 0 auto auto auto;
-        width: 90%;
-    }
-    h1 {
-        font-size: 1.7rem;
-    }
+  .container {
+    padding: 2.2rem 1.6rem;
+    margin: 0 auto auto auto;
+    width: 90%;
+  }
+  h1 {
+    font-size: 1.7rem;
+  }
 }
