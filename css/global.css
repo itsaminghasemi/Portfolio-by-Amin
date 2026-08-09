@@ -391,10 +391,10 @@ body {
   overflow: hidden;
   max-height: 320px;
   visibility: visible;
-  width: 50%;
+  width: 83%;
   opacity: 1;
-  right: auto;
-  left: 25%;
+  right: 10%;
+  left: 10%;
   justify-content: center;
   border-radius: 14px;
 }
