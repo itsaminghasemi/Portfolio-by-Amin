@@ -43,6 +43,7 @@
 @media (max-width: 768px) {
   .guide-btn {
     position: fixed;
+    top: -1rem;
     bottom: auto;
     right: 1.5rem;
     padding: 0.65rem 1.1rem;
