@@ -624,8 +624,9 @@ body {
 /* Guide Button - Global Styles */
 .guide-btn {
   position: absolute;
-  top: 1rem;
-  right: 1.5rem;
+  top: 50%;
+  right: 6rem;
+  transform: translateY(-50%);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -646,7 +647,7 @@ body {
 .guide-btn:hover {
   background: rgba(56, 189, 248, 0.25);
   border-color: var(--primary);
-  transform: translateY(-2px);
+  transform: translateY(-50%) translateX(-2px);
   box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
   color: #fff;
 }
@@ -658,16 +659,4 @@ body {
 
 .guide-btn:hover i {
   transform: scale(1.1);
-}
-
-/* Mobile responsive for guide button */
-@media (max-width: 768px) {
-  .guide-btn {
-    position: fixed;
-    top: -1rem;
-    bottom: auto;
-    right: 1.5rem;
-    padding: 0.65rem 1.1rem;
-    font-size: 0.82rem;
-  }
 }
