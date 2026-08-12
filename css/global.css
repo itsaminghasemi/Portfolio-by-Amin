@@ -624,8 +624,8 @@ body {
 /* Guide Button - Global Styles */
 .guide-btn {
   position: absolute;
-  top: 50%;
-  right: 6rem;
+  top: 160%;
+  right: 10%;
   transform: translateY(-50%);
   display: inline-flex;
   align-items: center;
