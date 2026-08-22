@@ -124,7 +124,7 @@ figure.profile-figure {
   background: rgba(10, 27, 35, 0.09);
   backdrop-filter: blur(18px);
   padding: 0.19rem;
-  text-wrap: nowrap;
+  text-wrap: wrap;
 }
 
 .glass-panel {
