@@ -9,7 +9,7 @@
     }
 
     // 2. Safe DOM queries (inside DOMContentLoaded)
-    const menuBtn = document.getElementById("nav-toggle");
+    const menuBtn = document.querySelector(".nav-toggle-label");
     const guideBtns = document.querySelectorAll(".guide-btn"); // Note the 'All'
 
     // 3. Safe event listener
