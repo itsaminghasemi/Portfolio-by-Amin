@@ -1,19 +1,24 @@
-// Dynamic footer year
-
 "use strict";
 
 (function () {
   document.addEventListener("DOMContentLoaded", () => {
+    // 1. Dynamic year
     const yearEl = document.getElementById("year");
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-  });
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
 
-  const menuBtn = document.getElementById("nav-toggle");
-  const guideBtn = document.querySelector(".guide-btn");
+    // 2. Safe DOM queries (inside DOMContentLoaded)
+    const menuBtn = document.getElementById("nav-toggle");
+    const guideBtns = document.querySelectorAll(".guide-btn"); // Note the 'All'
 
-  menuBtn.addEventListener("click", () => {
-    guideBtn.array.forEach((el) => {
-      el.style.display = "none";
-    });
+    // 3. Safe event listener
+    if (menuBtn) {
+      menuBtn.addEventListener("click", () => {
+        guideBtns.forEach((el) => {
+          el.style.display = "none";
+        });
+      });
+    }
   });
 })();
