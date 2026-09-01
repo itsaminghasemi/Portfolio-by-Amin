@@ -1,47 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://itsaminghasemi.github.io/Portfolio-by-Amin/</loc>
+    <loc>https://aminghasemi.vercel.app/</loc>
     <lastmod>2026-07-30</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/about.html</loc>
+    <loc>https://aminghasemi.vercel.app/pages/about.html</loc>
     <lastmod>2026-07-30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/social.html</loc>
+    <loc>https://aminghasemi.vercel.app/pages/social.html</loc>
     <lastmod>2026-07-30</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/contact.html</loc>
+    <loc>https://aminghasemi.vercel.app/pages/contact.html</loc>
     <lastmod>2026-07-30</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/projects.html</loc>
+    <loc>https://aminghasemi.vercel.app/pages/projects.html</loc>
     <lastmod>2026-07-30</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/guess-my-number.html</loc>
+    <loc>https://aminghasemi.vercel.app/pages/algorithm-playground.html</loc>
     <lastmod>2026-07-30</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/modal-window.html</loc>
+    <loc>https://aminghasemi.vercel.app/pages/guess-my-number.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aminghasemi.vercel.app/pages/modal-window.html</loc>
     <lastmod>2026-07-30</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/pig-game.html</loc>
+    <loc>https://aminghasemi.vercel.app/pages/pig-game.html</loc>
     <lastmod>2026-07-30</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://itsaminghasemi.github.io/Portfolio-by-Amin/pages/drum-kit.html</loc>
+    <loc>https://aminghasemi.vercel.app/pages/drum-kit.html</loc>
     <lastmod>2026-07-30</lastmod>
     <priority>0.6</priority>
   </url>
