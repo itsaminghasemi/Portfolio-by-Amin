@@ -18,7 +18,7 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = { reverseString };
 }
 
-// Export for browser usage - ensure it runs immediately when script loads
-(function(global) {
-  global.reverseString = reverseString;
-})(typeof window !== 'undefined' ? window : this);
+// Export for browser usage - attach directly to window
+if (typeof window !== 'undefined') {
+  window.reverseString = reverseString;
+}
