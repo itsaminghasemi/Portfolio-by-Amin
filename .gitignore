@@ -2,49 +2,49 @@
 # Dependencies
 node_modules/
 
-# Editor/IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-*.tmp
-
-# Logs
-*.log
-
-# Environment
-.env
-.env.local
-*.env.*
-
-# Build outputs
+# Build artifacts
 dist/
 build/
 target/
 
-# Python artifacts
+# Logs and temporary files
+*.log
+*.tmp
+
+# Environment variables
+.env
+.env.local
+*.env.*
+
+# Editors
+.vscode/
+.idea/
+
+# Python specific
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*.py~
 .Python
-
-# Compiled files
-*.o
-*.obj
-*.exe
-*.dll
-*.so
-*.a
-*.out
-
-# Coverage
-coverage/
-htmlcov/
+venv/
+.venv/
+.eggs/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
 .coverage
+htmlcov/
 
-# Compression
+# JavaScript specific
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Compression files
 *.zip
 *.gz
 *.tar

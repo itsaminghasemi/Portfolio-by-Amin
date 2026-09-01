@@ -1,7 +1,7 @@
 /**
  * Algorithm Registry
  * Central configuration for all available algorithms in the playground.
- * 
+ *
  * To add a new algorithm:
  * 1. Create the algorithm .js file in the /algorithms folder
  * 2. Add an entry to this registry with:
@@ -107,12 +107,5 @@ const ALGORITHM_REGISTRY = [
   }
 ];
 
-// Export for use in other modules
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { ALGORITHM_REGISTRY };
-}
-
 // Export for browser usage - attach directly to window
-if (typeof window !== 'undefined') {
-  window.ALGORITHM_REGISTRY = ALGORITHM_REGISTRY;
-}
+window.ALGORITHM_REGISTRY = ALGORITHM_REGISTRY;
