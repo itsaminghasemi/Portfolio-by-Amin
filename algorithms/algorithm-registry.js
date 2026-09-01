@@ -111,3 +111,8 @@ const ALGORITHM_REGISTRY = [
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { ALGORITHM_REGISTRY };
 }
+
+// Export for browser usage - ensure it runs immediately when script loads
+(function(global) {
+  global.ALGORITHM_REGISTRY = ALGORITHM_REGISTRY;
+})(typeof window !== 'undefined' ? window : this);
