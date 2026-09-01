@@ -4,7 +4,7 @@ A personal portfolio website built with HTML, CSS, and JavaScript. 🌐
 
 ## 🚀 Live Preview
 
-Open `index.html` in your browser or serve from a static server. 🖥️
+Visit [https://aminghasemi.vercel.app/](https://aminghasemi.vercel.app/)
 
 ## 📁 Project Structure
 
@@ -17,6 +17,8 @@ pages/
   about.html              ← About Me 👤
   contact.html            ← Contact form 📬
   social.html             ← Social links 🔗
+  projects.html           ← Projects showcase 🚀
+  algorithm-playground.html ← Interactive algorithm testing 🧮
   guess-my-number.html    ← Guess My Number game 🎮
   modal-window.html       ← Modal Window component 🪟
   pig-game.html           ← Pig Game dice game 🎲
@@ -27,6 +29,8 @@ css/
   contact.css
   social.css
   about.css
+  projects.css
+  algorithm-playground.css ← Algorithm Playground styles 🧮
   modal-window.css        ← Modal styles 🪟
   drum-kit-style.css      ← Drum Kit styles 🥁
 js/
@@ -34,27 +38,38 @@ js/
   contact.js
   social.js
   about.js
+  projects.js
+  algorithm-playground.js ← Algorithm Playground logic 🧮
   modal-window.js         ← Modal functionality 🪟
   drum-kit.js             ← Drum Kit functionality 🥁
+algorithms/
+  algorithm-registry.js   ← Algorithm configuration 🧮
+  binary-search.js        ← Binary search algorithm
+  bubble-sort.js          ← Bubble sort algorithm
+  fibonacci.js            ← Fibonacci sequence
+  palindrome.js           ← Palindrome checker
 images/
   back.svg / profileSVG.svg 🖼️
   Favicons/
+  projects/               ← Project logos
 sound/
   drum-kit/               ← Drum sound files (.wav) 🔊
 ```
 
 ## 📄 Pages
 
-| Page         | File                         | Description                                       |
-| ------------ | ---------------------------- | ------------------------------------------------- |
-| Home         | `index.html`                 | Portfolio landing page with modal window 🏠       |
-| About        | `pages/about.html`           | Bio, skills, timeline 👤                          |
-| Social       | `pages/social.html`          | GitHub & LinkedIn 🔗                              |
-| Contact      | `pages/contact.html`         | Formspree form 📬                                 |
-| Game         | `pages/guess-my-number.html` | Interactive number guessing game 🎮               |
-| Modal Window | `pages/modal-window.html`    | Reusable modal component 🪟                       |
-| Pig Game     | `pages/pig-game.html`        | Classic two-player dice game - race to 100 points 🎲 |
-| Drum Kit     | `pages/drum-kit.html`        | Interactive virtual drum kit playable with keyboard 🥁 |
+| Page               | File                         | Description                                               |
+| ------------------ | ---------------------------- | --------------------------------------------------------- |
+| Home               | `index.html`                 | Portfolio landing page with modal window 🏠               |
+| About              | `pages/about.html`           | Bio, skills, timeline 👤                                  |
+| Social             | `pages/social.html`          | GitHub & LinkedIn 🔗                                      |
+| Contact            | `pages/contact.html`         | Formspree form 📬                                         |
+| Projects           | `pages/projects.html`        | Showcase of all interactive projects 🚀                   |
+| Algorithm Playground | `pages/algorithm-playground.html` | Test JavaScript algorithms interactively 🧮         |
+| Game               | `pages/guess-my-number.html` | Interactive number guessing game 🎮                       |
+| Modal Window       | `pages/modal-window.html`    | Reusable modal component 🪟                               |
+| Pig Game           | `pages/pig-game.html`        | Classic two-player dice game - race to 100 points 🎲      |
+| Drum Kit           | `pages/drum-kit.html`        | Interactive virtual drum kit playable with keyboard 🥁    |
 
 ## ✨ Features
 
@@ -65,6 +80,7 @@ sound/
 - **Modal Window** 🪟 - Interactive modal available on every page navbar
 - **Interactive Elements** ✨ - Smooth animations and transitions
 - **Games** 🎮 - Multiple interactive games including Guess My Number, Pig Game, and JS Drum Kit
+- **Algorithm Playground** 🧮 - Interactive environment for testing JavaScript algorithms
 - **SEO Optimized** 🔍 - Complete meta tags, Open Graph, Twitter cards, and sitemap
 - **PWA Ready** 📲 - Web app manifest with comprehensive favicon set
 
@@ -84,3 +100,4 @@ sound/
 - Extend functionality through JavaScript files ⚡
 - Add new pages following the existing structure 📄
 - Customize modal window appearance in `css/modal-window.css` 🪟
+- Add new algorithms to the Algorithm Playground (see `algorithms/algorithm-registry.js`) 🧮
