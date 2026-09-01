@@ -35,7 +35,12 @@ function isPrime(n) {
   return true;
 }
 
-// Export for use in other modules
+// Export for use in other modules (Node.js and browser)
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { isPrime };
 }
+
+// Export for browser usage - ensure it runs immediately when script loads
+(function(global) {
+  global.isPrime = isPrime;
+})(typeof window !== 'undefined' ? window : this);

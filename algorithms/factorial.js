@@ -26,7 +26,12 @@ function factorial(n) {
   return result;
 }
 
-// Export for use in other modules
+// Export for use in other modules (Node.js and browser)
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { factorial };
 }
+
+// Export for browser usage - ensure it runs immediately when script loads
+(function(global) {
+  global.factorial = factorial;
+})(typeof window !== 'undefined' ? window : this);

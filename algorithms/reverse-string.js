@@ -13,7 +13,12 @@ function reverseString(str) {
   return str.split('').reverse().join('');
 }
 
-// Export for use in other modules
+// Export for use in other modules (Node.js and browser)
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { reverseString };
 }
+
+// Export for browser usage - ensure it runs immediately when script loads
+(function(global) {
+  global.reverseString = reverseString;
+})(typeof window !== 'undefined' ? window : this);
