@@ -5,34 +5,25 @@
  * @returns {number[]} - A new sorted array (does not modify original)
  */
 function selectionSort(arr) {
-  const result = [...arr]; // Create a copy to avoid mutating original
+  const result = [...arr];
   const n = result.length;
-  
+
   for (let i = 0; i < n - 1; i++) {
     let minIndex = i;
-    
-    // Find the minimum element in the remaining unsorted portion
+
     for (let j = i + 1; j < n; j++) {
       if (result[j] < result[minIndex]) {
         minIndex = j;
       }
     }
-    
-    // Swap the found minimum element with the first element of unsorted portion
+
     if (minIndex !== i) {
       [result[i], result[minIndex]] = [result[minIndex], result[i]];
     }
   }
-  
+
   return result;
 }
 
-// Export for use in other modules (Node.js and browser)
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { selectionSort };
-}
-
-// Export for browser usage - attach directly to window
-if (typeof window !== 'undefined') {
-  window.selectionSort = selectionSort;
-}
+// Export for browser usage
+window.selectionSort = selectionSort;

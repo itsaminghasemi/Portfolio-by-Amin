@@ -14,9 +14,6 @@
   const outputPanel = document.getElementById('output-panel');
   const inputHint = document.getElementById('input-hint');
 
-  // State
-  let loadedAlgorithms = {};
-
   /**
    * Initialize the playground
    */
@@ -47,19 +44,11 @@
    * Setup event listeners
    */
   function setupEventListeners() {
-    // Algorithm selection change
     algorithmSelect.addEventListener('change', handleAlgorithmChange);
-
-    // Run button click
     runBtn.addEventListener('click', handleRun);
-
-    // Clear button click
     clearBtn.addEventListener('click', handleClear);
-
-    // Keyboard shortcuts
     document.addEventListener('keydown', handleKeyboard);
 
-    // Input field enter key (for single-line inputs)
     testInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' && e.ctrlKey) {
         e.preventDefault();
@@ -74,13 +63,11 @@
   function handleAlgorithmChange() {
     const selectedId = algorithmSelect.value;
     const selectedAlgo = ALGORITHM_REGISTRY.find(a => a.id === selectedId);
-    
+
     if (selectedAlgo) {
       updateInputHint(selectedAlgo);
-      loadAlgorithm(selectedAlgo);
     }
-    
-    // Clear previous output when changing algorithms
+
     clearOutput();
   }
 
@@ -98,52 +85,25 @@
   }
 
   /**
-   * Load an algorithm script dynamically
-   */
-  async function loadAlgorithm(algo) {
-    if (loadedAlgorithms[algo.id]) {
-      return; // Already loaded
-    }
-
-    try {
-      // Create script element to load the algorithm file
-      const script = document.createElement('script');
-      script.src = algo.file;
-      
-      await new Promise((resolve, reject) => {
-        script.onload = resolve;
-        script.onerror = () => reject(new Error(`Failed to load algorithm: ${algo.name}`));
-        document.head.appendChild(script);
-      });
-
-      // Mark as loaded
-      loadedAlgorithms[algo.id] = true;
-      
-    } catch (error) {
-      showError(`Failed to load algorithm "${algo.name}": ${error.message}`);
-    }
-  }
-
-  /**
    * Handle run button click
    */
   function handleRun() {
     const selectedId = algorithmSelect.value;
-    
+
     if (!selectedId) {
       showError('Please select an algorithm first.');
       return;
     }
 
     const inputValue = testInput.value.trim();
-    
+
     if (!inputValue) {
       showError('Please enter a test case.');
       return;
     }
 
     const selectedAlgo = ALGORITHM_REGISTRY.find(a => a.id === selectedId);
-    
+
     if (!selectedAlgo) {
       showError('Selected algorithm not found.');
       return;
@@ -157,65 +117,58 @@
    */
   function parseInput(inputStr, argCount) {
     try {
-      // For multiple arguments, we need to split carefully
-      // This handles comma-separated values while respecting nested structures
-      
       if (argCount === 1) {
-        // Single argument - just eval the whole thing
         return [evaluateInput(inputStr)];
       }
-      
-      // Multiple arguments - need to parse carefully
+
       const args = [];
       let depth = 0;
       let current = '';
       let inString = false;
       let escapeNext = false;
-      
+
       for (let i = 0; i < inputStr.length; i++) {
         const char = inputStr[i];
-        
+
         if (escapeNext) {
           current += char;
           escapeNext = false;
           continue;
         }
-        
+
         if (char === '\\') {
           escapeNext = true;
           current += char;
           continue;
         }
-        
+
         if (char === '"' || char === "'") {
           inString = !inString;
           current += char;
           continue;
         }
-        
+
         if (!inString) {
           if (char === '[' || char === '{' || char === '(') {
             depth++;
           } else if (char === ']' || char === '}' || char === ')') {
             depth--;
           } else if (char === ',' && depth === 0) {
-            // Found argument separator
             args.push(evaluateInput(current.trim()));
             current = '';
             continue;
           }
         }
-        
+
         current += char;
       }
-      
-      // Don't forget the last argument
+
       if (current.trim()) {
         args.push(evaluateInput(current.trim()));
       }
-      
+
       return args;
-      
+
     } catch (error) {
       throw new Error(`Invalid input syntax: ${error.message}`);
     }
@@ -226,17 +179,14 @@
    */
   function evaluateInput(str) {
     try {
-      // Handle string literals
-      if ((str.startsWith('"') && str.endsWith('"')) || 
+      if ((str.startsWith('"') && str.endsWith('"')) ||
           (str.startsWith("'") && str.endsWith("'"))) {
         return str.slice(1, -1);
       }
-      
-      // Use Function constructor for safer eval
+
       // eslint-disable-next-line no-new-func
       return Function('"use strict";return (' + str + ')')();
     } catch (error) {
-      // If evaluation fails, return as string
       return str;
     }
   }
@@ -246,27 +196,22 @@
    */
   function executeAlgorithm(algo, inputValue) {
     try {
-      // Get the function from global scope
       const fn = window[algo.functionName];
-      
+
       if (typeof fn !== 'function') {
-        throw new Error(`Function "${algo.functionName}" not found. Make sure the algorithm file exports it correctly.`);
+        throw new Error(`Function "${algo.functionName}" not found.`);
       }
 
-      // Parse input arguments
       const args = parseInput(inputValue, algo.argCount);
-      
-      // Validate argument count
+
       if (args.length < algo.argCount) {
         throw new Error(`Expected ${algo.argCount} argument(s), but received ${args.length}. ${algo.inputHint}`);
       }
 
-      // Execute the algorithm
       const result = fn(...args);
-      
-      // Display the result
+
       displayResult(result);
-      
+
     } catch (error) {
       showError(error.message);
     }
@@ -277,9 +222,9 @@
    */
   function displayResult(result) {
     outputPanel.className = 'output-panel success';
-    
+
     let formattedResult;
-    
+
     if (result === null) {
       formattedResult = 'null';
     } else if (result === undefined) {
@@ -291,7 +236,7 @@
     } else {
       formattedResult = String(result);
     }
-    
+
     outputPanel.innerHTML = `<span class="result-prefix">Result:</span> ${escapeHtml(formattedResult)}`;
   }
 
@@ -324,13 +269,11 @@
    * Handle keyboard shortcuts
    */
   function handleKeyboard(e) {
-    // Ctrl+Enter to run
     if (e.key === 'Enter' && e.ctrlKey) {
       e.preventDefault();
       handleRun();
     }
-    
-    // Escape to clear
+
     if (e.key === 'Escape') {
       e.preventDefault();
       handleClear();

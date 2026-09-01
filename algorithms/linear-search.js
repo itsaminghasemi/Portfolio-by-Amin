@@ -11,16 +11,9 @@ function linearSearch(arr, target) {
       return i;
     }
   }
-  
+
   return -1;
 }
 
-// Export for use in other modules (Node.js and browser)
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { linearSearch };
-}
-
-// Export for browser usage - attach directly to window
-if (typeof window !== 'undefined') {
-  window.linearSearch = linearSearch;
-}
+// Export for browser usage
+window.linearSearch = linearSearch;

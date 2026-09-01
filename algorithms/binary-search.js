@@ -11,7 +11,7 @@ function binarySearch(arr, target) {
 
   while (left <= right) {
     const mid = Math.floor((left + right) / 2);
-    
+
     if (arr[mid] === target) {
       return mid;
     } else if (arr[mid] < target) {
@@ -24,12 +24,5 @@ function binarySearch(arr, target) {
   return -1;
 }
 
-// Export for use in other modules (Node.js and browser)
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { binarySearch };
-}
-
 // Export for browser usage - attach directly to window
-if (typeof window !== 'undefined') {
-  window.binarySearch = binarySearch;
-}
+window.binarySearch = binarySearch;

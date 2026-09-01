@@ -8,17 +8,9 @@ function reverseString(str) {
   if (typeof str !== 'string') {
     throw new Error('Input must be a string');
   }
-  
-  // Convert to array, reverse, and join back
+
   return str.split('').reverse().join('');
 }
 
-// Export for use in other modules (Node.js and browser)
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { reverseString };
-}
-
-// Export for browser usage - attach directly to window
-if (typeof window !== 'undefined') {
-  window.reverseString = reverseString;
-}
+// Export for browser usage
+window.reverseString = reverseString;
