@@ -31,7 +31,7 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = { factorial };
 }
 
-// Export for browser usage - ensure it runs immediately when script loads
-(function(global) {
-  global.factorial = factorial;
-})(typeof window !== 'undefined' ? window : this);
+// Export for browser usage - attach directly to window
+if (typeof window !== 'undefined') {
+  window.factorial = factorial;
+}

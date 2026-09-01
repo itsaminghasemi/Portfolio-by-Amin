@@ -29,7 +29,7 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = { binarySearch };
 }
 
-// Export for browser usage - ensure it runs immediately when script loads
-(function(global) {
-  global.binarySearch = binarySearch;
-})(typeof window !== 'undefined' ? window : this);
+// Export for browser usage - attach directly to window
+if (typeof window !== 'undefined') {
+  window.binarySearch = binarySearch;
+}

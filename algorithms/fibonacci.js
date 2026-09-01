@@ -22,7 +22,7 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = { fibonacci };
 }
 
-// Export for browser usage - ensure it runs immediately when script loads
-(function(global) {
-  global.fibonacci = fibonacci;
-})(typeof window !== 'undefined' ? window : this);
+// Export for browser usage - attach directly to window
+if (typeof window !== 'undefined') {
+  window.fibonacci = fibonacci;
+}
