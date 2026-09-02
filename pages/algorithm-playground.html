@@ -1,43 +1,40 @@
-<!doctype html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Test and explore JavaScript algorithms interactively. Select an algorithm, enter test cases, and see results instantly." />
-  <link rel="canonical" href="https://aminghasemi.vercel.app/pages/algorithm-playground.html" />
-  
-  <!-- OpenGraph / Social -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Algorithm Playground | Amin Ghasemi" />
-  <meta property="og:description" content="Test and explore JavaScript algorithms interactively." />
-  <meta property="og:image" content="https://aminghasemi.vercel.app/images/Favicons/android-chrome-512x512.png" />
-  <meta property="og:url" content="https://aminghasemi.vercel.app/pages/algorithm-playground.html" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Algorithm Playground | Amin Ghasemi" />
-  <meta name="twitter:description" content="Test and explore JavaScript algorithms interactively." />
-  <meta name="twitter:image" content="https://aminghasemi.vercel.app/images/Favicons/android-chrome-512x512.png" />
-  <meta name="theme-color" content="#0a0a0f" />
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amin Ghasemi | Algorithm Playground</title>
+  <meta name="description" content="Interactive algorithm visualizer and playground by Amin Ghasemi.">
+  <link rel="canonical" href="https://aminghasemi.vercel.app/pages/algorithm-playground.html">
+  <meta property="og:title" content="Amin Ghasemi | Algorithm Playground">
+  <meta property="og:description" content="Interactive algorithm visualizer and playground by Amin Ghasemi.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aminghasemi.vercel.app/pages/algorithm-playground.html">
+  <meta property="og:image" content="https://aminghasemi.vercel.app/images/Favicons/android-chrome-512x512.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Amin Ghasemi | Algorithm Playground">
+  <meta name="twitter:description" content="Interactive algorithm visualizer and playground by Amin Ghasemi.">
+  <meta name="twitter:image" content="https://aminghasemi.vercel.app/images/Favicons/android-chrome-512x512.png">
+
+  <!-- Favicons - Warm Color System - From Pages -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/Favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/Favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/Favicons/apple-touch-icon.png">
+  <link rel="manifest" href="../images/Favicons/site.webmanifest">
+  <meta name="theme-color" content="#c9b8a3">
+  <meta name="msapplication-TileColor" content="#c9b8a3">
+
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
-    rel="stylesheet" />
-  
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="../images/Favicons/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="../images/Favicons/favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../images/Favicons/apple-touch-icon.png" />
-  <link rel="manifest" href="../manifest.json" />
-  <link rel="icon" type="image/png" sizes="192x192" href="../images/Favicons/android-chrome-192x192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="../images/Favicons/android-chrome-512x512.png" />
-  <link rel="shortcut icon" href="../images/Favicons/favicon-32x32.png" />
+    rel="stylesheet">
 
-  <title>Algorithm Playground | Amin Ghasemi</title>
-  <link rel="stylesheet" href="../css/global.css" />
-  <link rel="stylesheet" href="../css/algorithm-playground.css" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/algorithm-playground.css">
 </head>
 
 <body>
@@ -78,7 +75,8 @@
     <header class="playground-header">
       <h1 class="playground-title">Algorithm Playground</h1>
       <p class="playground-subtitle">
-        Explore and test JavaScript algorithms interactively. Select an algorithm, enter your test case, and see the results instantly.
+        Explore and test JavaScript algorithms interactively. Select an algorithm, enter your test case, and see the
+        results instantly.
       </p>
     </header>
 
@@ -99,13 +97,8 @@
         <label for="test-input" class="form-label">
           Test Input<span class="required">*</span>
         </label>
-        <textarea 
-          id="test-input" 
-          class="input-textarea" 
-          placeholder="Enter your test case here..."
-          aria-describedby="input-hint"
-          required
-        ></textarea>
+        <textarea id="test-input" class="input-textarea" placeholder="Enter your test case here..."
+          aria-describedby="input-hint" required></textarea>
         <p id="input-hint" class="input-hint">
           Format your input as JavaScript values (numbers, strings, arrays, objects).
         </p>
@@ -114,13 +107,15 @@
       <!-- Action Buttons -->
       <div class="button-group">
         <button id="run-btn" class="btn-run" type="button" aria-label="Run the selected algorithm">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
             <polygon points="5 3 19 12 5 21 5 3"></polygon>
           </svg>
           Run Algorithm
         </button>
         <button id="clear-btn" class="btn-clear" type="button" aria-label="Clear input and output">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
             <polyline points="3 6 5 6 21 6"></polyline>
             <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
           </svg>
@@ -148,7 +143,7 @@
         <p>Building beautiful and functional digital experiences with code and creativity.</p>
       </div>
     </div>
-    
+
     <!-- Guidance Modal -->
     <div class="modal-overlay" id="guideModal">
       <div class="guidance-modal">
@@ -158,7 +153,8 @@
         </div>
         <div class="modal-body">
           <h3>🌟 About This Project</h3>
-          <p>The Algorithm Playground is an interactive environment for testing and exploring JavaScript algorithms. It allows you to experiment with different algorithms without writing any code.</p>
+          <p>The Algorithm Playground is an interactive environment for testing and exploring JavaScript algorithms. It
+            allows you to experiment with different algorithms without writing any code.</p>
 
           <h3>🎯 How to Use</h3>
           <ul>
@@ -208,18 +204,7 @@
 
   <!-- Scripts -->
   <script src="../js/script.js"></script>
-  <script src="../algorithms/algorithm-registry.js"></script>
-  <script src="../algorithms/binary-search.js"></script>
-  <script src="../algorithms/bubble-sort.js"></script>
-  <script src="../algorithms/fibonacci.js"></script>
-  <script src="../algorithms/palindrome.js"></script>
-  <script src="../algorithms/linear-search.js"></script>
-  <script src="../algorithms/selection-sort.js"></script>
-  <script src="../algorithms/reverse-string.js"></script>
-  <script src="../algorithms/factorial.js"></script>
-  <script src="../algorithms/prime-checker.js"></script>
-  <script src="../algorithms/max-element.js"></script>
-  <script src="../js/algorithm-playground.js"></script>
+  <script src="../js/algorithm-playground.js" defer></script>
 </body>
 
 </html>
