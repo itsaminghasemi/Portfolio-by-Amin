@@ -1,6 +1,6 @@
 :root {
-  --primary-glow: rgba(56, 189, 248, 0.4);
-  --accent-glow: rgba(139, 92, 246, 0.4);
+  --primary-glow: rgba(159, 173, 183, 0.4);
+  --accent-glow: rgba(196, 168, 150, 0.4);
 }
 
 body {
@@ -145,7 +145,7 @@ figure.profile-figure {
 
 .glass-panel:hover {
   transform: translateY(-5px);
-  box-shadow: 0 18px 45px rgba(56, 189, 248, 0.12);
+  box-shadow: 0 18px 45px rgba(159, 173, 183, 0.12);
   border-color: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(26px);
   -webkit-backdrop-filter: blur(26px);
@@ -239,7 +239,7 @@ figure.profile-figure {
   line-height: 1;
   display: block;
   margin-bottom: 0.5rem;
-  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.3));
+  filter: drop-shadow(0 0 8px rgba(159, 173, 183, 0.3));
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -251,9 +251,9 @@ figure.profile-figure {
 }
 
 .skill-card:hover {
-  background: rgba(56, 189, 248, 0.1);
+  background: rgba(159, 173, 183, 0.1);
   transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(56, 189, 248, 0.15);
+  box-shadow: 0 12px 25px rgba(159, 173, 183, 0.15);
   border-color: var(--primary);
 }
 
@@ -280,7 +280,7 @@ figure.profile-figure {
   font-size: 0.9rem;
   overflow: hidden;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 20px rgba(139, 92, 246, 0.2);
+  box-shadow: 0 10px 20px rgba(196, 168, 150, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -308,7 +308,7 @@ figure.profile-figure {
 
 .premium-btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4);
+  box-shadow: 0 15px 30px rgba(196, 168, 150, 0.4);
 }
 
 .premium-btn:hover .btn-shine {

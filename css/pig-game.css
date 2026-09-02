@@ -46,9 +46,9 @@ body.pig-game-page {
 }
 
 .player--active {
-  background: rgba(56, 189, 248, 0.05);
+  background: rgba(159, 173, 183, 0.05);
   border-color: var(--primary);
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+  box-shadow: 0 0 20px rgba(159, 173, 183, 0.15);
 }
 
 .name {
@@ -63,7 +63,7 @@ body.pig-game-page {
 .player--active .name {
   color: var(--primary);
   font-weight: 700;
-  text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+  text-shadow: 0 0 10px rgba(159, 173, 183, 0.5);
 }
 
 .score {
@@ -77,15 +77,15 @@ body.pig-game-page {
 /* 4. CURRENT SCORE (Mobile Sizes) */
 .current {
   width: 100%;
-  background: rgba(139, 92, 246, 0.08);
-  border: 1px solid rgba(139, 92, 246, 0.3);
+  background: rgba(196, 168, 150, 0.08);
+  border: 1px solid rgba(196, 168, 150, 0.3);
   border-radius: 12px;
   padding: 1rem;
   text-align: center;
 }
 
 .player--active .current {
-  background: rgba(139, 92, 246, 0.15);
+  background: rgba(196, 168, 150, 0.15);
   border-color: var(--accent);
 }
 
@@ -158,7 +158,7 @@ body.pig-game-page {
 }
 
 .btn:hover {
-  background: rgba(56, 189, 248, 0.1);
+  background: rgba(159, 173, 183, 0.1);
   border-color: var(--primary);
   color: var(--primary);
   transform: translateY(-2px);

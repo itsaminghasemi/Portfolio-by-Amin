@@ -12,10 +12,10 @@
   align-items: center;
   justify-content: center;
   background:
-    radial-gradient(ellipse at top, rgba(139, 92, 246, 0.08), transparent 60%),
+    radial-gradient(ellipse at top, rgba(196, 168, 150, 0.08), transparent 60%),
     radial-gradient(
       ellipse at bottom,
-      rgba(56, 189, 248, 0.06),
+      rgba(159, 173, 183, 0.06),
       transparent 60%
     ),
     var(--bg-color);
@@ -33,12 +33,12 @@
   background-image:
     radial-gradient(
       circle at 20% 30%,
-      rgba(56, 189, 248, 0.03) 0%,
+      rgba(159, 173, 183, 0.03) 0%,
       transparent 50%
     ),
     radial-gradient(
       circle at 80% 70%,
-      rgba(139, 92, 246, 0.03) 0%,
+      rgba(196, 168, 150, 0.03) 0%,
       transparent 50%
     );
   pointer-events: none;
@@ -61,17 +61,17 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 1rem;
-  text-shadow: 0 0 40px rgba(56, 189, 248, 0.3);
+  text-shadow: 0 0 40px rgba(159, 173, 183, 0.3);
   animation: glowPulse 3s ease-in-out infinite;
 }
 
 @keyframes glowPulse {
   0%,
   100% {
-    filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.3));
+    filter: drop-shadow(0 0 20px rgba(159, 173, 183, 0.3));
   }
   50% {
-    filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.4));
+    filter: drop-shadow(0 0 30px rgba(196, 168, 150, 0.4));
   }
 }
 
@@ -135,8 +135,8 @@
   bottom: 0;
   background: linear-gradient(
     135deg,
-    rgba(56, 189, 248, 0.1),
-    rgba(139, 92, 246, 0.1)
+    rgba(159, 173, 183, 0.1),
+    rgba(196, 168, 150, 0.1)
   );
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -149,10 +149,10 @@
 
 .key:hover {
   transform: translateY(-4px);
-  border-color: rgba(56, 189, 248, 0.4);
+  border-color: rgba(159, 173, 183, 0.4);
   box-shadow:
-    0 12px 40px rgba(56, 189, 248, 0.15),
-    0 0 0 1px rgba(56, 189, 248, 0.2);
+    0 12px 40px rgba(159, 173, 183, 0.15),
+    0 0 0 1px rgba(159, 173, 183, 0.2);
 }
 
 .key:active,
@@ -161,13 +161,13 @@
   border-color: var(--primary);
   background: linear-gradient(
     145deg,
-    rgba(56, 189, 248, 0.15),
-    rgba(139, 92, 246, 0.1)
+    rgba(159, 173, 183, 0.15),
+    rgba(196, 168, 150, 0.1)
   );
   box-shadow:
-    0 0 30px rgba(56, 189, 248, 0.4),
-    0 0 60px rgba(139, 92, 246, 0.2),
-    inset 0 0 20px rgba(56, 189, 248, 0.1);
+    0 0 30px rgba(159, 173, 183, 0.4),
+    0 0 60px rgba(196, 168, 150, 0.2),
+    inset 0 0 20px rgba(159, 173, 183, 0.1);
 }
 
 .key.playing::after {
@@ -180,7 +180,7 @@
   height: 150%;
   background: radial-gradient(
     circle,
-    rgba(56, 189, 248, 0.3) 0%,
+    rgba(159, 173, 183, 0.3) 0%,
     transparent 70%
   );
   animation: ripple 0.6s ease-out forwards;
@@ -219,7 +219,7 @@ kbd {
 
 .key.playing kbd {
   color: var(--primary);
-  text-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+  text-shadow: 0 0 20px rgba(159, 173, 183, 0.6);
   transform: scale(1.1);
 }
 
@@ -237,7 +237,7 @@ kbd {
 
 .key.playing .sound {
   color: var(--primary);
-  text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+  text-shadow: 0 0 10px rgba(159, 173, 183, 0.5);
   transform: scale(1.05);
 }
 
@@ -271,12 +271,12 @@ kbd {
 
 .instruction-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(56, 189, 248, 0.3);
-  box-shadow: 0 12px 40px rgba(56, 189, 248, 0.1);
+  border-color: rgba(159, 173, 183, 0.3);
+  box-shadow: 0 12px 40px rgba(159, 173, 183, 0.1);
   background: linear-gradient(
     145deg,
-    rgba(56, 189, 248, 0.05),
-    rgba(139, 92, 246, 0.03)
+    rgba(159, 173, 183, 0.05),
+    rgba(196, 168, 150, 0.03)
   );
 }
 
@@ -284,7 +284,7 @@ kbd {
   font-size: 2.5rem;
   display: block;
   margin-bottom: 1rem;
-  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.3));
+  filter: drop-shadow(0 0 10px rgba(159, 173, 183, 0.3));
 }
 
 .instruction-card h3 {

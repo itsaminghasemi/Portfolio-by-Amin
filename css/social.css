@@ -25,13 +25,13 @@ body {
 .glow-blue {
   top: -10%;
   left: -10%;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.4), transparent 70%);
+  background: radial-gradient(circle, rgba(159, 173, 183, 0.4), transparent 70%);
 }
 
 .glow-purple {
   bottom: -10%;
   right: -10%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent 70%);
+  background: radial-gradient(circle, rgba(196, 168, 150, 0.4), transparent 70%);
 }
 
 .container {

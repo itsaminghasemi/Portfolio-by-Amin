@@ -28,13 +28,13 @@ body {
 .glow-blue {
   top: -10%;
   left: -10%;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.4), transparent 70%);
+  background: radial-gradient(circle, rgba(159, 173, 183, 0.4), transparent 70%);
 }
 
 .glow-purple {
   bottom: -10%;
   right: -10%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent 70%);
+  background: radial-gradient(circle, rgba(196, 168, 150, 0.4), transparent 70%);
 }
 
 .form-container {
@@ -125,8 +125,8 @@ textarea + label {
 input:focus,
 textarea:focus {
   border-color: var(--primary);
-  background: rgba(56, 189, 248, 0.03);
-  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
+  background: rgba(159, 173, 183, 0.03);
+  box-shadow: 0 0 0 4px rgba(159, 173, 183, 0.1);
 }
 
 input:focus + label,
@@ -208,7 +208,7 @@ textarea:not(:placeholder-shown) + label {
 
 .radio-card-group input[type="radio"]:checked + .radio-card {
   border-color: var(--primary);
-  background: rgba(56, 189, 248, 0.08);
+  background: rgba(159, 173, 183, 0.08);
   color: var(--primary);
 }
 
@@ -262,7 +262,7 @@ textarea:not(:placeholder-shown) + label {
 
 .file-upload-label:hover {
   border-color: var(--primary);
-  background: rgba(56, 189, 248, 0.03);
+  background: rgba(159, 173, 183, 0.03);
 }
 
 .file-upload-label:hover .upload-icon-wrapper {
@@ -357,7 +357,7 @@ input:checked ~ .toggle-label {
 
 .btn-submit:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+  box-shadow: 0 10px 20px rgba(159, 173, 183, 0.3);
 }
 
 .btn-submit svg {
