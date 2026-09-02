@@ -1,7 +1,7 @@
 :root {
   --radius-lg: 24px;
-  --who-accent: #38bdf8;
-  --who-accent-glow: rgba(56, 189, 248, 0.35);
+  --who-accent: #9fadb7;
+  --who-accent-glow: rgba(159, 173, 183, 0.35);
 }
 
 body {
@@ -29,13 +29,13 @@ body {
 .glow-blue {
   top: -10%;
   left: -10%;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.4), transparent 70%);
+  background: radial-gradient(circle, rgba(159, 173, 183, 0.4), transparent 70%);
 }
 
 .glow-purple {
   bottom: -10%;
   right: -10%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent 70%);
+  background: radial-gradient(circle, rgba(196, 168, 150, 0.4), transparent 70%);
 }
 
 .page-title {
@@ -78,7 +78,7 @@ body {
 .flex-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px var(--who-accent-glow);
-  border-color: rgba(56, 189, 248, 0.3);
+  border-color: rgba(159, 173, 183, 0.3);
 }
 
 .flex-item h2 {
@@ -153,9 +153,9 @@ body {
 }
 
 .skill-badge {
-  background: rgba(56, 189, 248, 0.15);
+  background: rgba(159, 173, 183, 0.15);
   color: #7dd3fc;
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  border: 1px solid rgba(159, 173, 183, 0.3);
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
   font-size: 0.85rem;
@@ -163,7 +163,7 @@ body {
 }
 
 .skill-badge:hover {
-  background: rgba(56, 189, 248, 0.25);
+  background: rgba(159, 173, 183, 0.25);
   border-color: var(--who-accent);
   transform: translateY(-2px);
 }

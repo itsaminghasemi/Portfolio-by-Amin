@@ -63,9 +63,9 @@ main {
 
 .show-modal:hover {
   border-color: var(--primary);
-  background: rgba(56, 189, 248, 0.08);
+  background: rgba(159, 173, 183, 0.08);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
+  box-shadow: 0 8px 20px rgba(159, 173, 183, 0.15);
   color: var(--primary);
 }
 
@@ -87,8 +87,8 @@ main {
 }
 
 .show-modal.variant-primary:hover {
-  background: rgba(56, 189, 248, 0.9);
-  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+  background: rgba(159, 173, 183, 0.9);
+  box-shadow: 0 8px 25px rgba(159, 173, 183, 0.3);
 }
 
 .show-modal.variant-accent {
@@ -98,8 +98,8 @@ main {
 }
 
 .show-modal.variant-accent:hover {
-  background: rgba(139, 92, 246, 0.9);
-  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+  background: rgba(196, 168, 150, 0.9);
+  box-shadow: 0 8px 25px rgba(196, 168, 150, 0.3);
 }
 
 /* -------------------------- */
@@ -220,8 +220,8 @@ main {
 
 /* Info box inside modal */
 .modal-info-box {
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.2);
+  background: rgba(159, 173, 183, 0.08);
+  border: 1px solid rgba(159, 173, 183, 0.2);
   border-radius: 12px;
   padding: 1.5rem;
   margin-top: 1.5rem;

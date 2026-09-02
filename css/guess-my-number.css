@@ -95,10 +95,10 @@ body {
 }
 
 .btn-again:hover {
-  background: rgba(56, 189, 248, 0.1);
+  background: rgba(159, 173, 183, 0.1);
   border-color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
+  box-shadow: 0 8px 20px rgba(159, 173, 183, 0.15);
 }
 
 .btn-again svg {
@@ -127,7 +127,7 @@ body {
   border: 2px solid rgba(255, 255, 255, 0.8);
   box-shadow:
     0 15px 40px rgba(0, 0, 0, 0.4),
-    0 0 60px rgba(56, 189, 248, 0.1);
+    0 0 60px rgba(159, 173, 183, 0.1);
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   user-select: none;
   margin-top: 1rem;
@@ -138,7 +138,7 @@ body {
     transform: scale(1.03) translateY(-3px);
     box-shadow:
       0 20px 50px rgba(0, 0, 0, 0.5),
-      0 0 80px rgba(56, 189, 248, 0.15);
+      0 0 80px rgba(159, 173, 183, 0.15);
   }
 }
 
@@ -184,7 +184,7 @@ body {
 
 @media (hover: hover) and (pointer: fine) {
   .panel:hover {
-    border-color: rgba(56, 189, 248, 0.3);
+    border-color: rgba(159, 173, 183, 0.3);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
 }
@@ -238,7 +238,7 @@ body {
 
 .guess-input:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
+  box-shadow: 0 0 0 4px rgba(159, 173, 183, 0.1);
   transform: translateY(-2px);
 }
 
@@ -275,13 +275,13 @@ body {
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+  box-shadow: 0 10px 25px rgba(159, 173, 183, 0.2);
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .btn-check:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(56, 189, 248, 0.3);
+  box-shadow: 0 15px 35px rgba(159, 173, 183, 0.3);
   filter: brightness(1.05);
 }
 
@@ -338,7 +338,7 @@ body {
 }
 
 .message-text.info {
-  color: #38bdf8 !important; /* Blue */
+  color: #9fadb7 !important; /* Blue */
 }
 
 /* Stats Container */
@@ -361,7 +361,7 @@ body {
 
 .stat-item:hover {
   background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(56, 189, 248, 0.2);
+  border-color: rgba(159, 173, 183, 0.2);
 }
 
 .stat-icon {
@@ -384,8 +384,8 @@ body {
 /* Hints Container */
 .hints-container {
   padding: 1rem 1.2rem;
-  background: rgba(56, 189, 248, 0.03);
-  border: 1px solid rgba(56, 189, 248, 0.1);
+  background: rgba(159, 173, 183, 0.03);
+  border: 1px solid rgba(159, 173, 183, 0.1);
   border-radius: 12px;
 }
 
