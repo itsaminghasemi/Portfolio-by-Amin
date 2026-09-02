@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,12 +7,23 @@
   <title>404 | Amin Ghasemi</title>
   <meta name="description" content="Page not found." />
   <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Favicons - Warm Color System -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/Favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/Favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/Favicons/apple-touch-icon.png">
+  <link rel="manifest" href="../images/Favicons/site.webmanifest">
+  <meta name="theme-color" content="#c9b8a3">
+  <meta name="msapplication-TileColor" content="#c9b8a3">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
     rel="stylesheet" />
-  <link rel="icon" type="image/png" sizes="32x32" href="../images/Favicons/favicon-32x32.png" />
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="../css/global.css" />
   <link rel="stylesheet" href="../css/404.css" />
 </head>
@@ -24,7 +35,7 @@
   <header class="glass-navbar fade-in-up" aria-hidden="false">
     <div class="navbar-container">
       <a href="../index.html" class="nav-logo">
-        <span class="logo-icon"><img src="../images/Favicons/favicon.avif" alt="my logo"></span>
+        <span class="logo-icon"><img src="../images/Favicons/favicon.ico" id="nav-logo" alt="Amin Ghasemi logo"></span>
         <span>Amin Ghasemi</span>
       </a>
       <button class="guide-btn" onclick="openGuideModal()" aria-label="View page guide">
@@ -41,7 +52,7 @@
         <a href="contact.html" class="nav-link">Contact</a>
         <a href="social.html" class="nav-link">Social</a>
         <a href="projects.html" class="nav-link">Projects</a>
-        <a href="404.html" class="nav-link active">404</a>
+        <a href="404.html" class="nav-link active" aria-current="page">404</a>
       </nav>
     </div>
   </header>
@@ -78,10 +89,12 @@
       </div>
       <div class="modal-body">
         <h3>🌟 About This Page</h3>
-        <p>This is a custom 404 error page that appears when you try to access a URL that doesn't exist or has been moved. It's designed to help you navigate back to the right place with style and clarity.</p>
+        <p>This is a custom 404 error page that appears when you try to access a URL that doesn't exist or has been
+          moved. It's designed to help you navigate back to the right place with style and clarity.</p>
 
         <h3>🔍 What Does 404 Mean?</h3>
-        <p>A "404 Not Found" error is an HTTP status code indicating that the server cannot find the requested resource. This could happen if:</p>
+        <p>A "404 Not Found" error is an HTTP status code indicating that the server cannot find the requested resource.
+          This could happen if:</p>
         <ul>
           <li>The URL was typed incorrectly</li>
           <li>The page has been moved or deleted</li>

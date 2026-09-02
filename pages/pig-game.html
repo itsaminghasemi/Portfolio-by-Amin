@@ -23,8 +23,7 @@
     <meta property="og:title" content="Pig Game - Roll the Dice & Race to 100 Points" />
     <meta property="og:description"
         content="Play the classic Pig Game online! A fun two-player dice game where you roll, hold, and race to 100 points. Challenge your friends now!" />
-    <meta property="og:image"
-        content="https://aminghasemi.vercel.app/images/Favicons/android-chrome-512x512.png" />
+    <meta property="og:image" content="https://aminghasemi.vercel.app/images/Favicons/android-chrome-512x512.png" />
     <meta property="og:site_name" content="Amin Ghasemi Portfolio" />
     <meta property="og:locale" content="en_US" />
 
@@ -34,18 +33,15 @@
     <meta name="twitter:title" content="Pig Game - Roll the Dice & Race to 100 Points" />
     <meta name="twitter:description"
         content="Play the classic Pig Game online! A fun two-player dice game where you roll, hold, and race to 100 points. Challenge your friends now!" />
-    <meta name="twitter:image"
-        content="https://aminghasemi.vercel.app/images/Favicons/android-chrome-512x512.png" />
+    <meta name="twitter:image" content="https://aminghasemi.vercel.app/images/Favicons/android-chrome-512x512.png" />
     <meta name="twitter:creator" content="@aminghasemi" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../images/Favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../images/Favicons/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../images/Favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192"
-        href="../images/Favicons/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512"
-        href="../images/Favicons/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../images/Favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../images/Favicons/android-chrome-512x512.png">
     <link rel="shortcut icon" href="../images/Favicons/favicon-32x32.png">
     <link rel="manifest" href="../manifest.json" />
 
@@ -92,7 +88,8 @@
     <header class="glass-navbar fade-in-up" aria-hidden="false">
         <div class="navbar-container">
             <a href="../index.html" class="nav-logo">
-                <span class="logo-icon"><img src="../images/Favicons/favicon.avif" alt="my logo"></span>
+                <span class="logo-icon"><img src="../images/Favicons/favicon.ico" id="nav-logo"
+                        alt="Amin Ghasemi logo"></span>
                 <span>Amin Ghasemi</span>
             </a>
             <button class="guide-btn" onclick="openGuideModal()" aria-label="View project guide">
@@ -132,8 +129,7 @@
         </section>
 
         <div class="game-center">
-            <img src="../images/dice/dice-5.avif" alt="Dice showing current roll" class="dice hidden"
-                id="dice-image" />
+            <img src="../images/dice/dice-5.avif" alt="Dice showing current roll" class="dice hidden" id="dice-image" />
             <div class="controls" role="group" aria-label="Game Controls">
                 <button class="btn btn--roll" aria-label="Roll the dice to get a random number between 1 and 6">🎲 Roll
                     Dice</button>
@@ -160,7 +156,7 @@
                 <p>Building beautiful and functional digital experiences with code and creativity.</p>
             </div>
         </div>
-        
+
         <!-- Guidance Modal -->
         <div class="modal-overlay" id="guideModal">
             <div class="guidance-modal">
@@ -170,21 +166,26 @@
                 </div>
                 <div class="modal-body">
                     <h3>🌟 About This Project</h3>
-                    <p>Pig Game is a classic two-player dice game where players race to reach 100 points. It's a game of chance versus strategy - will you keep rolling to build your score, or play it safe and hold? Built with modern web technologies for a smooth gaming experience!</p>
-                    
+                    <p>Pig Game is a classic two-player dice game where players race to reach 100 points. It's a game of
+                        chance versus strategy - will you keep rolling to build your score, or play it safe and hold?
+                        Built with modern web technologies for a smooth gaming experience!</p>
+
                     <h3>🎮 How to Play</h3>
                     <ul>
                         <li><strong>🎯 Objective:</strong> Be the first player to reach 100 points</li>
                         <li><strong>🎲 Roll Dice:</strong> Click "Roll Dice" to get a random number between 1 and 6</li>
                         <li><strong>➕ Add Points:</strong> Your roll is added to your "current" temporary score</li>
-                        <li><strong>✋ Hold:</strong> Click "Hold" to add your current score to your total score and pass to next player</li>
-                        <li><strong>⚠️ Rolling a 1:</strong> If you roll a 1, you lose all current points and it's the next player's turn</li>
+                        <li><strong>✋ Hold:</strong> Click "Hold" to add your current score to your total score and pass
+                            to next player</li>
+                        <li><strong>⚠️ Rolling a 1:</strong> If you roll a 1, you lose all current points and it's the
+                            next player's turn</li>
                         <li><strong>🏆 Winning:</strong> First player to reach 100 or more points wins!</li>
                     </ul>
 
                     <h3>💡 Strategy Tips</h3>
                     <ul>
-                        <li>Know when to hold: Don't get greedy! Consider holding after reaching 20-25 current points</li>
+                        <li>Know when to hold: Don't get greedy! Consider holding after reaching 20-25 current points
+                        </li>
                         <li>If you're ahead, play safer. If behind, take more risks</li>
                         <li>Watch your opponent's score and adjust your strategy accordingly</li>
                         <li>Remember: rolling a 1 loses everything, so balance risk vs reward</li>
@@ -201,7 +202,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <p>&copy; <span id="year">2026</span> Amin Ghasemi. All rights reserved.</p>
         </div>
