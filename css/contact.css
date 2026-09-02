@@ -28,13 +28,13 @@ body {
 .glow-blue {
   top: -10%;
   left: -10%;
-  background: radial-gradient(circle, rgba(159, 173, 183, 0.4), transparent 70%);
+  background: radial-gradient(circle, var(--primary-glow), transparent 70%);
 }
 
 .glow-purple {
   bottom: -10%;
   right: -10%;
-  background: radial-gradient(circle, rgba(196, 168, 150, 0.4), transparent 70%);
+  background: radial-gradient(circle, var(--accent-glow), transparent 70%);
 }
 
 .form-container {
@@ -84,8 +84,8 @@ body {
   width: 100%;
 }
 
-input[type="text"],
-input[type="email"],
+input[type='text'],
+input[type='email'],
 textarea {
   width: 100%;
   background: var(--input-bg);
@@ -125,8 +125,8 @@ textarea + label {
 input:focus,
 textarea:focus {
   border-color: var(--primary);
-  background: rgba(159, 173, 183, 0.03);
-  box-shadow: 0 0 0 4px rgba(159, 173, 183, 0.1);
+  background: rgba(201, 184, 163, 0.03);
+  box-shadow: 0 0 0 4px rgba(201, 184, 163, 0.1);
 }
 
 input:focus + label,
@@ -176,7 +176,7 @@ textarea:not(:placeholder-shown) + label {
   gap: 1rem;
 }
 
-.radio-card-group input[type="radio"] {
+.radio-card-group input[type='radio'] {
   display: none;
 }
 
@@ -206,9 +206,9 @@ textarea:not(:placeholder-shown) + label {
   background: rgba(255, 255, 255, 0.05);
 }
 
-.radio-card-group input[type="radio"]:checked + .radio-card {
+.radio-card-group input[type='radio']:checked + .radio-card {
   border-color: var(--primary);
-  background: rgba(159, 173, 183, 0.08);
+  background: rgba(201, 184, 163, 0.08);
   color: var(--primary);
 }
 
@@ -262,7 +262,7 @@ textarea:not(:placeholder-shown) + label {
 
 .file-upload-label:hover {
   border-color: var(--primary);
-  background: rgba(159, 173, 183, 0.03);
+  background: rgba(201, 184, 163, 0.03);
 }
 
 .file-upload-label:hover .upload-icon-wrapper {
@@ -306,7 +306,7 @@ textarea:not(:placeholder-shown) + label {
 
 .slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 16px;
   width: 16px;
   left: 3px;
@@ -343,7 +343,7 @@ input:checked ~ .toggle-label {
   justify-content: center;
   gap: 0.8rem;
   width: 100%;
-  background: linear-gradient(135deg, var(--primary), #6366f1);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
   color: #fff;
   border: none;
   padding: 1.2rem;
@@ -357,7 +357,7 @@ input:checked ~ .toggle-label {
 
 .btn-submit:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(159, 173, 183, 0.3);
+  box-shadow: 0 10px 20px rgba(201, 184, 163, 0.3);
 }
 
 .btn-submit svg {

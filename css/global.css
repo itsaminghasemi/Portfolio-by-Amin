@@ -1,16 +1,59 @@
 :root {
-  /* Theme synced with profile image */
-  --primary: #9fadb7;        /* Complementary blue-gray from profile */
-  --primary-soft: #0f0f12;   /* Darker shade for contrast */
-  --accent: #c4a896;         /* Lighter warm brown accent */
-  --accent-soft: rgba(196, 168, 150, 0.12);
-  --text-on-dark: #f3f4f6;
-  --text-light: #f3f4f6;
-  --text-muted: #b8a99d;     /* Warm muted text color */
-  --bg-dark: #0a0a0c;        /* Very dark warm brown-black */
-  --bg-color: #12100f;       /* Warm dark background matching profile */
+  /* ===== PRIMARY PALETTE (Warm & Premium) ===== */
+  /* Backgrounds - Deep, warm, sophisticated */
+  --color-bg-primary: #0a0805; /* Deepest warm-black */
+  --color-bg-secondary: #12100f; /* Primary background */
+  --color-bg-tertiary: #1a1815; /* Elevated surfaces */
+
+  /* Surfaces - Glass & Cards */
+  --color-surface-primary: rgba(26, 24, 21, 0.6); /* Main glass surface */
+  --color-surface-secondary: rgba(32, 30, 27, 0.5); /* Secondary surface */
+  --color-surface-elevated: rgba(42, 38, 34, 0.7); /* Elevated glass */
+
+  /* Text - Warm, refined hierarchy */
+  --color-text-primary: #f5f1ed; /* Off-white, warm cream */
+  --color-text-secondary: #d4c4b0; /* Warm beige */
+  --color-text-muted: #a0816f; /* Warm taupe (muted) */
+  --color-text-subtle: #8b7355; /* Deep warm taupe */
+
+  /* Accents - Warm, premium feel */
+  --color-accent-primary: #c9b8a3; /* Warm taupe accent */
+  --color-accent-secondary: #8b7355; /* Deep warm brown */
+  --color-accent-light: #d4c4b0; /* Light warm beige */
+  --color-accent-hover: #a0816f; /* Hover state */
+  --color-accent-active: #8b7355; /* Active state */
+
+  /* Borders & Dividers */
+  --color-border-primary: rgba(201, 184, 163, 0.15); /* Warm taupe border */
+  --color-border-secondary: rgba(139, 115, 85, 0.1); /* Subtle warm border */
+  --color-border-soft: rgba(212, 196, 176, 0.05); /* Very subtle */
+
+  /* Semantic Colors */
+  --color-success: #6b9f7f; /* Muted green (warm tone) */
+  --color-warning: #d4a574; /* Warm amber */
+  --color-error: #b5726f; /* Warm muted red */
+  --color-info: #9fadb7; /* Cool-neutral for info */
+
+  /* Effects & Overlays */
+  --color-shadow: rgba(10, 8, 5, 0.5); /* Warm shadow */
+  --color-overlay: rgba(0, 0, 0, 0.4); /* Dark overlay */
+
+  /* Glass & Backdrop */
+  --color-glass-bg: rgba(255, 255, 255, 0.03);
+  --color-glass-border: rgba(201, 184, 163, 0.15);
+
+  /* Legacy variables (for transition compatibility) */
+  --primary: #c9b8a3;
+  --primary-soft: #0f0c0a;
+  --accent: #c9b8a3;
+  --accent-soft: rgba(201, 184, 163, 0.12);
+  --text-on-dark: #f5f1ed;
+  --text-light: #f5f1ed;
+  --text-muted: #a0816f;
+  --bg-dark: #0a0805;
+  --bg-color: #12100f;
   --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(159, 173, 183, 0.15); /* Subtle blue-gray border */
+  --glass-border: rgba(201, 184, 163, 0.15);
 }
 
 /* Base / Reset */
@@ -19,11 +62,11 @@
   margin: 0;
   padding: 0;
   font-family:
-    "Inter",
+    'Inter',
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
-    "Segoe UI",
+    'Segoe UI',
     sans-serif;
 }
 
@@ -118,11 +161,7 @@ body {
 }
 
 .nav-link.active {
-  background: linear-gradient(
-    145deg,
-    rgba(255, 215, 0, 0.15),
-    rgba(255, 215, 0, 0.05)
-  );
+  background: linear-gradient(145deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
   border: 2px solid rgba(255, 215, 0, 0.4);
   border-radius: 8px;
   color: #ffd700;
@@ -140,11 +179,7 @@ body {
   box-shadow:
     0 0 25px rgba(255, 215, 0, 0.5),
     inset 0 0 15px rgba(255, 215, 0, 0.3);
-  background: linear-gradient(
-    145deg,
-    rgba(255, 215, 0, 0.25),
-    rgba(255, 215, 0, 0.1)
-  );
+  background: linear-gradient(145deg, rgba(255, 215, 0, 0.25), rgba(255, 215, 0, 0.1));
 }
 
 /* Premium / Home button (top-left) */
@@ -170,18 +205,13 @@ body {
   z-index: 10;
 }
 .premium-home-btn::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(159, 173, 183, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(159, 173, 183, 0.2), transparent);
   transition: all 0.6s ease;
 }
 .premium-home-btn:hover::before {

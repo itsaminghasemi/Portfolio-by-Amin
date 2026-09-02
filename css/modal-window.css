@@ -1,72 +1,69 @@
-/* Modal Window Page Styles */
-/* Synced with global.css design system */
+/* Modal Window Page Styles - Synced with warm color system */
 
 /* Main content area */
 main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 4rem 2rem 6rem;
-  position: relative;
+  min-height: 100vh;
+  background: var(--bg-dark);
+  padding: 2rem;
 }
 
 /* Page title section */
 .modal-page-header {
   text-align: center;
   margin-bottom: 3rem;
-  animation: fadeInUp 0.6s ease-out;
 }
 
 .modal-page-header h1 {
   font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--text-on-dark);
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.5px;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(135deg, var(--color-text-primary), var(--color-accent-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .modal-page-header p {
-  color: var(--text-muted);
-  font-size: 1.1rem;
-  max-width: 500px;
-  margin: 0 auto;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin: 0.5rem 0 0 0;
 }
 
 /* Button container */
 .modal-buttons {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 2rem;
-  animation: fadeInUp 0.6s ease-out 0.1s backwards;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
 }
 
 /* Show modal buttons - synced with global button styles */
 .show-modal {
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 1rem 2rem;
-  border: 1px solid var(--glass-border);
-  background: var(--glass-bg);
-  color: var(--text-on-dark);
-  border-radius: 50px;
+  position: relative;
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  color: var(--color-text-primary);
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
   cursor: pointer;
+  overflow: hidden;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  backdrop-filter: blur(10px);
-  display: inline-flex;
+  box-shadow: 0 8px 16px rgba(201, 184, 163, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.8rem;
 }
 
 .show-modal:hover {
-  border-color: var(--primary);
-  background: rgba(159, 173, 183, 0.08);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(159, 173, 183, 0.15);
-  color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(201, 184, 163, 0.3);
 }
 
 .show-modal svg {
@@ -81,25 +78,22 @@ main {
 
 /* Different button variants */
 .show-modal.variant-primary {
-  background: var(--primary);
-  color: var(--primary-soft);
-  border-color: var(--primary);
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
 }
 
 .show-modal.variant-primary:hover {
-  background: rgba(159, 173, 183, 0.9);
-  box-shadow: 0 8px 25px rgba(159, 173, 183, 0.3);
+  background: linear-gradient(135deg, var(--color-accent-secondary), var(--color-accent-primary));
 }
 
 .show-modal.variant-accent {
-  background: var(--accent);
-  color: #ffffff;
-  border-color: var(--accent);
+  background: var(--color-surface-primary);
+  border: 1px solid var(--color-border-primary);
+  color: var(--color-accent-primary);
 }
 
 .show-modal.variant-accent:hover {
-  background: rgba(196, 168, 150, 0.9);
-  box-shadow: 0 8px 25px rgba(196, 168, 150, 0.3);
+  background: rgba(201, 184, 163, 0.1);
+  border-color: var(--color-accent-primary);
 }
 
 /* -------------------------- */
@@ -114,30 +108,22 @@ main {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
+  background: var(--color-surface-elevated);
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  z-index: 10;
+  max-width: 500px;
   width: 90%;
-  max-width: 600px;
-  max-height: 80vh;
-  overflow-y: auto;
-
-  background: rgba(15, 15, 19, 0.95);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--color-border-primary);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-  border-radius: 16px;
-  padding: 3rem;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-  z-index: 10000;
-  animation: modalSlideIn 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  animation: modalSlideIn 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
 @keyframes modalSlideIn {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -45%) scale(0.95);
-  }
   to {
-    opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
 }
@@ -145,50 +131,47 @@ main {
 .modal-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 2rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 .modal-header h1 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--text-on-dark);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
   margin: 0;
-  letter-spacing: -0.5px;
 }
 
 .close-modal {
-  position: relative;
-  top: auto;
-  right: auto;
-  font-size: 2.5rem;
-  line-height: 1;
-  color: var(--text-muted);
+  background: var(--color-surface-secondary);
+  border: 1px solid var(--color-border-primary);
+  color: var(--color-accent-primary);
+  font-size: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
   cursor: pointer;
-  border: none;
-  background: transparent;
-  padding: 0.25rem;
-  transition: all 0.2s ease;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .close-modal:hover {
-  color: var(--text-on-dark);
-  background: rgba(255, 255, 255, 0.05);
-  transform: scale(1.1);
+  background: rgba(201, 184, 163, 0.1);
+  border-color: var(--color-accent-primary);
+  transform: rotate(90deg);
 }
 
 .modal-body {
-  color: var(--text-muted);
-  font-size: 1rem;
-  line-height: 1.7;
+  color: var(--color-text-primary);
+  line-height: 1.8;
 }
 
 .modal-body p {
-  margin-bottom: 1.25rem;
+  margin: 0 0 1rem 0;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
 }
 
 .modal-body p:last-child {
@@ -202,107 +185,67 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  z-index: 9999;
-  animation: overlayFadeIn 0.2s ease;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  animation: overlayFadeIn 0.3s ease forwards;
 }
 
 @keyframes overlayFadeIn {
-  from {
-    opacity: 0;
-  }
   to {
     opacity: 1;
+    pointer-events: all;
   }
 }
 
 /* Info box inside modal */
 .modal-info-box {
-  background: rgba(159, 173, 183, 0.08);
-  border: 1px solid rgba(159, 173, 183, 0.2);
-  border-radius: 12px;
-  padding: 1.5rem;
+  background: var(--color-surface-secondary);
+  border: 1px solid var(--color-border-soft);
+  border-radius: 0.8rem;
+  padding: 1.2rem;
   margin-top: 1.5rem;
 }
 
 .modal-info-box h3 {
-  color: var(--primary);
+  color: var(--color-accent-primary);
+  margin: 0 0 0.8rem 0;
   font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .modal-info-box ul {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
   margin: 0;
 }
 
 .modal-info-box li {
-  color: var(--text-muted);
-  font-size: 0.9rem;
+  color: var(--color-text-muted);
   padding: 0.4rem 0;
-  padding-left: 1.5rem;
-  position: relative;
+  font-size: 0.9rem;
 }
 
 .modal-info-box li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  color: var(--primary);
-  font-size: 0.8rem;
+  content: '→ ';
+  color: var(--color-accent-primary);
+  font-weight: 600;
+  margin-right: 0.5rem;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   main {
-    padding: 3rem 1.5rem 4rem;
-  }
-
-  .modal-page-header h1 {
-    font-size: 2rem;
-  }
-
-  .modal-page-header p {
-    font-size: 1rem;
+    padding: 1rem;
   }
 
   .modal-buttons {
-    flex-direction: column;
-    align-items: stretch;
-    max-width: 300px;
-  }
-
-  .show-modal {
-    justify-content: center;
+    grid-template-columns: 1fr;
   }
 
   .modal {
     width: 95%;
-    padding: 2rem 1.5rem;
-  }
-
-  .modal-header h1 {
-    font-size: 1.5rem;
-  }
-
-  .modal-body {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .modal {
-    padding: 1.5rem 1rem;
-  }
-
-  .close-modal {
-    font-size: 2rem;
+    padding: 2rem;
   }
 }

@@ -1,188 +1,201 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap');
 
 /* 1. GLOBAL OVERRIDES & LAYOUT FLOW */
 body.pig-game-page {
   background: var(--bg-color) !important;
-  /* Override global 110px padding since the navbar is now inside the body */
   padding-top: 0 !important;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  /* Removed justify-content: center to allow natural document flow */
+  font-family: 'Nunito', sans-serif;
 }
 
 /* 2. MAIN CONTAINER (Mobile Base) */
 .pig-game-container {
-  position: relative;
-  width: 95vw;
-  max-width: 500px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid var(--glass-border);
-  border-radius: 20px;
-  padding: 1.5rem 1rem;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-color);
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  font-family: "Nunito", sans-serif;
-  /* Pushes content below the fixed global navbar */
-  margin-top: 90px;
-  margin-bottom: 2rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.pig-game-container::before {
+  content: '';
+  position: fixed;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--primary-glow), transparent 70%);
+  filter: blur(100px);
+  top: -10%;
+  left: -10%;
+  z-index: -1;
+  opacity: 0.5;
 }
 
 /* 3. PLAYER CARDS (Mobile Sizes) */
 .player {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--glass-border);
-  border-radius: 16px;
-  padding: 1.5rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--color-surface-primary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  width: 45%;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .player--active {
-  background: rgba(159, 173, 183, 0.05);
-  border-color: var(--primary);
-  box-shadow: 0 0 20px rgba(159, 173, 183, 0.15);
+  background: rgba(201, 184, 163, 0.08);
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 15px 35px rgba(201, 184, 163, 0.15);
 }
 
 .name {
-  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 400;
-  color: var(--text-muted);
-  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  margin: 0;
+  transition: all 0.3s ease;
 }
 
 .player--active .name {
-  color: var(--primary);
+  color: var(--color-accent-primary);
   font-weight: 700;
-  text-shadow: 0 0 10px rgba(159, 173, 183, 0.5);
 }
 
 .score {
-  font-size: 3rem;
+  font-size: 6rem;
   font-weight: 800;
-  color: var(--text-on-dark);
-  margin-bottom: 1rem;
-  letter-spacing: -1px;
+  color: var(--color-accent-primary);
+  margin: 1rem 0;
 }
 
 /* 4. CURRENT SCORE (Mobile Sizes) */
 .current {
-  width: 100%;
-  background: rgba(196, 168, 150, 0.08);
-  border: 1px solid rgba(196, 168, 150, 0.3);
-  border-radius: 12px;
+  background: var(--color-accent-primary);
+  color: #000;
+  border-radius: 1rem;
   padding: 1rem;
-  text-align: center;
+  margin: 1rem 0;
+  transition: all 0.3s ease;
 }
 
 .player--active .current {
-  background: rgba(196, 168, 150, 0.15);
-  border-color: var(--accent);
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  box-shadow: 0 0 20px rgba(201, 184, 163, 0.4);
 }
 
 .current-label {
   text-transform: uppercase;
-  font-size: 1rem;
-  color: var(--text-muted);
-  margin-bottom: 0.3rem;
+  font-size: 0.8rem;
   letter-spacing: 1px;
+  font-weight: 700;
 }
 
 .current-score {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--accent);
+  font-size: 3.5rem;
+  font-weight: 900;
 }
 
 /* 5. CENTER AREA & DICE (Mobile Sizes) */
 .game-center {
+  flex-basis: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  padding: 0.5rem 0;
+  gap: 2rem;
 }
 
 .dice {
-  height: 5rem; /* Scaled down for mobile */
-  filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.4));
+  width: 5rem;
+  height: 5rem;
+  background: var(--color-surface-elevated);
+  border: 2px solid var(--color-border-primary);
+  border-radius: 0.8rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  font-size: 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
 }
 
 .dice.rolling {
-  animation: premiumRoll 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: rotateX(360deg) rotateY(360deg);
+  animation: premiumRoll 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 @keyframes premiumRoll {
   0% {
-    transform: scale(0.8) rotate(0deg);
+    transform: rotateX(0) rotateY(0);
   }
   50% {
-    transform: scale(1.1) rotate(180deg);
+    transform: rotateX(720deg) rotateY(720deg);
   }
   100% {
-    transform: scale(1) rotate(360deg);
+    transform: rotateX(360deg) rotateY(360deg);
   }
 }
 
 .controls {
   display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  width: 100%;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* 6. BUTTONS (Mobile Sizes) */
 .btn {
-  width: 100%;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--glass-border);
-  border-radius: 12px;
-  color: var(--text-on-dark);
-  font-family: inherit;
-  font-size: 1.3rem;
-  font-weight: 600;
+  padding: 1rem 2rem;
+  background: var(--color-surface-secondary);
+  border: 1px solid var(--color-border-primary);
+  color: var(--color-text-primary);
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .btn:hover {
-  background: rgba(159, 173, 183, 0.1);
-  border-color: var(--primary);
-  color: var(--primary);
-  transform: translateY(-2px);
+  background: rgba(201, 184, 163, 0.1);
+  border-color: var(--color-accent-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(201, 184, 163, 0.2);
 }
 
 .btn:active {
-  transform: translateY(1px);
+  transform: translateY(-1px);
 }
 
 .btn--new {
-  background: transparent;
-  border-color: rgba(255, 255, 255, 0.1);
-  color: var(--text-muted);
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  color: #000;
+  border: none;
+  box-shadow: 0 8px 16px rgba(201, 184, 163, 0.25);
+}
+
+.btn--new:hover {
+  box-shadow: 0 12px 24px rgba(201, 184, 163, 0.35);
+  background: linear-gradient(135deg, var(--color-accent-secondary), var(--color-accent-primary));
 }
 
 /* 7. STATES */
 .player--winner {
-  background: rgba(47, 255, 150, 0.05) !important;
-  border-color: #2fff96 !important;
-  box-shadow: 0 0 30px rgba(47, 255, 150, 0.2) !important;
+  background: rgba(107, 159, 127, 0.08);
+  border-color: var(--color-success);
 }
+
 .player--winner .name {
-  color: #2fff96 !important;
-  text-shadow: 0 0 10px rgba(47, 255, 150, 0.5);
+  color: var(--color-success);
+  font-size: 1.1rem;
 }
 
 .hidden {
@@ -190,61 +203,35 @@ body.pig-game-page {
 }
 
 /* =========================================================
-   8. DESKTOP ENHANCEMENTS (min-width: 769px)
+   DESKTOP LAYOUT (MIN-WIDTH: 769PX)
    ========================================================= */
 @media (min-width: 769px) {
   .pig-game-container {
-    max-width: 1100px;
-    width: 90vw;
-    min-height: 600px;
-    flex-direction: row;
-    padding: 3rem;
-    gap: 3rem;
-    align-items: stretch;
-    margin-top: 100px;
+    gap: 4rem;
+    flex-wrap: nowrap;
+    padding: 2rem;
   }
 
   .player {
     flex: 1;
     padding: 3rem 2rem;
-    justify-content: space-between;
+    min-width: 300px;
   }
 
-  .name {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
   .score {
-    font-size: 6.5rem;
-    margin-bottom: 2rem;
-  }
-  .current {
-    padding: 1.5rem;
-  }
-  .current-label {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-  .current-score {
-    font-size: 3.5rem;
+    font-size: 8rem;
   }
 
   .game-center {
-    flex: 0 0 250px;
-    justify-content: center;
-    padding: 0;
-  }
-
-  .dice {
-    height: 10rem;
+    flex-basis: auto;
   }
 
   .controls {
-    gap: 1.2rem;
+    gap: 1.5rem;
   }
 
   .btn {
-    padding: 1.4rem;
-    font-size: 1.5rem;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.05rem;
   }
 }

@@ -4,12 +4,11 @@ body {
   background: var(--bg-dark);
   display: flex;
   flex-direction: column;
-  color: var(--text-on-dark);
+  color: var(--color-text-primary);
   position: relative;
   overflow-x: hidden;
 }
 
-/* Guide Button - Social Page Style */
 /* Ambient glow effects matching index page */
 .ambient-glow {
   position: fixed;
@@ -25,79 +24,410 @@ body {
 .glow-blue {
   top: -10%;
   left: -10%;
-  background: radial-gradient(circle, rgba(159, 173, 183, 0.4), transparent 70%);
+  background: radial-gradient(circle, var(--primary-glow), transparent 70%);
 }
 
 .glow-purple {
   bottom: -10%;
   right: -10%;
-  background: radial-gradient(circle, rgba(196, 168, 150, 0.4), transparent 70%);
+  background: radial-gradient(circle, var(--accent-glow), transparent 70%);
 }
 
 .container {
   text-align: center;
   background: var(--glass-bg);
   padding: 2.6rem 2.4rem;
-  border-radius: var(--radius-lg, 18px);
+  border-radius: 18px;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
-  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
-  width: 100%;
-  max-width: 420px;
-  margin: 0 auto auto auto;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 0.4rem;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(135deg, var(--color-text-primary), var(--color-accent-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-  opacity: 0.8;
-  margin-bottom: 2.1rem;
-  font-size: 0.96rem;
-  color: var(--text-muted);
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin: 0.5rem 0 2rem 0;
 }
 
-.social-links {
+/* ==========================================
+   GITHUB SECTION - CLICKABLE ICON
+   ========================================== */
+
+.github-section {
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
-}
-
-.social-links a {
-  text-decoration: none;
-  padding: 0.9rem;
-  border-radius: 99px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--glass-border);
-  color: var(--text-on-dark);
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2.5rem 0 0 0;
   transition: all 0.3s ease;
-  font-size: 0.95rem;
 }
 
-.social-links a.github {
-  border-color: rgba(156, 163, 175, 0.5);
-}
-.social-links a.linkedin {
-  border-color: rgba(14, 118, 168, 0.5);
+.github-section-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background: var(--color-surface-secondary);
+  border: 2px solid var(--color-accent-primary);
+  border-radius: 12px;
+  color: var(--color-accent-primary);
+  font-size: 1.8rem;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  cursor: pointer;
 }
 
-.social-links a:hover {
-  background-color: var(--primary);
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+.github-section-icon::before {
+  content: '⚙️';
+  font-size: 1.6rem;
+}
+
+.github-section-icon:hover {
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  border-color: var(--color-accent-primary);
+  color: #000;
+  transform: scale(1.15) rotate(-10deg);
+  box-shadow: 0 12px 28px rgba(201, 184, 163, 0.35);
+}
+
+.github-section-icon:active {
+  transform: scale(1.08) rotate(-10deg);
+}
+
+.github-section-icon:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 4px;
+}
+
+.github-section h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.github-section:hover h2 {
+  color: var(--color-accent-primary);
+}
+
+.github-description {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0.5rem 0 0 0;
+  font-style: italic;
+}
+
+/* ==========================================
+   LINKEDIN SECTION - CLICKABLE ICON
+   ========================================== */
+
+.linkedin-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2.5rem 0 0 0;
+  transition: all 0.3s ease;
+}
+
+.linkedin-section-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background: var(--color-surface-secondary);
+  border: 2px solid var(--color-accent-primary);
+  border-radius: 12px;
+  color: var(--color-accent-primary);
+  font-size: 1.8rem;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  cursor: pointer;
+}
+
+.linkedin-section-icon::before {
+  content: '💼';
+  font-size: 1.6rem;
+}
+
+.linkedin-section-icon:hover {
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  border-color: var(--color-accent-primary);
+  color: #000;
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 12px 28px rgba(201, 184, 163, 0.35);
+}
+
+.linkedin-section-icon:active {
+  transform: scale(1.08) rotate(10deg);
+}
+
+.linkedin-section-icon:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 4px;
+}
+
+.linkedin-section h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.linkedin-section:hover h2 {
+  color: var(--color-accent-primary);
+}
+
+.linkedin-description {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0.5rem 0 0 0;
+  font-style: italic;
+}
+
+/* ==========================================
+   SECTION HEADINGS WITH ICONS (Generic)
+   ========================================== */
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2.5rem 0 1.8rem 0;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--color-border-primary);
+  transition: all 0.3s ease;
+}
+
+.section-heading:hover {
+  border-bottom-color: var(--color-accent-primary);
+}
+
+.section-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background: var(--color-surface-secondary);
+  border: 1.5px solid var(--color-border-primary);
+  border-radius: 12px;
+  color: var(--color-accent-primary);
+  font-size: 1.4rem;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.section-heading:hover .section-icon {
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  border-color: var(--color-accent-primary);
+  color: #000;
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 8px 16px rgba(201, 184, 163, 0.25);
+}
+
+.section-heading h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-heading:hover h2 {
+  color: var(--color-accent-primary);
+}
+
+/* ==========================================
+   SOCIAL LINKS SECTION (Hidden - no longer needed)
+   ========================================== */
+
+.social-links {
+  display: none;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1.5rem;
+    margin: 2rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .github-section h2,
+  .linkedin-section h2,
+  .section-heading h2 {
+    font-size: 1.2rem;
+  }
+
+  .github-section-icon,
+  .linkedin-section-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.4rem;
+  }
+
+  .github-section-icon::before,
+  .linkedin-section-icon::before {
+    font-size: 1.3rem;
+  }
+
+  .github-description,
+  .linkedin-description {
+    font-size: 0.8rem;
+  }
+
+  .section-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 2.2rem 1.6rem;
-    margin: 0 auto auto auto;
-    width: 90%;
+  body {
+    padding: 0.5rem;
   }
+
+  .container {
+    padding: 1.5rem 1rem;
+    margin: 1rem 0.5rem;
+  }
+
   h1 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .github-section,
+  .linkedin-section {
+    gap: 0.8rem;
+    margin: 2rem 0 0 0;
+  }
+
+  .github-section h2,
+  .linkedin-section h2 {
+    font-size: 1.1rem;
+  }
+
+  .github-section-icon,
+  .linkedin-section-icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 1.2rem;
+  }
+
+  .github-section-icon::before,
+  .linkedin-section-icon::before {
+    font-size: 1.1rem;
+  }
+
+  .github-description,
+  .linkedin-description {
+    font-size: 0.75rem;
+  }
+
+  .section-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1rem;
+  }
+
+  .section-heading h2 {
+    font-size: 1rem;
+  }
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+.github-section,
+.linkedin-section {
+  animation: sectionFadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+
+.github-section {
+  animation-delay: 0.1s;
+}
+
+.linkedin-section {
+  animation-delay: 0.3s;
+}
+
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.github-section-icon,
+.linkedin-section-icon {
+  animation: buttonPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes buttonPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(201, 184, 163, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(201, 184, 163, 0);
+  }
+}
+
+/* Stop pulse on hover */
+.github-section-icon:hover,
+.linkedin-section-icon:hover {
+  animation: none;
+}
+
+/* ==========================================
+   DARK THEME ADJUSTMENTS
+   ========================================== */
+
+@media (prefers-color-scheme: dark) {
+  .github-section-icon:hover,
+  .linkedin-section-icon:hover {
+    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
   }
 }

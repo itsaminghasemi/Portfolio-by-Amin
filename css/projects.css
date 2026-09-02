@@ -1,4 +1,4 @@
-/* Projects Page Styles */
+/* Projects Page Styles - Synced with warm color system */
 
 /* Main container */
 .projects-main {
@@ -13,61 +13,45 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: var(--color-text-primary);
+  background: linear-gradient(135deg, var(--color-text-primary), var(--color-accent-primary));
   -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .page-subtitle {
   text-align: center;
-  color: var(--text-muted);
-  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  font-size: 1rem;
   margin-bottom: 3rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* Projects grid */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
-  padding: 1rem;
 }
 
 /* Project card */
 .project-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: 16px;
-  padding: 2rem;
-  text-decoration: none;
-  color: var(--text-on-dark);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   position: relative;
+  background: var(--color-surface-primary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 1.5rem;
+  padding: 2rem;
   overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
 }
 
 .project-card::before {
-  content: "";
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(159, 173, 183, 0.05),
-    rgba(196, 168, 150, 0.05)
-  );
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(201, 184, 163, 0.15), transparent 70%);
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease;
 }
 
 .project-card:hover::before {
@@ -76,111 +60,114 @@
 
 .project-card:hover {
   transform: translateY(-8px);
-  border-color: var(--primary);
-  box-shadow: 0 20px 40px rgba(159, 173, 183, 0.15);
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 20px 40px rgba(201, 184, 163, 0.15);
+  background: var(--color-surface-elevated);
 }
 
 /* Project icon */
 .project-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: var(--color-surface-secondary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
-  background: rgba(159, 173, 183, 0.1);
-  border-radius: 12px;
-  margin-bottom: 1.5rem;
-  transition: all 0.4s ease;
+  margin-bottom: 1.2rem;
+  transition: all 0.3s ease;
 }
 
 .project-card:hover .project-icon {
-  background: var(--primary);
-  transform: scale(1.1) rotate(5deg);
+  background: rgba(201, 184, 163, 0.1);
+  border-color: var(--color-accent-primary);
+  transform: scale(1.1) rotate(-5deg);
 }
 
 .project-icon img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  padding: 0.5rem;
 }
 
 .project-icon i {
-  font-size: 2.5rem;
-  color: var(--primary);
-  transition: color 0.4s ease;
+  font-size: 1.8rem;
+  color: var(--color-accent-primary);
 }
 
 .project-card:hover .project-icon i {
-  color: var(--primary-soft);
+  transform: scale(1.2);
 }
 
 /* Project title */
 .project-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  color: var(--text-on-dark);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 0.8rem 0;
 }
 
 /* Project description */
 .project-description {
-  font-size: 0.95rem;
-  color: var(--text-muted);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
   line-height: 1.6;
   margin-bottom: 1.5rem;
-  flex-grow: 1;
 }
 
 /* Project link */
 .project-link {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--primary);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  color: var(--color-accent-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
 }
 
 .project-card:hover .project-link {
-  gap: 0.75rem;
-  color: var(--accent);
+  background: rgba(201, 184, 163, 0.1);
+  transform: translateX(4px);
 }
 
 /* Ambient glow effects */
 .ambient-glow {
   position: fixed;
-  width: 600px;
-  height: 600px;
+  width: 40vw;
+  height: 40vw;
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.15;
+  z-index: -1;
+  opacity: 0.5;
   pointer-events: none;
-  z-index: 0;
 }
 
 .glow-blue {
-  background: var(--primary);
-  top: -200px;
-  right: -200px;
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(circle, var(--primary-glow), transparent 70%);
 }
 
 .glow-purple {
-  background: var(--accent);
-  bottom: -200px;
-  left: -200px;
+  bottom: -10%;
+  right: -10%;
+  background: radial-gradient(circle, var(--accent-glow), transparent 70%);
 }
 
 /* Animation */
 .fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
   to {
     opacity: 1;
     transform: translateY(0);
@@ -190,21 +177,25 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .projects-main {
-    padding: 2rem 1rem 4rem;
+    padding: 2rem 1rem 3rem;
   }
 
   .page-title {
     font-size: 2rem;
   }
 
-  .page-subtitle {
-    font-size: 1rem;
-    padding: 0 1rem;
-  }
-
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-main {
+    padding: 1rem 1rem 2rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
   }
 
   .project-card {
@@ -212,32 +203,7 @@
   }
 }
 
-@media (max-width: 480px) {
-  .page-title {
-    font-size: 1.75rem;
-  }
-
-  .project-icon {
-    width: 56px;
-    height: 56px;
-  }
-
-  .project-icon i {
-    font-size: 2rem;
-  }
-
-  .project-title {
-    font-size: 1.25rem;
-  }
-
-  .project-description {
-    font-size: 0.9rem;
-  }
-}
-
 /* Project logo image styles */
 .project-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(201, 184, 163, 0.15));
 }
