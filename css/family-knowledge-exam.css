@@ -1,1 +1,817 @@
-/* ========================================\n   Family Knowledge Exam - Premium Styles\n   Synced with Portfolio Global Theme\n   ======================================== */\n\n:root {\n  --exam-primary: var(--color-accent-primary);\n  --exam-secondary: var(--color-accent-secondary);\n  --exam-text: var(--color-text-primary);\n  --exam-muted: var(--color-text-muted);\n  --exam-surface: var(--color-surface-primary);\n  --exam-border: var(--color-border-primary);\n  --exam-success: #067647;\n  --exam-success-bg: #ecfdf3;\n  --exam-danger: #b42318;\n  --exam-danger-bg: #fef2f2;\n}\n\n/* Main Container */\n.exam-container {\n  min-height: 100vh;\n  background: var(--bg-color);\n  color: var(--exam-text);\n  padding: 2rem 1rem 4rem;\n  position: relative;\n  overflow-x: hidden;\n}\n\n/* RTL Support */\n[dir=\"rtl\"] .exam-container {\n  font-family: \"Vazirmatn\", Tahoma, Arial, sans-serif;\n  line-height: 1.9;\n}\n\n/* Exam Header */\n.exam-header {\n  text-align: center;\n  margin-bottom: 3rem;\n}\n\n.exam-header h1 {\n  font-size: 2.5rem;\n  font-weight: 900;\n  margin: 0 0 0.8rem 0;\n  background: linear-gradient(135deg, var(--exam-text), var(--exam-primary));\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-clip: text;\n}\n\n.exam-subtitle {\n  font-size: 1.1rem;\n  color: var(--exam-muted);\n  margin: 0;\n}\n\n/* Exam Selector Section */\n.exam-selector {\n  max-width: 1200px;\n  margin: 0 auto;\n}\n\n.selector-title {\n  font-size: 1.8rem;\n  font-weight: 800;\n  text-align: center;\n  margin-bottom: 2rem;\n  color: var(--exam-text);\n}\n\n.exam-cards-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n  gap: 2rem;\n  padding: 1rem;\n}\n\n.exam-card {\n  background: var(--exam-surface);\n  border: 1px solid var(--exam-border);\n  border-radius: 1.5rem;\n  padding: 2rem;\n  text-align: center;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n\n.exam-card:hover:not(.coming-soon) {\n  transform: translateY(-8px);\n  border-color: var(--exam-primary);\n  box-shadow: 0 12px 40px rgba(201, 184, 163, 0.15);\n}\n\n.exam-card.coming-soon {\n  opacity: 0.6;\n  cursor: not-allowed;\n  filter: grayscale(0.3);\n}\n\n.exam-card-icon {\n  font-size: 3rem;\n  margin-bottom: 1rem;\n}\n\n.exam-card h3 {\n  font-size: 1.4rem;\n  font-weight: 800;\n  margin: 0 0 0.8rem 0;\n  color: var(--exam-text);\n}\n\n.exam-card p {\n  font-size: 0.95rem;\n  color: var(--exam-muted);\n  margin: 0 0 1.5rem 0;\n}\n\n.exam-card-meta {\n  display: flex;\n  justify-content: center;\n  gap: 1rem;\n  margin-bottom: 1.5rem;\n  flex-wrap: wrap;\n}\n\n.meta-item {\n  font-size: 0.85rem;\n  color: var(--exam-muted);\n  background: rgba(201, 184, 163, 0.1);\n  padding: 0.4rem 0.8rem;\n  border-radius: 0.5rem;\n}\n\n.start-exam-btn {\n  width: 100%;\n  padding: 0.9rem 1.5rem;\n  background: linear-gradient(135deg, var(--exam-primary), var(--exam-secondary));\n  color: #000;\n  border: none;\n  border-radius: 0.8rem;\n  font-size: 1rem;\n  font-weight: 700;\n  font-family: inherit;\n  cursor: pointer;\n  transition: all 0.3s ease;\n}\n\n.start-exam-btn:hover:not(.disabled) {\n  transform: scale(1.02);\n  box-shadow: 0 8px 20px rgba(201, 184, 163, 0.3);\n}\n\n.start-exam-btn.disabled {\n  background: var(--exam-muted);\n  cursor: not-allowed;\n  opacity: 0.5;\n}\n\n/* Active Exam Section */\n.active-exam-section.hidden {\n  display: none;\n}\n\n/* Toolbar */\n.exam-toolbar {\n  position: sticky;\n  top: 10px;\n  z-index: 10;\n  display: flex;\n  gap: 0.8rem;\n  margin-bottom: 1.5rem;\n  background: var(--exam-surface);\n  padding: 1rem;\n  border-radius: 1rem;\n  border: 1px solid var(--exam-border);\n  backdrop-filter: blur(10px);\n}\n\n.back-btn,\n.print-btn {\n  padding: 0.8rem 1.2rem;\n  border: 1px solid var(--exam-border);\n  border-radius: 0.8rem;\n  background: var(--exam-surface);\n  font-family: inherit;\n  color: var(--exam-text);\n  cursor: pointer;\n  transition: all 0.2s ease;\n  white-space: nowrap;\n}\n\n.back-btn:hover,\n.print-btn:hover {\n  border-color: var(--exam-primary);\n  background: rgba(201, 184, 163, 0.1);\n}\n\n.search-input {\n  flex: 1;\n  padding: 0.8rem 1rem;\n  border: 1px solid var(--exam-border);\n  border-radius: 0.8rem;\n  background: var(--exam-surface);\n  font-family: inherit;\n  color: var(--exam-text);\n  font-size: 1rem;\n}\n\n.search-input:focus {\n  outline: 2px solid var(--exam-primary);\n  outline-offset: 2px;\n}\n\n.result-text {\n  min-height: 1.9em;\n  color: var(--exam-muted);\n  margin: 0 0 1.5rem 0;\n}\n\n/* Questions Container */\n.questions-container {\n  max-width: 960px;\n  margin: 0 auto;\n}\n\n.question-card {\n  background: var(--exam-surface);\n  border: 1px solid var(--exam-border);\n  border-radius: 1.5rem;\n  padding: 1.5rem;\n  margin: 1.5rem 0;\n  box-shadow: 0 8px 25px rgba(16, 24, 40, 0.1);\n}\n\n.question-text {\n  font-weight: 800;\n  margin-bottom: 1.2rem;\n  font-size: 1.1rem;\n  line-height: 1.8;\n}\n\n.options-container {\n  display: grid;\n  gap: 0.7rem;\n}\n\n.option-btn {\n  width: 100%;\n  padding: 1rem 1.2rem;\n  border: 1px solid var(--exam-border);\n  border-radius: 0.8rem;\n  background: rgba(248, 250, 252, 0.5);\n  cursor: pointer;\n  text-align: right;\n  font-family: inherit;\n  color: var(--exam-text);\n  font-size: 1rem;\n  transition: all 0.2s ease;\n}\n\n.option-btn:hover {\n  border-color: var(--exam-primary);\n  background: rgba(201, 184, 163, 0.1);\n}\n\n.option-btn.is-correct {\n  color: var(--exam-success);\n  border-color: #abefc6;\n  background: var(--exam-success-bg);\n}\n\n.option-btn.is-wrong {\n  color: var(--exam-danger);\n  border-color: #fecdca;\n  background: var(--exam-danger-bg);\n}\n\n.feedback-text {\n  min-height: 1.9em;\n  margin: 0.8rem 0 0 0;\n  font-size: 0.95rem;\n  font-weight: 700;\n}\n\n.feedback-text.correct {\n  color: var(--exam-success);\n}\n\n.feedback-text.wrong {\n  color: var(--exam-danger);\n}\n\n/* Section Headings */\n.section-heading {\n  margin: 2.5rem 0 1.5rem 0;\n  padding: 1rem 1.5rem;\n  border-radius: 1rem;\n  font-size: 1.3rem;\n  font-weight: 800;\n}\n\n.section-heading[data-section=\"a\"] {\n  background: rgba(180, 35, 24, 0.1);\n  color: var(--exam-danger);\n}\n\n.section-heading[data-section=\"b\"] {\n  background: rgba(234, 179, 8, 0.1);\n  color: #b47706;\n}\n\n.section-heading[data-section=\"c\"] {\n  background: rgba(6, 118, 71, 0.1);\n  color: var(--exam-success);\n}\n\n/* Answers Section */\n.answers-section {\n  max-width: 960px;\n  margin: 3rem auto 0;\n  background: linear-gradient(180deg, var(--exam-surface) 0%, rgba(248, 251, 255, 0.5) 100%);\n  border: 1px solid var(--exam-border);\n  border-radius: 1.5rem;\n  padding: 2rem;\n}\n\n.answers-heading {\n  font-size: 1.5rem;\n  font-weight: 800;\n  margin: 0 0 1.5rem 0;\n}\n\n.answer-head {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 1rem;\n  margin-bottom: 1.5rem;\n  padding-bottom: 1rem;\n  border-bottom: 1px solid var(--exam-border);\n}\n\n.answer-title {\n  font-size: 1.1rem;\n  font-weight: 800;\n}\n\n.answer-count {\n  font-size: 0.85rem;\n  color: var(--exam-muted);\n  background: rgba(242, 244, 247, 0.8);\n  border: 1px solid var(--exam-border);\n  padding: 0.4rem 0.8rem;\n  border-radius: 999px;\n}\n\n.answer-grid {\n  display: grid;\n  grid-template-columns: repeat(5, minmax(0, 1fr));\n  gap: 0.8rem;\n}\n\n.answer-item {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 0.8rem;\n  padding: 0.9rem 1rem;\n  border: 1px solid rgba(223, 229, 236, 0.8);\n  border-radius: 0.8rem;\n  background: var(--exam-surface);\n}\n\n.answer-number {\n  font-weight: 700;\n  font-variant-numeric: tabular-nums;\n  font-size: 0.9rem;\n}\n\n.answer-key {\n  min-width: 34px;\n  height: 30px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 0.6rem;\n  background: var(--exam-success-bg);\n  border: 1px solid #abefc6;\n  color: var(--exam-success);\n  font-family: \"Cascadia Code\", monospace;\n  font-weight: 800;\n  font-size: 0.95rem;\n}\n\n/* Info Section */\n.info-section {\n  max-width: 960px;\n  margin: 2rem auto 0;\n  display: grid;\n  gap: 1.5rem;\n}\n\n.info-card {\n  background: var(--exam-surface);\n  border: 1px solid var(--exam-border);\n  border-radius: 1.2rem;\n  padding: 1.5rem;\n}\n\n.info-card h3 {\n  font-size: 1.1rem;\n  font-weight: 800;\n  margin: 0 0 0.8rem 0;\n}\n\n.info-card p {\n  margin: 0;\n  color: var(--exam-muted);\n  line-height: 1.8;\n}\n\n/* Hidden Utility */\n.hidden {\n  display: none !important;\n}\n\n/* Responsive Design */\n@media (max-width: 1024px) {\n  .answer-grid {\n    grid-template-columns: repeat(4, minmax(0, 1fr));\n  }\n}\n\n@media (max-width: 768px) {\n  .exam-header h1 {\n    font-size: 1.8rem;\n  }\n\n  .exam-cards-grid {\n    grid-template-columns: 1fr;\n  }\n\n  .exam-toolbar {\n    flex-wrap: wrap;\n  }\n\n  .search-input {\n    order: 3;\n    width: 100%;\n  }\n\n  .answer-grid {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n    gap: 0.6rem;\n  }\n\n  .answer-head {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 0.8rem;\n  }\n}\n\n@media (max-width: 480px) {\n  .exam-container {\n    padding: 1rem 0.5rem 3rem;\n  }\n\n  .exam-header h1 {\n    font-size: 1.5rem;\n  }\n\n  .exam-card {\n    padding: 1.5rem 1rem;\n  }\n\n  .question-card {\n    padding: 1.2rem;\n  }\n\n  .option-btn {\n    padding: 0.8rem 1rem;\n    font-size: 0.9rem;\n  }\n}\n\n/* Print Styles */\n@media print {\n  body {\n    background: #fff;\n  }\n\n  .glass-navbar,\n  .exam-toolbar,\n  .result-text,\n  .feedback-text,\n  .answers-section,\n  .info-section,\n  .section-heading {\n    display: none !important;\n  }\n\n  .exam-container {\n    padding: 0;\n  }\n\n  .exam-header {\n    margin-bottom: 1rem;\n  }\n\n  .question-card {\n    box-shadow: none;\n    break-inside: avoid;\n    margin: 0.8rem 0;\n    border: 1px solid #ddd;\n  }\n\n  .option-btn {\n    cursor: default;\n  }\n\n  .option-btn:hover {\n    background: rgba(248, 250, 252, 0.5);\n  }\n}\n\n/* Focus States for Accessibility */\n.option-btn:focus-visible,\n.start-exam-btn:focus-visible,\n.back-btn:focus-visible,\n.print-btn:focus-visible,\n.search-input:focus-visible {\n  outline: 2px solid var(--exam-primary);\n  outline-offset: 2px;\n}\n\n/* Animation Classes */\n.fade-in-up {\n  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;\n  opacity: 0;\n  transform: translateY(30px);\n}\n\n@keyframes fadeInUp {\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n
+/* ========================================
+   Family Knowledge Exam - Premium Styles
+   Synced with Portfolio Global Theme
+   ======================================== */
+
+:root {
+  --exam-primary: var(--color-accent-primary, #c9b8a3);
+  --exam-secondary: var(--color-accent-secondary, #a8957f);
+
+  --exam-text: var(--color-text-primary, #172033);
+  --exam-muted: var(--color-text-muted, #667085);
+
+  --exam-surface: var(--color-surface-primary, #ffffff);
+  --exam-border: var(--color-border-primary, #e4e7ec);
+
+  --exam-success: #067647;
+  --exam-success-bg: #ecfdf3;
+
+  --exam-danger: #b42318;
+  --exam-danger-bg: #fef2f2;
+}
+
+/* ========================================
+   Base
+   ======================================== */
+
+.exam-container,
+.exam-container *,
+.exam-container *::before,
+.exam-container *::after {
+  box-sizing: border-box;
+}
+
+.exam-container {
+  min-height: 100vh;
+  padding: 2rem 1rem 4rem;
+
+  background: var(--bg-color);
+  color: var(--exam-text);
+
+  position: relative;
+  overflow-x: hidden;
+
+  font-family: inherit;
+  line-height: 1.9;
+}
+
+[dir='rtl'] .exam-container {
+  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+}
+
+/* ========================================
+   Exam Header
+   ======================================== */
+
+.exam-header {
+  max-width: 960px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+#exam-logo {
+  display: block;
+  margin: 0 auto 1.5rem;
+
+  width: 120px;
+  height: auto;
+}
+
+.exam-header h1 {
+  margin: 0 0 0.8rem;
+
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.4;
+
+  background: linear-gradient(135deg, var(--exam-text), var(--exam-primary));
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.exam-subtitle {
+  margin: 0;
+
+  color: var(--exam-muted);
+  font-size: 1.1rem;
+}
+
+/* ========================================
+   Exam Selector
+   ======================================== */
+
+.exam-selector {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.selector-title {
+  margin: 0 0 2rem;
+
+  color: var(--exam-text);
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.exam-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.exam-card {
+  padding: 2rem;
+
+  background: var(--exam-surface);
+  border: 1px solid var(--exam-border);
+  border-radius: 1.5rem;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.exam-card:hover:not(.coming-soon) {
+  transform: translateY(-8px);
+
+  border-color: var(--exam-primary);
+
+  box-shadow: 0 12px 40px rgba(201, 184, 163, 0.15);
+}
+
+.exam-card.coming-soon {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(0.3);
+}
+
+.exam-card-icon {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.exam-card h3 {
+  margin: 0 0 0.8rem;
+
+  color: var(--exam-text);
+
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.exam-card p {
+  margin: 0 0 1.5rem;
+
+  color: var(--exam-muted);
+
+  font-size: 0.95rem;
+}
+
+.exam-card-meta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.meta-item {
+  padding: 0.4rem 0.8rem;
+
+  color: var(--exam-muted);
+
+  background: rgba(201, 184, 163, 0.1);
+
+  border-radius: 0.5rem;
+
+  font-size: 0.85rem;
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+
+.start-exam-btn {
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+
+  background: linear-gradient(135deg, var(--exam-primary), var(--exam-secondary));
+
+  color: #000;
+
+  border: 0;
+  border-radius: 0.8rem;
+
+  font: inherit;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.start-exam-btn:hover:not(.disabled) {
+  transform: scale(1.02);
+
+  box-shadow: 0 8px 20px rgba(201, 184, 163, 0.3);
+}
+
+.start-exam-btn.disabled {
+  background: var(--exam-muted);
+
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+/* ========================================
+   Active Exam
+   ======================================== */
+
+.active-exam-section.hidden {
+  display: none;
+}
+
+/* ========================================
+   Toolbar
+   ======================================== */
+
+.exam-toolbar {
+  position: sticky;
+  top: 10px;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.8rem;
+
+  max-width: 960px;
+  margin: 0 auto 1.5rem;
+  padding: 1rem;
+
+  background: color-mix(in srgb, var(--exam-surface) 90%, transparent);
+
+  border: 1px solid var(--exam-border);
+  border-radius: 1rem;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.back-btn,
+.print-btn {
+  flex-shrink: 0;
+
+  padding: 0.8rem 1.2rem;
+
+  background: var(--exam-surface);
+  color: var(--exam-text);
+
+  border: 1px solid var(--exam-border);
+  border-radius: 0.8rem;
+
+  font: inherit;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.back-btn:hover,
+.print-btn:hover {
+  border-color: var(--exam-primary);
+  background: rgba(201, 184, 163, 0.1);
+}
+
+.back-btn:active,
+.print-btn:active {
+  transform: translateY(1px);
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+
+  padding: 0.8rem 1rem;
+
+  background: var(--exam-surface);
+  color: var(--exam-text);
+
+  border: 1px solid var(--exam-border);
+  border-radius: 0.8rem;
+
+  font: inherit;
+  font-size: 1rem;
+}
+
+.search-input::placeholder {
+  color: var(--exam-muted);
+}
+
+.search-input:focus {
+  outline: 2px solid var(--exam-primary);
+  outline-offset: 2px;
+}
+
+.result-text {
+  max-width: 960px;
+  min-height: 1.9em;
+
+  margin: 0 auto 1.5rem;
+
+  color: var(--exam-muted);
+}
+
+/* ========================================
+   Questions
+   ======================================== */
+
+.questions-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.question-card {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+
+  background: var(--exam-surface);
+
+  border: 1px solid var(--exam-border);
+  border-radius: 1.5rem;
+
+  box-shadow: 0 8px 25px rgba(16, 24, 40, 0.1);
+}
+
+.question-text {
+  margin-bottom: 1.2rem;
+
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1.8;
+}
+
+.options-container {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.option-btn {
+  width: 100%;
+
+  padding: 1rem 1.2rem;
+
+  background: rgba(248, 250, 252, 0.5);
+  color: var(--exam-text);
+
+  border: 1px solid var(--exam-border);
+  border-radius: 0.8rem;
+
+  font: inherit;
+  font-size: 1rem;
+
+  text-align: right;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.option-btn:hover {
+  border-color: var(--exam-primary);
+  background: rgba(201, 184, 163, 0.1);
+}
+
+.option-btn:active {
+  transform: translateY(1px);
+}
+
+.option-btn.is-correct {
+  color: var(--exam-success);
+
+  background: var(--exam-success-bg);
+
+  border-color: #abefc6;
+}
+
+.option-btn.is-wrong {
+  color: var(--exam-danger);
+
+  background: var(--exam-danger-bg);
+
+  border-color: #fecdca;
+}
+
+/* ========================================
+   Feedback
+   ======================================== */
+
+.feedback-text {
+  min-height: 1.9em;
+
+  margin: 0.8rem 0 0;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.feedback-text.correct {
+  color: var(--exam-success);
+}
+
+.feedback-text.wrong {
+  color: var(--exam-danger);
+}
+
+/* ========================================
+   Section Headings
+   ======================================== */
+
+.section-heading {
+  margin: 2.5rem auto 1.5rem;
+  padding: 1rem 1.5rem;
+
+  max-width: 960px;
+
+  border-radius: 1rem;
+
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.section-heading[data-section='a'] {
+  background: rgba(180, 35, 24, 0.1);
+  color: var(--exam-danger);
+}
+
+.section-heading[data-section='b'] {
+  background: rgba(234, 179, 8, 0.1);
+  color: #b47706;
+}
+
+.section-heading[data-section='c'] {
+  background: rgba(6, 118, 71, 0.1);
+  color: var(--exam-success);
+}
+
+/* ========================================
+   Answers
+   ======================================== */
+
+.answers-section {
+  max-width: 960px;
+  margin: 3rem auto 0;
+  padding: 2rem;
+
+  background: linear-gradient(180deg, var(--exam-surface) 0%, rgba(248, 251, 255, 0.5) 100%);
+
+  border: 1px solid var(--exam-border);
+  border-radius: 1.5rem;
+}
+
+.answers-heading {
+  margin: 0 0 1.5rem;
+
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.answer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+
+  border-bottom: 1px solid var(--exam-border);
+}
+
+.answer-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.answer-count {
+  padding: 0.4rem 0.8rem;
+
+  color: var(--exam-muted);
+
+  background: rgba(242, 244, 247, 0.8);
+
+  border: 1px solid var(--exam-border);
+  border-radius: 999px;
+
+  font-size: 0.85rem;
+}
+
+.answer-grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 0.8rem;
+}
+
+.answer-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 0.8rem;
+
+  padding: 0.9rem 1rem;
+
+  background: var(--exam-surface);
+
+  border: 1px solid rgba(223, 229, 236, 0.8);
+  border-radius: 0.8rem;
+}
+
+.answer-number {
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  font-variant-numeric: tabular-nums;
+}
+
+.answer-key {
+  min-width: 34px;
+  height: 30px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--exam-success-bg);
+  color: var(--exam-success);
+
+  border: 1px solid #abefc6;
+  border-radius: 0.6rem;
+
+  font-family: 'Cascadia Code', monospace;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+/* ========================================
+   Information
+   ======================================== */
+
+.info-section {
+  max-width: 960px;
+
+  display: grid;
+  gap: 1.5rem;
+
+  margin: 2rem auto 0;
+}
+
+.info-card {
+  padding: 1.5rem;
+
+  background: var(--exam-surface);
+
+  border: 1px solid var(--exam-border);
+  border-radius: 1.2rem;
+}
+
+.info-card h3 {
+  margin: 0 0 0.8rem;
+
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.info-card p {
+  margin: 0;
+
+  color: var(--exam-muted);
+
+  line-height: 1.8;
+}
+
+/* ========================================
+   Utilities
+   ======================================== */
+
+.hidden {
+  display: none !important;
+}
+
+/* ========================================
+   Accessibility
+   ======================================== */
+
+.option-btn:focus-visible,
+.start-exam-btn:focus-visible,
+.back-btn:focus-visible,
+.print-btn:focus-visible,
+.search-input:focus-visible {
+  outline: 2px solid var(--exam-primary);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   Animation
+   ======================================== */
+
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .answer-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .exam-container {
+    padding-top: 1.5rem;
+  }
+
+  .exam-header {
+    margin-bottom: 2rem;
+  }
+
+  .exam-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .exam-subtitle {
+    font-size: 1rem;
+  }
+
+  .exam-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 0.5rem;
+  }
+
+  .exam-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .search-input {
+    order: 3;
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .answer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 0.6rem;
+  }
+
+  .answer-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .exam-container {
+    padding: 1rem 0.5rem 3rem;
+  }
+
+  .exam-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .exam-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .question-card {
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+  }
+
+  .question-text {
+    font-size: 1rem;
+  }
+
+  .option-btn {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .answers-section {
+    padding: 1.2rem;
+  }
+
+  .back-btn,
+  .print-btn {
+    padding: 0.7rem 0.9rem;
+  }
+}
+
+/* ========================================
+   Print
+   ======================================== */
+
+@media print {
+  body {
+    background: #fff !important;
+  }
+
+  .glass-navbar,
+  .exam-toolbar,
+  .result-text,
+  .feedback-text,
+  .answers-section,
+  .info-section,
+  .section-heading {
+    display: none !important;
+  }
+
+  .exam-container {
+    min-height: auto;
+    padding: 0;
+    background: #fff;
+  }
+
+  .exam-header {
+    margin-bottom: 1rem;
+  }
+
+  .exam-header h1 {
+    background: none;
+    color: #000;
+
+    -webkit-text-fill-color: #000;
+  }
+
+  .exam-subtitle {
+    color: #444;
+  }
+
+  .question-card {
+    margin: 0.8rem 0;
+
+    background: #fff;
+
+    border: 1px solid #ddd;
+
+    box-shadow: none;
+
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .option-btn {
+    background: #fff;
+    cursor: default;
+  }
+
+  .option-btn:hover {
+    background: #fff;
+    border-color: var(--exam-border);
+    transform: none;
+  }
+}

@@ -31,8 +31,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://aminghasemi.vercel.app/pages/family-knowledge-exam.html" />
   <meta name="twitter:title" content="Family Knowledge Exam - Interactive Quiz Platform" />
-  <meta name="twitter:description"
-    content="Interactive exam platform for Family Knowledge and Population studies." />
+  <meta name="twitter:description" content="Interactive exam platform for Family Knowledge and Population studies." />
   <meta name="twitter:image" content="https://aminghasemi.vercel.app/images/Favicons/android-chrome-512x512.png" />
   <meta name="twitter:creator" content="@aminghasemi" />
 
@@ -115,7 +114,8 @@
   <main id="exam-main" class="exam-container" role="main">
     <div class="exam-header fade-in-up">
       <div class="exam-logo-container">
-        <img src="../images/projects/algorithm-playground.svg" alt="Exam Platform logo" class="exam-logo" />
+        <img src="../images/projects/algorithm-playground.svg" alt="Exam Platform logo" id="exam-logo"
+          class="exam-logo" />
       </div>
       <h1>📚 پلتفرم آزمون دانش خانواده</h1>
       <p class="exam-subtitle">انتخاب فایل آزمون و شروع تمرین با سؤالات چهارگزینه‌ای</p>
@@ -135,7 +135,7 @@
           </div>
           <button class="start-exam-btn" onclick="startExam('family-knowledge')">شروع آزمون →</button>
         </div>
-        
+
         <div class="exam-card coming-soon">
           <div class="exam-card-icon">🔒</div>
           <h3>آزمون اخلاق حرفه‌ای</h3>
@@ -145,7 +145,7 @@
           </div>
           <button class="start-exam-btn disabled" disabled>به زودی</button>
         </div>
-        
+
         <div class="exam-card coming-soon">
           <div class="exam-card-icon">🔒</div>
           <h3>آزمون اندیشه اسلامی</h3>
@@ -165,11 +165,11 @@
         <input id="search" class="search-input" type="search" placeholder="🔎 جست‌وجو در سؤالات" autocomplete="off" />
         <button id="print" class="print-btn" type="button" aria-label="چاپ صفحه" title="چاپ صفحه">🖨️</button>
       </div>
-      
+
       <p id="result" class="result-text" aria-live="polite"></p>
-      
+
       <div id="main" class="questions-container"></div>
-      
+
       <section class="answers-section" aria-labelledby="answers-title">
         <h2 id="answers-title" class="answers-heading">✅ پاسخنامه</h2>
         <div class="answer-head">
@@ -182,11 +182,13 @@
       <section class="info-section">
         <div class="info-card note">
           <h3>📌 نکته</h3>
-          <p>این سؤالات به هیچ عنوان از طرف استاد تهیه یا ارائه نشده‌اند و صرفاً به عنوان منبع مکمل و کمک‌آموزشی برای آمادگی بیشتر در آزمون تهیه شده‌اند.</p>
+          <p>این سؤالات به هیچ عنوان از طرف استاد تهیه یا ارائه نشده‌اند و صرفاً به عنوان منبع مکمل و کمک‌آموزشی برای
+            آمادگی بیشتر در آزمون تهیه شده‌اند.</p>
         </div>
         <div class="info-card basis">
           <h3>📚 مبنا</h3>
-          <p>این مجموعه بر اساس مطالب فصل‌های ۱، ۳ و ۴ کتاب «دانش خانواده و جمعیت» تهیه شده و سعی شده سؤال‌ها بر نکات پرتکرار، مفهومی و امتحانی تمرکز داشته باشند.</p>
+          <p>این مجموعه بر اساس مطالب فصل‌های ۱، ۳ و ۴ کتاب «دانش خانواده و جمعیت» تهیه شده و سعی شده سؤال‌ها بر نکات
+            پرتکرار، مفهومی و امتحانی تمرکز داشته باشند.</p>
         </div>
       </section>
     </section>
@@ -209,13 +211,16 @@
         </div>
         <div class="modal-body">
           <h3>🌟 About This Project</h3>
-          <p>This is an interactive exam platform designed for practicing Family Knowledge and Population studies. It features a clean, modern interface with RTL support for Persian language, allowing students to test their knowledge with multiple-choice questions.</p>
+          <p>This is an interactive exam platform designed for practicing Family Knowledge and Population studies. It
+            features a clean, modern interface with RTL support for Persian language, allowing students to test their
+            knowledge with multiple-choice questions.</p>
 
           <h3>🎮 How to Use</h3>
           <ul>
             <li><strong>Select Exam:</strong> Choose from available exams on the main screen</li>
             <li><strong>Answer Questions:</strong> Click on any option to select your answer</li>
-            <li><strong>Instant Feedback:</strong> Get immediate feedback on whether your answer is correct or incorrect</li>
+            <li><strong>Instant Feedback:</strong> Get immediate feedback on whether your answer is correct or incorrect
+            </li>
             <li><strong>Search:</strong> Use the search bar to find specific questions by keyword</li>
             <li><strong>Print:</strong> Use the print button to generate a printable version of the exam</li>
             <li><strong>Answer Key:</strong> Check the answer key section at the bottom for all correct answers</li>
