@@ -23,6 +23,8 @@ pages/
   modal-window.html       ← Modal Window component 🪟
   pig-game.html           ← Pig Game dice game 🎲
   drum-kit.html           ← JS Drum Kit virtual drums 🥁
+training/
+  none.html               ← Training Way JavaScript exercises 🧠
   404.html                ← Error page (full design) ❌
 css/
   index-style.css
@@ -70,6 +72,7 @@ sound/
 | Modal Window       | `pages/modal-window.html`    | Reusable modal component 🪟                               |
 | Pig Game           | `pages/pig-game.html`        | Classic two-player dice game - race to 100 points 🎲      |
 | Drum Kit           | `pages/drum-kit.html`        | Interactive virtual drum kit playable with keyboard 🥁    |
+| Training Way       | `training/none.html`         | Practical JavaScript exercises and experiments 🧠          |
 
 ## ✨ Features
 
