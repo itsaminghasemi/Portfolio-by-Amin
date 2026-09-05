@@ -68,13 +68,6 @@
     BlinkMacSystemFont,
     'Segoe UI',
     sans-serif;
-
-  overflow-wrap: break-word;
-  overflow-x: hidden;
-  overflow-y: auto;
-  overflow-block: hidden;
-  overflow-inline: hidden;
-  overflow: hidden;
 }
 
 html {
