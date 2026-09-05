@@ -456,7 +456,7 @@ body {
 @media (min-width: 769px) {
   /* Footer glass style */
   .glass-footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     margin: 0;
     background: var(--glass-bg);
