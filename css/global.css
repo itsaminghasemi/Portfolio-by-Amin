@@ -81,7 +81,7 @@ main {
   flex-direction: column;
   overflow-y: scroll;
   padding: 1rem;
-  max-width: 1200px;
+  width: 100%;
   margin-bottom: 10rem; /* leaves space for fixed footer */
 }
 
