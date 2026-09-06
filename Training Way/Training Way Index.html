@@ -4,109 +4,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Training Way | Amin Ghasemi</title>
-    <meta name="description" content="Training Way - Console Practice and Learning Path">
+
+    <meta name="description"
+        content="Training Way by Amin Ghasemi — a JavaScript console practice and learning environment.">
+    <meta name="author" content="Amin Ghasemi">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="../images/Favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../images/Favicons/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../images/Favicons/apple-touch-icon.png">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
         rel="stylesheet">
+
+    <!-- Shared styles -->
     <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="Training Way Style.css">
-    <script src="Training Way Script.js" defer></script>
+
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="./Training Way Style.css">
+
+    <!-- Page script -->
+    <script src="./Training Way Script.js" defer></script>
 </head>
 
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Glass Navbar -->
-    <header class="glass-navbar fade-in-up" aria-hidden="false">
+    <!-- Accessibility -->
+    <a href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="glass-navbar">
         <div class="navbar-container">
-            <a href="../index.html" class="nav-logo">
-                <span class="logo-icon"><img src="../images/Favicons/favicon.ico" id="nav-logo" alt="Amin Ghasemi logo"></span>
+
+            <!-- Logo -->
+            <a href="../index.html" class="nav-logo" aria-label="Amin Ghasemi home">
+
+                <span class="logo-icon">
+                    <img src="../images/Favicons/favicon.ico" id="nav-logo" alt="" aria-hidden="true">
+                </span>
+
                 <span>Amin Ghasemi</span>
             </a>
-            <button class="guide-btn" onclick="openGuideModal()" aria-label="View page guide">
-                <i>📖</i> Guide
+
+            <!-- Guide -->
+            <button type="button" class="guide-btn" onclick="openGuideModal()" aria-label="Open page guide">
+
+                <span aria-hidden="true">📖</span>
+                <span>Guide</span>
             </button>
-            <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-            <label for="nav-toggle" class="nav-toggle-label">
+
+            <!-- Mobile navigation toggle -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
-            <nav class="nav-links">
-                <a href="../index.html" class="nav-link">Vitrine</a>
-                <a href="../pages/contact.html" class="nav-link">Contact</a>
-                <a href="../pages/social.html" class="nav-link">Social</a>
-                <a href="../pages/projects.html" class="nav-link">Projects</a>
+
+            <!-- Navigation -->
+            <nav class="nav-links" aria-label="Main navigation">
+
+                <a href="../index.html" class="nav-link">
+                    Vitrine
+                </a>
+
+                <a href="../pages/contact.html" class="nav-link">
+                    Contact
+                </a>
+
+                <a href="../pages/social.html" class="nav-link">
+                    Social
+                </a>
+
+                <a href="../pages/projects.html" class="nav-link">
+                    Projects
+                </a>
+
+                <a href="
+                Training Way Index.html" class="nav-link active" aria-current="page">
+                    Training Way
+                </a>
+
             </nav>
+
         </div>
     </header>
 
-    <!-- Ambient glow effects -->
-    <div class="ambient-glow glow-blue"></div>
-    <div class="ambient-glow glow-purple"></div>
 
-    <main id="main-content" class="fade-in-up delay-1">
-        <h1>Open the Browser Console</h1>
-        <p>Press <strong>F12</strong>, open the <strong>Console</strong> tab, and view the script result.</p>
+    <!-- ==================== AMBIENT BACKGROUND ==================== -->
+    <div class="ambient-glow glow-blue" aria-hidden="true"></div>
+    <div class="ambient-glow glow-purple" aria-hidden="true"></div>
+
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main id="main-content" class="training-way fade-in-up delay-1">
+
+        <section class="training-hero" aria-labelledby="training-title">
+
+            <div class="training-content">
+
+                <p class="training-eyebrow">
+                    JavaScript Learning Environment
+                </p>
+
+                <h1 id="training-title">
+                    Open the Browser Console
+                </h1>
+
+                <p class="training-description">
+                    Press <strong>F12</strong>, open the
+                    <strong>Console</strong> tab, and view the script result.
+                </p>
+
+                <div class="training-instructions" aria-label="Console instructions">
+
+                    <div class="instruction-step">
+                        <span class="step-number">01</span>
+                        <span>Open Developer Tools</span>
+                    </div>
+
+                    <div class="instruction-step">
+                        <span class="step-number">02</span>
+                        <span>Select the Console tab</span>
+                    </div>
+
+                    <div class="instruction-step">
+                        <span class="step-number">03</span>
+                        <span>Run and experiment with JavaScript</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 
+
+    <!-- ==================== FOOTER ==================== -->
     <footer class="glass-footer">
+
         <div class="footer-content">
+
             <div class="footer-brand">
-                <p>Building beautiful and functional digital experiences with code and creativity.</p>
+                <p>
+                    Building beautiful and functional digital experiences
+                    with code and creativity.
+                </p>
             </div>
+
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; <span id="year">2026</span> Amin. All rights reserved.</p>
+            <p>
+                &copy;
+                <span id="year">2026</span>
+                Amin. All rights reserved.
+            </p>
         </div>
+
     </footer>
 
-    <!-- Guidance Modal -->
-    <div class="modal-overlay" id="guideModal">
+
+    <!-- ==================== GUIDE MODAL ==================== -->
+    <div class="modal-overlay" id="guideModal" role="dialog" aria-modal="true" aria-labelledby="guide-title"
+        aria-hidden="true">
+
         <div class="guidance-modal">
+
             <div class="modal-header">
-                <h2>🎯 Training Way Page - Guide</h2>
-                <button class="close-modal" onclick="closeGuideModal()" aria-label="Close guide">&times;</button>
+
+                <h2 id="guide-title">
+                    🎯 Training Way — Guide
+                </h2>
+
+                <button type="button" class="close-modal" onclick="closeGuideModal()" aria-label="Close guide">
+
+                    &times;
+
+                </button>
+
             </div>
+
             <div class="modal-body">
+
                 <h3>💻 About This Page</h3>
-                <p>This page is designed for console practice and learning. Open your browser's developer tools to see
-                    the script output and experiment with JavaScript code.</p>
+
+                <p>
+                    Training Way is a JavaScript practice environment.
+                    Open your browser's Developer Tools to inspect the
+                    console output and experiment with JavaScript.
+                </p>
+
 
                 <h3>📖 What You'll Find Here</h3>
+
                 <ul>
-                    <li><strong>Console Practice:</strong> Run JavaScript code and see results in the browser console
+                    <li>
+                        <strong>Console Practice:</strong>
+                        Run JavaScript and inspect its output.
                     </li>
-                    <li><strong>Learning Path:</strong> Follow along with training exercises</li>
-                    <li><strong>Interactive Examples:</strong> Test and modify code in real-time</li>
+
+                    <li>
+                        <strong>Learning Path:</strong>
+                        Practice concepts through small exercises.
+                    </li>
+
+                    <li>
+                        <strong>Interactive Experiments:</strong>
+                        Modify code and observe the results.
+                    </li>
                 </ul>
+
 
                 <h3>💡 How to Use</h3>
-                <ul>
-                    <li>Press <strong>F12</strong> to open Developer Tools</li>
-                    <li>Navigate to the <strong>Console</strong> tab</li>
-                    <li>View the script output and error messages</li>
-                    <li>Experiment by typing your own JavaScript code</li>
-                </ul>
+
+                <ol>
+                    <li>
+                        Open your browser's Developer Tools.
+                    </li>
+
+                    <li>
+                        Navigate to the <strong>Console</strong> tab.
+                    </li>
+
+                    <li>
+                        Read the output produced by the script.
+                    </li>
+
+                    <li>
+                        Experiment with your own JavaScript code.
+                    </li>
+                </ol>
+
 
                 <h3>🎯 Tips for Learning</h3>
+
                 <ul>
-                    <li>Read the console output carefully to understand code execution</li>
-                    <li>Use console.log() to debug your own code</li>
-                    <li>Try modifying values and observe the changes</li>
-                    <li>Check the Network tab to see resource loading</li>
+                    <li>
+                        Read console output carefully.
+                    </li>
+
+                    <li>
+                        Use <code>console.log()</code> to inspect values.
+                    </li>
+
+                    <li>
+                        Change values and observe what happens.
+                    </li>
+
+                    <li>
+                        Pay attention to errors and their messages.
+                    </li>
+
+                    <li>
+                        Use the Network and Sources tabs when debugging.
+                    </li>
                 </ul>
+
             </div>
+
         </div>
+
     </div>
 
+
+    <!-- Shared JavaScript -->
     <script src="../js/script.js"></script>
+
 </body>
 
 </html>
