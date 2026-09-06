@@ -714,6 +714,6 @@ body {
   transform: scale(1.1);
 }
 
-.guide-btn hidden {
-  display: none;
+.guide-btn[hidden] {
+  display: none !important;
 }
