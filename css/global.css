@@ -76,6 +76,15 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding: 1rem;
+  max-width: 1200px;
+  margin-bottom: 10rem; /* leaves space for fixed footer */
+}
+
 body {
   background: var(--bg-color);
   color: var(--text-on-dark);
@@ -456,9 +465,9 @@ body {
 @media (min-width: 769px) {
   /* Footer glass style */
   .glass-footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
-    margin: 0;
+    margin-top: 3rem;
     background: var(--glass-bg);
     border-top: 1px solid var(--glass-border);
     padding: 2rem 5% 1rem;

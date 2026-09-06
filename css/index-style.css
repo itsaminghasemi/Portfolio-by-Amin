@@ -14,6 +14,10 @@ body {
 
 main {
   min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-buttom: 10rem; /* leaves space for fixed footer */
+  max-width: 1200px;
 }
 
 .ambient-glow {
