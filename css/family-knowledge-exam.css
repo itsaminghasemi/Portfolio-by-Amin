@@ -20,9 +20,19 @@
   --exam-danger-bg: #fef2f2;
 }
 
-/* ========================================
-   Base
-   ======================================== */
+/* =========================================================
+   FAMILY KNOWLEDGE EXAM — FONT
+   Force the entire Persian exam UI to use Vazirmatn
+   ========================================================= */
+
+html,
+body,
+button,
+input,
+textarea,
+select {
+  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+}
 
 .exam-container,
 .exam-container *,
@@ -41,12 +51,16 @@
   position: relative;
   overflow-x: hidden;
 
-  font-family: inherit;
+  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
   line-height: 1.9;
 }
 
-[dir='rtl'] .exam-container {
-  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+/* Keep code-style content on Cascadia Code when needed */
+.answer-key,
+code,
+pre,
+kbd {
+  font-family: 'Cascadia Code', monospace;
 }
 
 /* ========================================
@@ -122,7 +136,6 @@
   border-radius: 1.5rem;
 
   text-align: center;
-
   cursor: pointer;
 
   transition:
@@ -180,7 +193,6 @@
   padding: 0.4rem 0.8rem;
 
   color: var(--exam-muted);
-
   background: rgba(201, 184, 163, 0.1);
 
   border-radius: 0.5rem;
@@ -278,7 +290,6 @@
   font: inherit;
 
   cursor: pointer;
-
   white-space: nowrap;
 
   transition:
@@ -401,17 +412,13 @@
 
 .option-btn.is-correct {
   color: var(--exam-success);
-
   background: var(--exam-success-bg);
-
   border-color: #abefc6;
 }
 
 .option-btn.is-wrong {
   color: var(--exam-danger);
-
   background: var(--exam-danger-bg);
-
   border-color: #fecdca;
 }
 
@@ -441,10 +448,10 @@
    ======================================== */
 
 .section-heading {
+  max-width: 960px;
+
   margin: 2.5rem auto 1.5rem;
   padding: 1rem 1.5rem;
-
-  max-width: 960px;
 
   border-radius: 1rem;
 
@@ -473,6 +480,7 @@
 
 .answers-section {
   max-width: 960px;
+
   margin: 3rem auto 0;
   padding: 2rem;
 
@@ -703,7 +711,6 @@
 
   .answer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
     gap: 0.6rem;
   }
 

@@ -6,15 +6,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
   <title>Family Knowledge Exam - Interactive Quiz Platform | Amin Ghasemi Portfolio</title>
+
   <meta name="title" content="Family Knowledge Exam - Interactive Quiz Platform | Amin Ghasemi Portfolio" />
+
   <meta name="description"
     content="Interactive exam platform for Family Knowledge and Population studies. Practice with 50 multiple-choice questions covering chapters 1, 3, and 4." />
+
   <meta name="keywords"
     content="family knowledge exam, population studies, quiz platform, interactive exam, persian quiz, amin ghasemi, portfolio, educational tool" />
+
   <meta name="author" content="Amin Ghasemi" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0a0a0f" />
+
   <link rel="canonical" href="https://aminghasemi.vercel.app/pages/family-knowledge-exam.html" />
 
   <!-- Open Graph / Facebook -->
@@ -36,24 +42,26 @@
   <meta name="twitter:creator" content="@aminghasemi" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="../images/Favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../images/Favicons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../images/Favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="../images/Favicons/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="../images/Favicons/android-chrome-512x512.png">
-  <link rel="shortcut icon" href="../images/Favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/Favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/Favicons/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/Favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../images/Favicons/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../images/Favicons/android-chrome-512x512.png" />
+  <link rel="shortcut icon" href="../images/Favicons/favicon-32x32.png" />
+
   <link rel="manifest" href="../manifest.json" />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link
     href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="../css/global.css">
-  <link rel="stylesheet" href="../css/family-knowledge-exam.css">
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/family-knowledge-exam.css" />
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -81,152 +89,327 @@
 </head>
 
 <body>
+
   <!-- Skip Link for Accessibility -->
-  <a href="#exam-main" class="skip-link">Skip to main content</a>
+  <a href="#exam-main" class="skip-link">
+    Skip to main content
+  </a>
 
   <!-- Glass Navbar -->
-  <header class="glass-navbar fade-in-up" aria-hidden="false">
+  <header class="glass-navbar fade-in-up">
     <div class="navbar-container">
-      <a href="../index.html" class="nav-logo">
-        <span class="logo-icon"><img src="../images/Favicons/favicon.ico" id="nav-logo" alt="Amin Ghasemi logo"></span>
+
+      <a href="../index.html" class="nav-logo" aria-label="Amin Ghasemi home">
+        <span class="logo-icon">
+          <img src="../images/Favicons/favicon.ico" id="nav-logo" alt="" aria-hidden="true" />
+        </span>
+
         <span>Amin Ghasemi</span>
       </a>
-      <button class="guide-btn" onclick="openGuideModal()" aria-label="View project guide">
-        <i>📖</i> Guide
+
+      <button type="button" class="guide-btn" onclick="openGuideModal()" aria-label="View project guide">
+        <i aria-hidden="true">📖</i>
+        Guide
       </button>
+
       <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
         <span></span>
         <span></span>
         <span></span>
       </label>
+
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="../index.html" class="nav-link">Vitrine</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="social.html" class="nav-link">Social</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="family-knowledge-exam.html" class="nav-link active" aria-current="page">Exam</a>
+        <a href="../index.html" class="nav-link">
+          Vitrine
+        </a>
+
+        <a href="contact.html" class="nav-link">
+          Contact
+        </a>
+
+        <a href="social.html" class="nav-link">
+          Social
+        </a>
+
+        <a href="projects.html" class="nav-link">
+          Projects
+        </a>
+
+        <a href="family-knowledge-exam.html" class="nav-link active" aria-current="page">
+          Exam
+        </a>
       </nav>
+
     </div>
   </header>
 
   <!-- Main Content -->
-  <main id="exam-main" class="exam-container" role="main">
+  <main id="exam-main" class="exam-container">
+
+    <!-- Exam Header -->
     <div class="exam-header fade-in-up">
+
       <div class="exam-logo-container">
         <img src="../images/projects/algorithm-playground.svg" alt="Exam Platform logo" id="exam-logo"
           class="exam-logo" />
       </div>
-      <h1>📚 پلتفرم آزمون دانش خانواده</h1>
-      <p class="exam-subtitle">انتخاب فایل آزمون و شروع تمرین با سؤالات چهارگزینه‌ای</p>
+
+      <h1>
+        📚 پلتفرم آزمون دانش خانواده
+      </h1>
+
+      <p class="exam-subtitle">
+        انتخاب فایل آزمون و شروع تمرین با سؤالات چهارگزینه‌ای
+      </p>
+
     </div>
 
     <!-- Exam Selection Section -->
-    <section class="exam-selector fade-in-up" id="examSelector">
-      <h2 class="selector-title">انتخاب آزمون</h2>
+    <section class="exam-selector fade-in-up" id="examSelector" aria-labelledby="exam-selector-title">
+
+      <h2 id="exam-selector-title" class="selector-title">
+        انتخاب آزمون
+      </h2>
+
       <div class="exam-cards-grid">
-        <div class="exam-card" data-exam="family-knowledge">
-          <div class="exam-card-icon">📖</div>
-          <h3>دانش خانواده و جمعیت</h3>
-          <p>۵۰ سؤال چهارگزینه‌ای از فصل‌های ۱، ۳ و ۴</p>
-          <div class="exam-card-meta">
-            <span class="meta-item">📝 ۵۰ سؤال</span>
-            <span class="meta-item">⏱️ بدون محدودیت زمانی</span>
-          </div>
-          <button class="start-exam-btn" onclick="startExam('family-knowledge')">شروع آزمون →</button>
-        </div>
 
-        <div class="exam-card coming-soon">
-          <div class="exam-card-icon">🔒</div>
-          <h3>آزمون اخلاق حرفه‌ای</h3>
-          <p>به زودی...</p>
-          <div class="exam-card-meta">
-            <span class="meta-item">📝 به زودی</span>
-          </div>
-          <button class="start-exam-btn disabled" disabled>به زودی</button>
-        </div>
+        <!-- Available Exam -->
+        <article class="exam-card" data-exam="family-knowledge">
 
-        <div class="exam-card coming-soon">
-          <div class="exam-card-icon">🔒</div>
-          <h3>آزمون اندیشه اسلامی</h3>
-          <p>به زودی...</p>
-          <div class="exam-card-meta">
-            <span class="meta-item">📝 به زودی</span>
+          <div class="exam-card-icon" aria-hidden="true">
+            📖
           </div>
-          <button class="start-exam-btn disabled" disabled>به زودی</button>
-        </div>
+
+          <h3>
+            دانش خانواده و جمعیت
+          </h3>
+
+          <p>
+            ۵۰ سؤال چهارگزینه‌ای از فصل‌های ۱، ۳ و ۴
+          </p>
+
+          <div class="exam-card-meta">
+            <span class="meta-item">
+              📝 ۵۰ سؤال
+            </span>
+
+            <span class="meta-item">
+              ⏱️ بدون محدودیت زمانی
+            </span>
+          </div>
+
+          <button type="button" class="start-exam-btn" onclick="startExam('family-knowledge')">
+            شروع آزمون →
+          </button>
+
+        </article>
+
+        <!-- Coming Soon -->
+        <article class="exam-card coming-soon">
+
+          <div class="exam-card-icon" aria-hidden="true">
+            🔒
+          </div>
+
+          <h3>
+            آزمون اخلاق حرفه‌ای
+          </h3>
+
+          <p>
+            به زودی...
+          </p>
+
+          <div class="exam-card-meta">
+            <span class="meta-item">
+              📝 به زودی
+            </span>
+          </div>
+
+          <button type="button" class="start-exam-btn disabled" disabled>
+            به زودی
+          </button>
+
+        </article>
+
+        <!-- Coming Soon -->
+        <article class="exam-card coming-soon">
+
+          <div class="exam-card-icon" aria-hidden="true">
+            🔒
+          </div>
+
+          <h3>
+            آزمون اندیشه اسلامی
+          </h3>
+
+          <p>
+            به زودی...
+          </p>
+
+          <div class="exam-card-meta">
+            <span class="meta-item">
+              📝 به زودی
+            </span>
+          </div>
+
+          <button type="button" class="start-exam-btn disabled" disabled>
+            به زودی
+          </button>
+
+        </article>
+
       </div>
     </section>
 
-    <!-- Active Exam Section (Hidden by default) -->
-    <section class="active-exam-section hidden" id="activeExamSection">
+    <!-- Active Exam Section -->
+    <section class="active-exam-section hidden" id="activeExamSection" aria-label="Active exam">
+
+      <!-- Toolbar -->
       <div class="exam-toolbar">
-        <button class="back-btn" onclick="backToSelection()">← بازگشت به انتخاب آزمون</button>
-        <input id="search" class="search-input" type="search" placeholder="🔎 جست‌وجو در سؤالات" autocomplete="off" />
-        <!-- <button id="print" class="print-btn" type="button" aria-label="چاپ صفحه" title="چاپ صفحه">🖨️</button> -->
+
+        <button type="button" class="back-btn" onclick="backToSelection()">
+          ← بازگشت به انتخاب آزمون
+        </button>
+
+        <input id="search" class="search-input" type="search" placeholder="🔎 جست‌وجو در سؤالات" autocomplete="off"
+          aria-label="جست‌وجو در سؤالات" />
+
       </div>
 
+      <!-- Search / Result Status -->
       <p id="result" class="result-text" aria-live="polite"></p>
 
+      <!-- Questions are rendered dynamically -->
       <div id="main" class="questions-container"></div>
 
-      <!-- <section class="answers-section" aria-labelledby="answers-title">
-        <h2 id="answers-title" class="answers-heading">✅ پاسخنامه</h2>
-        <div class="answer-head">
-          <div class="answer-title">پاسخ صحیح سؤالات</div>
-          <div class="answer-count" id="answerCount">۵۰ سؤال چهارگزینه‌ای</div>
-        </div>
-        <div id="answer-grid" class="answer-grid"></div>
-      </section> -->
+      <!-- Information -->
+      <section class="info-section" aria-label="اطلاعات آزمون">
 
-      <section class="info-section">
         <div class="info-card note">
-          <h3>📌 نکته</h3>
-          <p>این سؤالات به هیچ عنوان از طرف استاد تهیه یا ارائه نشده‌اند و صرفاً به عنوان منبع مکمل و کمک‌آموزشی برای
-            آمادگی بیشتر در آزمون تهیه شده‌اند.</p>
+
+          <h3>
+            📌 نکته
+          </h3>
+
+          <p>
+            این سؤالات به هیچ عنوان از طرف استاد تهیه یا ارائه نشده‌اند
+            و صرفاً به عنوان منبع مکمل و کمک‌آموزشی برای آمادگی بیشتر
+            در آزمون تهیه شده‌اند.
+          </p>
+
         </div>
+
         <div class="info-card basis">
-          <h3>📚 مبنا</h3>
-          <p>این مجموعه بر اساس مطالب فصل‌های ۱، ۳ و ۴ کتاب «دانش خانواده و جمعیت» تهیه شده و سعی شده سؤال‌ها بر نکات
-            پرتکرار، مفهومی و امتحانی تمرکز داشته باشند.</p>
+
+          <h3>
+            📚 مبنا
+          </h3>
+
+          <p>
+            این مجموعه بر اساس مطالب فصل‌های ۱، ۳ و ۴ کتاب
+            «دانش خانواده و جمعیت» تهیه شده و سعی شده سؤال‌ها بر
+            نکات پرتکرار، مفهومی و امتحانی تمرکز داشته باشند.
+          </p>
+
         </div>
+
       </section>
+
     </section>
+
   </main>
 
-  <!-- GLOBAL FOOTER -->
+  <!-- Global Footer -->
   <footer class="glass-footer">
+
     <div class="footer-content">
+
       <div class="footer-brand">
-        <p>Building beautiful and functional digital experiences with code and creativity.</p>
+        <p>
+          Building beautiful and functional digital experiences
+          with code and creativity.
+        </p>
       </div>
+
     </div>
 
     <!-- Guidance Modal -->
-    <div class="modal-overlay" id="guideModal">
-      <div class="guidance-modal">
-        <div class="modal-header">
-          <h2>📚 Family Knowledge Exam - Guide</h2>
-          <button class="close-modal" onclick="closeGuideModal()" aria-label="Close guide">&times;</button>
-        </div>
-        <div class="modal-body">
-          <h3>🌟 About This Project</h3>
-          <p>This is an interactive exam platform designed for practicing Family Knowledge and Population studies. It
-            features a clean, modern interface with RTL support for Persian language, allowing students to test their
-            knowledge with multiple-choice questions.</p>
+    <div class="modal-overlay" id="guideModal" role="dialog" aria-modal="true" aria-labelledby="guide-title"
+      aria-hidden="true">
 
-          <h3>🎮 How to Use</h3>
+      <div class="guidance-modal">
+
+        <div class="modal-header">
+
+          <h2 id="guide-title">
+            📚 Family Knowledge Exam - Guide
+          </h2>
+
+          <button type="button" class="close-modal" onclick="closeGuideModal()" aria-label="Close guide">
+            &times;
+          </button>
+
+        </div>
+
+        <div class="modal-body">
+
+          <h3>
+            🌟 About This Project
+          </h3>
+
+          <p>
+            This is an interactive exam platform designed for practicing
+            Family Knowledge and Population studies. It features a clean,
+            modern interface with RTL support for Persian language,
+            allowing students to test their knowledge with multiple-choice
+            questions.
+          </p>
+
+          <h3>
+            🎮 How to Use
+          </h3>
+
           <ul>
-            <li><strong>Select Exam:</strong> Choose from available exams on the main screen</li>
-            <li><strong>Answer Questions:</strong> Click on any option to select your answer</li>
-            <li><strong>Instant Feedback:</strong> Get immediate feedback on whether your answer is correct or incorrect
+            <li>
+              <strong>Select Exam:</strong>
+              Choose from available exams on the main screen.
             </li>
-            <li><strong>Search:</strong> Use the search bar to find specific questions by keyword</li>
-            <li><strong>Print:</strong> Use the print button to generate a printable version of the exam</li>
-            <li><strong>Answer Key:</strong> Check the answer key section at the bottom for all correct answers</li>
+
+            <li>
+              <strong>Answer Questions:</strong>
+              Click on any option to select your answer.
+            </li>
+
+            <li>
+              <strong>Instant Feedback:</strong>
+              Get immediate feedback on whether your answer is correct
+              or incorrect.
+            </li>
+
+            <li>
+              <strong>Search:</strong>
+              Use the search bar to find specific questions by keyword.
+            </li>
+
+            <li>
+              <strong>Print:</strong>
+              Use the print button to generate a printable version
+              of the exam.
+            </li>
+
+            <li>
+              <strong>Answer Key:</strong>
+              Check the answer key section at the bottom for all
+              correct answers.
+            </li>
           </ul>
 
-          <h3>📋 Features</h3>
+          <h3>
+            📋 Features
+          </h3>
+
           <ul>
             <li>50 carefully crafted multiple-choice questions</li>
             <li>Organized into 3 sections based on importance</li>
@@ -237,23 +420,59 @@
             <li>Persian language support with RTL layout</li>
           </ul>
 
-          <h3>📊 Question Sections</h3>
+          <h3>
+            📊 Question Sections
+          </h3>
+
           <ul>
-            <li><strong>Section A (Red):</strong> Very important and exam-critical questions (Questions 1-30)</li>
-            <li><strong>Section B (Yellow):</strong> Important questions (Questions 31-40)</li>
-            <li><strong>Section C (Green):</strong> Final review questions (Questions 41-50)</li>
+            <li>
+              <strong>Section A (Red):</strong>
+              Very important and exam-critical questions (Questions 1-30)
+            </li>
+
+            <li>
+              <strong>Section B (Yellow):</strong>
+              Important questions (Questions 31-40)
+            </li>
+
+            <li>
+              <strong>Section C (Green):</strong>
+              Final review questions (Questions 41-50)
+            </li>
           </ul>
 
-          <h3>💡 Study Tips</h3>
+          <h3>
+            💡 Study Tips
+          </h3>
+
           <ul>
-            <li>Start with Section A questions as they are most likely to appear on exams</li>
-            <li>Use the search feature to focus on specific topics you want to review</li>
-            <li>Check the answer key after completing each section</li>
-            <li>Print the exam for offline practice and annotation</li>
-            <li>Review incorrect answers to understand your knowledge gaps</li>
+            <li>
+              Start with Section A questions as they are most likely
+              to appear on exams.
+            </li>
+
+            <li>
+              Use the search feature to focus on specific topics
+              you want to review.
+            </li>
+
+            <li>
+              Check the answer key after completing each section.
+            </li>
+
+            <li>
+              Print the exam for offline practice and annotation.
+            </li>
+
+            <li>
+              Review incorrect answers to understand your knowledge gaps.
+            </li>
           </ul>
 
-          <h3>⚙️ Technical Features</h3>
+          <h3>
+            ⚙️ Technical Features
+          </h3>
+
           <ul>
             <li>Built with vanilla JavaScript for optimal performance</li>
             <li>Responsive design with mobile-first approach</li>
@@ -261,17 +480,28 @@
             <li>Print-optimized styles for paper-based study</li>
             <li>Dynamic question rendering with shuffled options</li>
           </ul>
+
         </div>
+
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; <span id="year">2026</span> Amin Ghasemi. All rights reserved.</p>
+      <p>
+        &copy;
+        <span id="year">2026</span>
+        Amin Ghasemi. All rights reserved.
+      </p>
     </div>
+
   </footer>
 
+  <!-- Global Scripts -->
   <script src="../js/script.js"></script>
+
+  <!-- Page Script -->
   <script src="../js/family-knowledge-exam.js"></script>
+
 </body>
 
 </html>
