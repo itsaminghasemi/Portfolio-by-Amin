@@ -5,21 +5,32 @@ body.pig-game-page {
   background: var(--bg-color) !important;
   padding-top: 0 !important;
   display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  overflow-x: hidden;
   font-family: 'Nunito', sans-serif;
 }
 
 /* 2. MAIN CONTAINER (Mobile Base) */
 .pig-game-container {
   width: 100%;
-  height: 100vh;
+  min-height: 100dvh;
+  height: auto;
   background: var(--bg-color);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  margin: 0;
+  overflow: visible;
   gap: 2rem;
   flex-wrap: wrap;
   position: relative;
+}
+
+body.pig-game-page > .pig-game-container {
+  flex: 1 0 auto;
+  padding-top: calc(70px + 1rem);
 }
 
 .pig-game-container::before {
@@ -207,14 +218,15 @@ body.pig-game-page {
    ========================================================= */
 @media (max-width: 768px) {
   .pig-game-container {
-    min-height: 100vh;
+    min-height: 100dvh;
     height: auto;
     align-items: start;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
     padding: 1rem;
-    padding-top: 1.5rem;
+    padding-top: calc(70px + 1.5rem);
+    padding-bottom: 2rem;
   }
 
   .game-logo-container {
