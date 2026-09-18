@@ -18,9 +18,24 @@
    * Initialize the playground
    */
   function init() {
-    populateAlgorithmSelect();
-    setupEventListeners();
-    updateInputHint();
+    loadAlgorithms().then(() => {
+      populateAlgorithmSelect();
+      setupEventListeners();
+      updateInputHint();
+    }).catch(() => {
+      showError('Unable to load the algorithm registry.');
+    });
+  }
+
+  function loadAlgorithms() {
+    const scripts = ALGORITHM_REGISTRY.map((algo) => new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = `../${algo.file.replace('./', '')}`;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    }));
+    return Promise.all(scripts);
   }
 
   /**

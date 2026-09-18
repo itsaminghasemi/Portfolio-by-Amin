@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-labelledby="title desc">
+  <title id="title">Family Knowledge Exam</title>
+  <desc id="desc">A stylized exam card with a check mark</desc>
+  <rect width="320" height="180" rx="24" fill="#18212b"/>
+  <rect x="82" y="28" width="156" height="124" rx="12" fill="#c9b8a3"/>
+  <path d="M112 62h96M112 84h72M112 106h44" stroke="#18212b" stroke-width="10" stroke-linecap="round"/>
+  <path d="m178 120 10 10 22-24" fill="none" stroke="#6b9f7f" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -191,6 +191,17 @@ body {
   background: linear-gradient(145deg, rgba(255, 215, 0, 0.25), rgba(255, 215, 0, 0.1));
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Premium / Home button (top-left) */
 .premium-home-btn {
   position: absolute;
@@ -368,20 +379,6 @@ body {
 
 /* Hidden checkbox controlling mobile menu */
 .nav-toggle {
-  position: absolute;
-  opacity: 0;
-  width: 1px;
-  height: 1px;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-  pointer-events: none;
-}
-
-/* Toggle label (hamburger) */
-.nav-toggle-label {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -392,19 +389,18 @@ body {
   height: 42px;
   padding: 0.5rem;
   background: rgba(255, 255, 255, 0.08);
+  color: inherit;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 50%;
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease,
-    border-color 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
   z-index: 10000;
 }
-.nav-toggle-label:hover {
+
+.nav-toggle:hover {
   background: rgba(255, 255, 255, 0.14);
   transform: scale(1.04);
 }
-.nav-toggle-label span {
+.nav-toggle span {
   display: block;
   height: 2px;
   width: 18px;
@@ -438,7 +434,7 @@ body {
 }
 
 /* When toggle is checked, show mobile menu */
-.nav-toggle:checked ~ .nav-links {
+.nav-links.menu-open {
   overflow: hidden;
   max-height: 320px;
   visibility: visible;
@@ -451,18 +447,21 @@ body {
 }
 
 /* Hamburger transform when active */
-.nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+.nav-toggle[aria-expanded='true'] span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
-.nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+.nav-toggle[aria-expanded='true'] span:nth-child(2) {
   opacity: 0;
 }
-.nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+.nav-toggle[aria-expanded='true'] span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Desktop layout overrides */
 @media (min-width: 769px) {
+  .nav-toggle {
+    display: none;
+  }
   /* Footer glass style */
   .glass-footer {
     position: relative;
