@@ -7,6 +7,12 @@
   // Open guide modal
   let lastFocusedElement = null;
 
+  function setGuideButtonsHidden(hidden) {
+    document.querySelectorAll('.guide-btn').forEach((button) => {
+      button.hidden = hidden;
+    });
+  }
+
   window.openGuideModal = function () {
     const modal = document.getElementById('guideModal');
 
@@ -19,9 +25,7 @@
       document.body.style.overflow = 'hidden';
 
       // Hide all guide buttons while the modal is open
-      document.querySelectorAll('.guide-btn').forEach((button) => {
-        button.hidden = true;
-      });
+      setGuideButtonsHidden(true);
       requestAnimationFrame(() => modal.focus());
     }
   };
@@ -34,10 +38,9 @@
       modal.classList.remove('active');
       document.body.style.overflow = '';
 
-      // Show all guide buttons again
-      document.querySelectorAll('.guide-btn').forEach((button) => {
-        button.hidden = false;
-      });
+      // Keep guide buttons hidden while the navigation menu is open
+      const menuOpen = document.querySelector('.nav-links.menu-open');
+      setGuideButtonsHidden(Boolean(menuOpen));
       if (lastFocusedElement instanceof HTMLElement) {
         lastFocusedElement.focus();
       }
@@ -89,10 +92,12 @@
         const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
         menuBtn.setAttribute('aria-expanded', String(!expanded));
         nav.classList.toggle('menu-open', !expanded);
+        setGuideButtonsHidden(!expanded);
       });
       nav.addEventListener('click', () => {
         menuBtn.setAttribute('aria-expanded', 'false');
         nav.classList.remove('menu-open');
+        setGuideButtonsHidden(false);
       });
     }
 
