@@ -50,14 +50,12 @@
       <button class="guide-btn" onclick="openGuideModal()" aria-label="View page guide">
         <i>📖</i> Guide
       </button>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-      <label for="nav-toggle" class="nav-toggle-label">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-      <nav class="nav-links" aria-label="Main navigation">
+      <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="nav-links" aria-label="Main navigation">
         <a href="../index.html" class="nav-link">Vitrine</a>
+        <a href="about.html" class="nav-link">About</a>
         <a href="contact.html" class="nav-link">Contact</a>
         <a href="social.html" class="nav-link">Social</a>
         <a href="projects.html" class="nav-link active" aria-current="page">Projects</a>
@@ -73,34 +71,31 @@
     <p class="page-subtitle">Explore interactive projects and games built with HTML, CSS, and JavaScript</p>
 
     <section class="projects-grid">
+      <a href="family-knowledge-exam.html" class="project-card" data-project="family-knowledge-exam">
+        <div class="project-icon">
+          <img src="../images/projects/family-knowledge-exam.svg" alt="Family Knowledge Exam logo" />
+        </div>
+        <h2 class="project-title">Family Knowledge Exam</h2>
+        <p class="project-description">I built a RTL quiz experience with 50 questions, search, and instant feedback to prove product thinking and careful interface design.</p>
+        <span class="project-link">Start Exam →</span>
+      </a>
+
       <a href="algorithm-playground.html" class="project-card" data-project="algorithm-playground">
         <div class="project-icon">
           <img src="../images/projects/algorithm-playground.svg" alt="Algorithm Playground logo" />
         </div>
         <h2 class="project-title">Algorithm Playground</h2>
-        <p class="project-description">An interactive playground for testing and exploring JavaScript algorithms. Select
-          an algorithm, enter test cases, and see results instantly.</p>
+        <p class="project-description">I built an interactive algorithm runner with a registry-driven selector to prove structured JavaScript and problem-solving skills.</p>
         <span class="project-link">Try It Now →</span>
       </a>
 
-      <a href="guess-my-number.html" class="project-card" data-project="guess-my-number">
+      <a href="../training-way/training-way.html" class="project-card" data-project="training-way">
         <div class="project-icon">
-          <img src="../images/projects/guess-my-number.svg" alt="Guess My Number logo" />
+          <img src="../images/projects/training-way.svg" alt="Training Way logo" />
         </div>
-        <h2 class="project-title">Guess My Number</h2>
-        <p class="project-description">Test your luck and intuition in this classic number guessing game. Can you find
-          the secret number between 1 and 20?</p>
-        <span class="project-link">Play Now →</span>
-      </a>
-
-      <a href="modal-window.html" class="project-card" data-project="modal-window">
-        <div class="project-icon">
-          <img src="../images/projects/modal-window.svg" alt="Modal Window logo" />
-        </div>
-        <h2 class="project-title">Modal Window</h2>
-        <p class="project-description">A clean, accessible modal window component with smooth animations and keyboard
-          navigation support.</p>
-        <span class="project-link">View Demo →</span>
+        <h2 class="project-title">Training Way</h2>
+        <p class="project-description">I built a learning lab for practicing JavaScript fundamentals and proving steady iteration through small experiments.</p>
+        <span class="project-link">Open Project →</span>
       </a>
 
       <a href="pig-game.html" class="project-card" data-project="pig-game">
@@ -108,8 +103,7 @@
           <img src="../images/projects/pig-game.svg" alt="Pig Game logo" />
         </div>
         <h2 class="project-title">Pig Game</h2>
-        <p class="project-description">A classic dice game where players race to reach 100 points. Roll the dice, hold
-          your score, and outsmart your opponent!</p>
+        <p class="project-description">Practice demo: I built the turn-based dice mechanics to prove state management and event-driven JavaScript.</p>
         <span class="project-link">Play Now →</span>
       </a>
 
@@ -118,31 +112,10 @@
           <img src="../images/projects/drum-kit.svg" alt="Drum Kit logo" />
         </div>
         <h2 class="project-title">Drum Kit</h2>
-        <p class="project-description">An interactive drum kit that lets you create beats using keyboard keys or mouse
-          clicks. Feel the rhythm!</p>
+        <p class="project-description">Practice demo: I connected keyboard and pointer events to audio playback to prove responsive interaction design.</p>
         <span class="project-link">Play Now →</span>
       </a>
 
-      <a href="family-knowledge-exam.html" class="project-card" data-project="family-knowledge-exam">
-        <div class="project-icon">
-          <img src="../images/projects/algorithm-playground.svg" alt="Family Knowledge Exam logo" />
-        </div>
-        <h2 class="project-title">Family Knowledge Exam</h2>
-        <p class="project-description">Interactive exam platform for Family Knowledge and Population studies. Practice
-          with 50 multiple-choice questions with instant feedback.</p>
-        <span class="project-link">Start Exam →</span>
-      </a>
-
-      <a href="../training-way/training-way.html" class="project-card" data-project="training-way">
-        <div class="project-icon">
-          <img src="../images/projects/training-way.svg" alt="Training Way logo" />
-        </div>
-        <h2 class="project-title">Training Way</h2>
-        <p class="project-description">A focused space for experimenting with JavaScript fundamentals and building
-          practical
-          coding exercises.</p>
-        <span class="project-link">Open Project →</span>
-      </a>
     </section>
   </main>
 

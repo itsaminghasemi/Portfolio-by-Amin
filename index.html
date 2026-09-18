@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amin Ghasemi | Full-Stack Developer & Designer</title>
+  <title>Amin Ghasemi | Front-end Developer</title>
   <meta name="description"
-    content="Amin Ghasemi - Full-stack developer crafting beautiful, functional digital experiences with modern web technologies.">
-  <meta name="keywords" content="developer, designer, portfolio, web development, full-stack">
+    content="Amin Ghasemi - Front-end developer building accessible, responsive interfaces with HTML, CSS, and JavaScript.">
+  <meta name="keywords" content="front-end developer, portfolio, web development, HTML, CSS, JavaScript">
   <meta name="author" content="Amin Ghasemi">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aminghasemi.vercel.app/">
-  <meta property="og:title" content="Amin Ghasemi | Full-Stack Developer & Designer">
+  <meta property="og:title" content="Amin Ghasemi | Front-end Developer">
   <meta property="og:description"
-    content="Amin Ghasemi - Full-stack developer crafting beautiful, functional digital experiences.">
+    content="Amin Ghasemi - Front-end developer building accessible, responsive interfaces.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aminghasemi.vercel.app/">
   <meta property="og:image" content="https://aminghasemi.vercel.app/images/Favicons/android-chrome-512x512.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Amin Ghasemi | Full-Stack Developer & Designer">
+  <meta name="twitter:title" content="Amin Ghasemi | Front-end Developer">
   <meta name="twitter:description"
-    content="Amin Ghasemi - Full-stack developer crafting beautiful, functional digital experiences.">
+    content="Amin Ghasemi - Front-end developer building accessible, responsive interfaces.">
   <meta name="twitter:image" content="https://aminghasemi.vercel.app/images/Favicons/android-chrome-512x512.png">
 
   <!-- Favicons - Warm Color System - Root Level -->
@@ -41,6 +41,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./css/global.css">
   <link rel="stylesheet" href="./css/index-style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 
 <body>
@@ -56,14 +57,12 @@
       <button class="guide-btn" onclick="openGuideModal()" aria-label="View page guide">
         <i>📖</i> Guide
       </button>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-      <label for="nav-toggle" class="nav-toggle-label">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-      <nav class="nav-links">
+      <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="nav-links">
         <a href="index.html" class="nav-link active" aria-current="page">Vitrine</a>
+        <a href="pages/about.html" class="nav-link">About</a>
         <a href="pages/contact.html" class="nav-link">Contact</a>
         <a href="pages/social.html" class="nav-link">Social</a>
         <a href="pages/projects.html" class="nav-link">Projects</a>
@@ -84,15 +83,15 @@
             <img id="profilePNG" src="images/profile.avif" alt="Portrait of Amin Ghasemi" />
             <div class="avatar-ring"></div>
           </a>
-          <figcaption class="hint">Click the photo for blog</figcaption>
+          <figcaption class="hint">Click the photo to learn more about me</figcaption>
         </figure>
 
         <div class="info glass-panel">
           <h2 class="hero-title">Amin Ghasemi</h2>
-          <p class="hero-role">Front-end developer & typist</p>
+          <p class="hero-role">Front-end developer</p>
           <p id="myInfo">
             I build fast, responsive interfaces with clean HTML, modern CSS, and
-            JavaScript. I also manage code reliably with Git and GitHub.
+              JavaScript. I care about accessible details and reliable delivery.
           </p>
           <div class="hero-meta">
             <span>UI-focused</span>
@@ -103,7 +102,7 @@
       </section>
 
       <section class="skills">
-        <h2 class="skills-title">Resume-ready technical skills</h2>
+        <h2 class="skills-title">Front-end skills</h2>
         <div class="skills-grid">
           <div class="skill-card">
             <i class="devicon-html5-plain"></i>
@@ -149,7 +148,7 @@
   <div class="modal-overlay" id="guideModal">
     <div class="guidance-modal">
       <div class="modal-header">
-        <h2>Home Page - Guide</h2>
+        <h2>Home Page</h2>
         <button class="close-modal" onclick="closeGuideModal()" aria-label="Close guide">&times;</button>
       </div>
       <div class="modal-body">
@@ -192,7 +191,7 @@
   </div>
 
   <script src="./js/script.js"></script>
-  <script src="./js/index.js" defer></script>
+  <script src="./js/index-logic.js" defer></script>
 </body>
 
 </html>
