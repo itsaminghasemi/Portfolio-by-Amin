@@ -1,20 +1,20 @@
 const message = 'Hello from the console!';
 console.log(message);
 
-function createGreeting(name) {
-  const greeting = `Hello, ${name}! Welcome`;
+// Question Box
+// Complete the function below.
+// Do not use a global variable.\
 
-  return function () {
-    return greeting;
+function createMultiplier(multiplier) {
+  return function (number) {
+    return number * multiplier;
   };
 }
 
-const greetAmin = createGreeting('Amin');
+// Test Cases
+const double = createMultiplier(2);
+const triple = createMultiplier(3);
 
-console.log(greetAmin());
-// "Hello, Amin! Welcome"
-
-const greetAli = createGreeting('Ali');
-
-console.log(greetAli());
-// "Hello, Ali! Welcome"
+console.log(double(5)); // Expected: 10
+console.log(double(7)); // Expected: 14
+console.log(triple(5)); // Expected: 15
