@@ -1,20 +1,23 @@
-const message = 'Hello from the console!';
-console.log(message);
+const person = {
+  name: 'Amin',
 
-// Question Box
-// Complete the function below.
-// Do not use a global variable.\
+  introduce(age, city) {
+    console.log(`I am ${this.name}, ${age}, from ${city}.`);
 
-function createMultiplier(multiplier) {
-  return function (number) {
-    return number * multiplier;
-  };
-}
+    function call(OtherObject, age, city) {
+      console.log(`I am ${OtherObject.name}, ${age}, from ${city}.`);
+    }
+  },
+};
 
-// Test Cases
-const double = createMultiplier(2);
-const triple = createMultiplier(3);
+const introduceOtherPerson = {
+  name: 'Sara',
+};
 
-console.log(double(5)); // Expected: 10
-console.log(double(7)); // Expected: 14
-console.log(triple(5)); // Expected: 15
+person.introduce(20, 'Frankfurt');
+
+person.introduce.call(introduceOtherPerson, 22, 'Berlin');
+
+const saraIntroduce = person.introduce.bind(introduceOtherPerson);
+
+saraIntroduce(22, 'Berlin');
